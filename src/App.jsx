@@ -1,22 +1,22 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Inicio from './pages/index';
-import Historia from './pages/Historia';
-import './App.css';
+import Inicio from './pages/index'
+import NuestraHistoria from './pages/NuestraHistoria'
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 function App() {
+
   return (
     <>
-      <BrowserRouter>
+     <BrowserRouter>
           <Routes>
             <Route path="/" element={<Inicio />} />
-            <Route path="/NuestraHistoria" element={<Historia />} />
+            <Route path="/NuestraHistoria" element={<NuestraHistoria />} />
           </Routes>
-      </BrowserRouter>
+     </BrowserRouter>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
