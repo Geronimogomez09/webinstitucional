@@ -5,11 +5,12 @@ import "../styles/header.css";
 
 const enlaces = [
   { nombre: "Novedades", ruta: "/novedades" },
-  { nombre: "Estudiantes", ruta: "/estudiantes" },
+  { nombre: "Trayecto formativo", ruta: "/trayecto-formativos" },
   { nombre: "Talleres", ruta: "/talleres" },
   { nombre: "Secretaría", ruta: "/secretaria" },
   { nombre: "Asesoría", ruta: "/asesoria" },
-  { nombre: "Biblioteca", ruta: "/biblioteca" },
+  { nombre: "Historia", ruta: "/historia" },
+  { nombre: "Contacto", ruta: "/contacto" },
 ];
 
 export default function Header() {
@@ -29,16 +30,6 @@ export default function Header() {
           {enlace.nombre}
         </NavLink>
       ))}
-
-      <NavLink
-        to="/mas"
-        className={({ isActive }) =>
-          `header-link ${isActive ? "activo" : ""}`
-        }
-        onClick={() => setMenuAbierto(false)}
-      >
-        Más
-      </NavLink>
     </>
   );
 
