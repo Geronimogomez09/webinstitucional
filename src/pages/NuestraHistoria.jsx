@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './Historia.css';
-
+import "../styles/NuestraHistoria.css";
 const Historia = () => {
   return (
     <div className="historia-container">
