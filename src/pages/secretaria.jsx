@@ -2,30 +2,141 @@ import React from 'react';
 
 export default function Secretaria() {
   const formularios = [
-    { id: 1, titulo: 'A tener en cuenta Docentes-No docentes', tipo: 'Descargar' },
-    { id: 2, titulo: 'DDJJ de cargos y actividades', tipo: 'Descargar' },
-    { id: 3, titulo: 'DDJJ de carga de familia (con copia de DNI y CUIL de cada integrante que se declare)', tipo: 'Descargar' },
-    { id: 4, titulo: 'DDJJ de datos personales', tipo: 'Descargar' },
-    { id: 5, titulo: 'PL2 (se adjunta nota del docente, DDJJ de cargos y actividades que va a licenciar)', tipo: 'Descargar' },
-    { id: 6, titulo: 'Renuncia', tipo: 'Descargar' },
-    { id: 7, titulo: 'Formulario interno de días por estudio (adjuntar por primera vez cada año la constancia de alumno regular y la constancia de examen)', tipo: 'Descargar' },
-    { id: 8, titulo: 'Constancia de alumno regular de hijo/a', tipo: 'Haz clic aquí' },
-    { id: 9, titulo: 'Formulario de Historia Clínica (subir conjuntamente a SISO con certificado de Alta)', tipo: 'Descargar' },
-    { id: 10, titulo: 'Portal Único', tipo: 'Haz clic aquí' },
-    { id: 11, titulo: 'SISO', tipo: 'Haz clic aquí' },
-    { id: 12, titulo: 'Solicitud y Justificación de Inasistencia', tipo: 'Haz clic aquí' },
-    { id: 13, titulo: 'COBROS POR NACIM - HIJO - MATRI - PRENATAL - CIRCULAR 003_2022', tipo: 'Haz clic aquí' },
-    { id: 14, titulo: 'Circular - 19 Apertura de CAJA de ahorro', tipo: 'Descargar' },
-    { id: 15, titulo: 'Generar NÚMERO DE EMPLEADO', tipo: 'Descargar' },
-    { id: 16, titulo: 'Solicitud de LICENCIA x estudios o capacitaciones', tipo: 'Descargar' },
-    { id: 17, titulo: 'Nota de descargo - demora de entrega de DDJJ', tipo: 'Descargar' },
-    { id: 18, titulo: 'Formulario de renuncia por razones Particulares', tipo: 'Descargar' },
+    { 
+      id: 1, 
+      titulo: 'A tener en cuenta Docentes-No docentes', 
+      tipo: 'Descargar',
+      link: 'https://drive.google.com/file/d/1AZGSXOMbDLEXEFQwy9A1XiEVaa8oMw0X/preview' 
+    },
+    { 
+      id: 2, 
+      titulo: 'DDJJ de cargos y actividades', 
+      tipo: 'Descargar',
+      link: 'https://drive.google.com/file/d/1A5DWXg6fDEPMD7E_0JunklxbI9UmNjoL/preview' 
+    },
+    { 
+      id: 3, 
+      titulo: 'DDJJ de carga de familia (con copia de DNI y CUIL de cada integrante que se declare)', 
+      links: [
+        { label: 'Vertical', url: 'https://drive.google.com/file/d/1SjgrHRFYoPY-PsV8gsLwwNzu_OrncO38/preview' },
+        { label: 'Apaisado', url: 'https://drive.google.com/file/d/1NyQg4dnX8KKphRpHVeNaj98MKikxm6pW/preview' }
+      ]
+    },
+    { 
+      id: 4, 
+      titulo: 'DDJJ de datos personales', 
+      tipo: 'Descargar',
+      link: 'https://drive.google.com/file/d/1u4BWPy77HWDPE7ZYl32tJackz3nb62xG/preview' 
+    },
+    { 
+      id: 5, 
+      titulo: 'PL2 (se adjunta nota del docente, DDJJ de cargos y actividades que va a licenciar)', 
+      tipo: 'Descargar',
+      link: 'https://drive.google.com/file/d/1szkpp0AKsUcT9JroPj1Sy2xA9TAakvRI/preview' 
+    },
+    { 
+      id: 6, 
+      titulo: 'Renuncia', 
+      tipo: 'Descargar',
+      link: 'https://drive.google.com/file/d/1BQEz_Z2c7nlSuSsWyGsAdYDSDsaG6rO4/preview' 
+    },
+    { 
+      id: 7, 
+      titulo: 'Formulario interno de días por estudio (adjuntar por primera vez cada año la constancia de alumno regular y la constancia de examen)', 
+      tipo: 'Descargar',
+      link: 'https://drive.google.com/file/d/197OmS5sKZb2g31dZSgvW16viBNJC1CUA/preview' 
+    },
+    { 
+      id: 8, 
+      titulo: 'Constancia de alumno regular de hijo/a', 
+      tipo: 'Haz clic aquí',
+      link: 'https://certificado-regularidad.neuquen.edu.ar/' 
+    },
+    { 
+      id: 9, 
+      titulo: 'Formulario de Historia Clínica (subir conjuntamente a SISO con certificado de Alta)', 
+      tipo: 'Descargar',
+      link: 'https://drive.google.com/file/d/1VEp69rSakocmvWnGJTxS-m43bq8mS7_M/preview' 
+    },
+    { 
+      id: 10, 
+      titulo: 'Portal Único', 
+      tipo: 'Haz clic aquí',
+      link: 'https://portalunico.neuquen.edu.ar/auth/iniciar-sesion?nocache=1775979955856' 
+    },
+    { 
+      id: 11, 
+      titulo: 'SISO', 
+      tipo: 'Haz clic aquí',
+      link: 'https://play.google.com/store/apps/details?id=com.cpe.sisoapp&hl=es_AR&gl=US&pli=1' 
+    },
+    { 
+      id: 12, 
+      titulo: 'Solicitud y Justificación de Inasistencia', 
+      tipo: 'Haz clic aquí',
+      link: 'https://docs.google.com/forms/d/e/1FAIpQLSeEGitYwn_C8gYJQcNOQXsGsYv64AgZTa77LoFtwc1us5XPaA/viewform' 
+    },
+    { 
+      id: 13, 
+      titulo: 'COBROS POR NACIM - HIJO - MATRI - PRENATAL - CIRCULAR 003_2022', 
+      tipo: 'Haz clic aquí',
+      link: 'https://drive.google.com/file/d/1MF3FkXJPugSQThNJkAUQQ8waD0Vzq0my/preview' 
+    },
+    { 
+      id: 14, 
+      titulo: 'Circular - 19 Apertura de CAJA de ahorro', 
+      tipo: 'Descargar',
+      link: 'https://drive.google.com/file/d/1KZt3HLxdWAQwDtHPJamaDVOQqnLFXJiV/preview' 
+    },
+    { 
+      id: 15, 
+      titulo: 'Generar NÚMERO DE EMPLEADO', 
+      tipo: 'Descargar',
+      link: 'https://docs.google.com/document/d/1K23kSg-dpD2Gm4YOqgKThYo0JFh7yuA7NxmJ5z-bs1Y/edit?tab=t.0' 
+    },
+    { 
+      id: 17, 
+      titulo: 'Nota de descargo - demora de entrega de DDJJ', 
+      tipo: 'Descargar',
+      link: 'https://docs.google.com/document/d/1fzPFVe4THGQo8gLGQeR0lblnvAl49lh1Uy-rLlvqMNM/edit?tab=t.0' 
+    },
   ];
 
   const normativas = [
-    { id: 1, titulo: 'Manual de procedimiento', tipo: 'Descargar' },
-    { id: 2, titulo: '1278/24 Diseño Curricular', tipo: 'Descargar' },
+    { 
+      id: 1, 
+      titulo: 'Manual de procedimiento', 
+      tipo: 'Descargar', 
+      link: 'https://drive.google.com/file/d/12HJD1Q8hWhUf4wAijb3xXKqBt5R_S3J7/preview' 
+    },
+    { 
+      id: 2, 
+      titulo: '1278/24 Diseño Curricular', 
+      tipo: 'Descargar', 
+      link: 'https://drive.google.com/file/d/1JkIIcyO6GMq2KGtCj4-U-rA_kelhN0Gd/preview' 
+    },
   ];
+
+  const buttonStyle = {
+    backgroundColor: '#456268',
+    color: '#ffffff',
+    border: 'none',
+    padding: '8px 16px',
+    borderRadius: '6px',
+    fontWeight: '600',
+    fontSize: '0.8rem',
+    cursor: 'pointer',
+    whiteSpace: 'nowrap',
+    minWidth: '110px',
+    textAlign: 'center',
+    textDecoration: 'none',
+    display: 'inline-block'
+  };
+
+  const normativasButtonStyle = {
+    ...buttonStyle,
+    backgroundColor: '#79A3B1'
+  };
 
   return (
     <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 24px', fontFamily: "'Inter', sans-serif" }}>
@@ -141,7 +252,7 @@ export default function Secretaria() {
         Formularios de inscripción anual y registros de asistencia
       </h3>
 
-      {/* Listado de Formularios (Contenedores en #FCF8EC) */}
+      {/* Listado de Formularios */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '40px' }}>
         {formularios.map((item) => (
           <div 
@@ -160,27 +271,36 @@ export default function Secretaria() {
             <span style={{ color: '#456268', fontWeight: '600', fontSize: '0.88rem', lineHeight: '1.4' }}>
               {item.titulo}
             </span>
-            <button 
-              style={{ 
-                backgroundColor: '#456268', 
-                color: '#ffffff', 
-                border: 'none', 
-                padding: '8px 16px', 
-                borderRadius: '6px', 
-                fontWeight: '600', 
-                fontSize: '0.8rem', 
-                cursor: 'pointer', 
-                whiteSpace: 'nowrap',
-                minWidth: '110px'
-              }}
-            >
-              {item.tipo}
-            </button>
+
+            {item.links ? (
+              <div style={{ display: 'flex', gap: '8px' }}>
+                {item.links.map((l, idx) => (
+                  <a 
+                    key={idx}
+                    href={l.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    style={buttonStyle}
+                  >
+                    {l.label}
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <a 
+                href={item.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                style={buttonStyle}
+              >
+                {item.tipo}
+              </a>
+            )}
           </div>
         ))}
       </div>
 
-      {/* Normativas (Contenedores en #FCF8EC) */}
+      {/* Normativas */}
       <div 
         style={{ 
           backgroundColor: '#456268', 
@@ -213,22 +333,14 @@ export default function Secretaria() {
             <span style={{ color: '#456268', fontWeight: '600', fontSize: '0.88rem' }}>
               {item.titulo}
             </span>
-            <button 
-              style={{ 
-                backgroundColor: '#79A3B1', 
-                color: '#ffffff', 
-                border: 'none', 
-                padding: '8px 16px', 
-                borderRadius: '6px', 
-                fontWeight: '600', 
-                fontSize: '0.8rem', 
-                cursor: 'pointer', 
-                whiteSpace: 'nowrap',
-                minWidth: '110px'
-              }}
+            <a 
+              href={item.link} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={normativasButtonStyle}
             >
               {item.tipo}
-            </button>
+            </a>
           </div>
         ))}
       </div>
