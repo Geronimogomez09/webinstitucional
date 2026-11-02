@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import "../styles/NuestraHistoria.css";
 
 const Historia = () => {
@@ -6,19 +7,32 @@ const Historia = () => {
     <div className="historia-container">
       <main className="historia-main">
         
-        {/* Sección de Historia Institucional */}
-        <section className="intro-seccion">
-          <h2>Historia de la EPET N°20</h2>
-          <p>
-            La EPET Nº20 fue inaugurada en el año 2006. Anteriormente se ubicaba en la calle Carlos H. Rodrigues y Chrestia, en un edificio antiguo y en muy mal estado. La institución era tan solicitada que los cupos disponibles no alcanzaban. Como solución, se optó por utilizar trailers refaccionados con calefacción mediante calefactores y ventilación con ventiladores. Sin embargo, el estado de los trailers era deplorable: en invierno se congelaban y en verano las temperaturas eran aún más altas que afuera.
-          </p>
-          <p>
-            Eso ya es parte del pasado. En 2018 se inauguró el nuevo edificio de la EPET Nº20, totalmente distinto al anterior. Cuenta con calefacción por suelo radiante, ventilación mediante ventiladores, 12 aulas para teoría, 12 para taller y una biblioteca de gran tamaño.
-          </p>
+        <section className="intro-seccion card shadow-sm p-0 border-0 mb-4 overflow-hidden" style={{ backgroundColor: '#FCF8EC' }}>
+          
+          {/* Imagen arriba ocupando todo el ancho de la caja */}
+          <div className="w-100">
+            <img src="/img/epet-20-fachada.avif"
+              alt="Fachada EPET N°20" 
+              className="img-fluid w-100"
+              style={{ maxHeight: '350px', objectFit: 'cover' }}
+            />
+          </div>
+
+          {/* Contenido de texto debajo de la foto */}
+          <div className="p-4">
+            <h2 className="mb-3">Historia de la EPET N°20</h2>
+            <p>
+              La EPET Nº20 fue inaugurada en el año 2006. Anteriormente se ubicaba en la calle Carlos H. Rodrigues y Chrestia, en un edificio antiguo y en muy mal estado. La institución era tan solicitada que los cupos disponibles no alcanzaban. Como solución, se optó por utilizar trailers refaccionados con calefacción mediante calefactores y ventilación con ventiladores. Sin embargo, el estado de los trailers era deplorable: en invierno se congelaban y en verano las temperaturas eran aún más altas que afuera.
+            </p>
+            <p className="mb-0">
+              Eso ya es parte del pasado. En 2018 se inauguró el nuevo edificio de la EPET Nº20, totalmente distinto al anterior. Cuenta con calefacción por suelo radiante, ventilación mediante ventiladores, 12 aulas para teoría, 12 para taller y una biblioteca de gran tamaño.
+            </p>
+          </div>
+
         </section>
 
-        {/* Hitos / Línea de tiempo visual */}
-        <div className="timeline-grid">
+        {/* Línea de tiempo / Hitos importantes */}
+        <div className="timeline-grid mb-5">
           <div className="timeline-card">
             <span className="anio">2006 - Inicios</span>
             <h3>Los Cimientos y Trailers</h3>
