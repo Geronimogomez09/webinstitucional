@@ -156,18 +156,19 @@ export default function Secretaria() {
           Secretaría Escolar
         </h1>
         
-        {/* Banner de Aviso Institucional */}
+        {/* Banner de Aviso Institucional con fondo destacado (#79A3B1) y texto blanco */}
         <div 
           style={{ 
-            backgroundColor: '#D0E8F2', 
-            borderLeft: '4px solid #79A3B1', 
+            backgroundColor: '#456268', 
+            borderLeft: '5px solid #79A3B1', 
             padding: '12px 24px', 
             borderRadius: '8px', 
             display: 'inline-block',
-            maxWidth: '780px'
+            maxWidth: '780px',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
           }}
         >
-          <p style={{ margin: 0, fontSize: '0.85rem', fontWeight: '700', color: '#456268', letterSpacing: '0.03em' }}>
+          <p style={{ margin: 0, fontSize: '0.85rem', fontWeight: '700', color: '#ffffff', letterSpacing: '0.03em' }}>
             EL INGRESO A LA INSTITUCIÓN SERÁ EXCLUSIVO DEL ESTUDIANTADO Y PERSONAL
           </p>
         </div>
