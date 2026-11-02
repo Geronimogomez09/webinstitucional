@@ -1,0 +1,161 @@
+
+/* =========================================
+   PÁGINA DE NOVEDADES
+========================================= */
+
+.pagina-novedades {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #d5edf2;
+
+    box-sizing: border-box;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.novedades-contenedor {
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+    padding: 20px 3%;
+
+    box-sizing: border-box;
+}
+
+/* =========================================
+   GRILLA DE ANUNCIOS
+========================================= */
+
+.novedades-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+/* =========================================
+   ANIMACIÓN DE ENTRADA
+========================================= */
+
+.novedades-grid .tarjeta-anuncio-link {
+    display: block;
+    min-width: 0;
+    height: 100%;
+
+    opacity: 0;
+
+    animation: entradaAnuncio 0.7s
+        cubic-bezier(0.22, 0.8, 0.24, 1)
+        forwards;
+}
+
+/* Movimiento de entrada */
+
+@keyframes entradaAnuncio {
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.97);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =========================================
+   RETRASO ESCALONADO
+========================================= */
+
+.novedades-grid .tarjeta-anuncio-link:nth-child(1) {
+    animation-delay: 0.10s;
+}
+
+.novedades-grid .tarjeta-anuncio-link:nth-child(2) {
+    animation-delay: 0.20s;
+}
+
+.novedades-grid .tarjeta-anuncio-link:nth-child(3) {
+    animation-delay: 0.30s;
+}
+
+.novedades-grid .tarjeta-anuncio-link:nth-child(4) {
+    animation-delay: 0.40s;
+}
+
+.novedades-grid .tarjeta-anuncio-link:nth-child(5) {
+    animation-delay: 0.50s;
+}
+
+.novedades-grid .tarjeta-anuncio-link:nth-child(6) {
+    animation-delay: 0.60s;
+}
+
+.novedades-grid .tarjeta-anuncio-link:nth-child(n + 7) {
+    animation-delay: 0.70s;
+}
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 900px) {
+
+    .novedades-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+}
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .novedades-contenedor {
+        padding: 15px;
+    }
+
+    .novedades-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .tarjeta-anuncio {
+        padding: 15px;
+    }
+
+    .anuncio-imagen-contenedor {
+        height: 200px;
+        min-height: 200px;
+    }
+
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .novedades-grid .tarjeta-anuncio-link {
+        opacity: 1;
+        animation: none;
+        transform: none;
+    }
+
+    .tarjeta-anuncio,
+    .anuncio-imagen {
+        transition: none;
+    }
+
+}

@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Inicio from './pages/index';
 import NuestraHistoria from './pages/NuestraHistoria';
+import Novedades from "./pages/Novedades";
+import NovedadDetalle from "./pages/NovedadDetalle";
 import Header from './componentes/header';
 import Footer from './componentes/footer';
 
@@ -24,6 +26,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<Inicio />} />
                 <Route path="/NuestraHistoria" element={<NuestraHistoria />} />
+                <Route path="/novedades" element={<Novedades />} />
+                <Route path="/novedades/:id" element={<NovedadDetalle />} />
               </Routes>
             </main>
           </div>
