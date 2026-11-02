@@ -1,127 +1,236 @@
 import React from 'react';
 
 export default function Secretaria() {
+  const formularios = [
+    { id: 1, titulo: 'A tener en cuenta Docentes-No docentes', tipo: 'Descargar' },
+    { id: 2, titulo: 'DDJJ de cargos y actividades', tipo: 'Descargar' },
+    { id: 3, titulo: 'DDJJ de carga de familia (con copia de DNI y CUIL de cada integrante que se declare)', tipo: 'Descargar' },
+    { id: 4, titulo: 'DDJJ de datos personales', tipo: 'Descargar' },
+    { id: 5, titulo: 'PL2 (se adjunta nota del docente, DDJJ de cargos y actividades que va a licenciar)', tipo: 'Descargar' },
+    { id: 6, titulo: 'Renuncia', tipo: 'Descargar' },
+    { id: 7, titulo: 'Formulario interno de días por estudio (adjuntar por primera vez cada año la constancia de alumno regular y la constancia de examen)', tipo: 'Descargar' },
+    { id: 8, titulo: 'Constancia de alumno regular de hijo/a', tipo: 'Haz clic aquí' },
+    { id: 9, titulo: 'Formulario de Historia Clínica (subir conjuntamente a SISO con certificado de Alta)', tipo: 'Descargar' },
+    { id: 10, titulo: 'Portal Único', tipo: 'Haz clic aquí' },
+    { id: 11, titulo: 'SISO', tipo: 'Haz clic aquí' },
+    { id: 12, titulo: 'Solicitud y Justificación de Inasistencia', tipo: 'Haz clic aquí' },
+    { id: 13, titulo: 'COBROS POR NACIM - HIJO - MATRI - PRENATAL - CIRCULAR 003_2022', tipo: 'Haz clic aquí' },
+    { id: 14, titulo: 'Circular - 19 Apertura de CAJA de ahorro', tipo: 'Descargar' },
+    { id: 15, titulo: 'Generar NÚMERO DE EMPLEADO', tipo: 'Descargar' },
+    { id: 16, titulo: 'Solicitud de LICENCIA x estudios o capacitaciones', tipo: 'Descargar' },
+    { id: 17, titulo: 'Nota de descargo - demora de entrega de DDJJ', tipo: 'Descargar' },
+    { id: 18, titulo: 'Formulario de renuncia por razones Particulares', tipo: 'Descargar' },
+  ];
+
+  const normativas = [
+    { id: 1, titulo: 'Manual de procedimiento', tipo: 'Descargar' },
+    { id: 2, titulo: '1278/24 Diseño Curricular', tipo: 'Descargar' },
+  ];
+
   return (
-    <div className="w-full max-w-5xl mx-auto px-4 py-8 space-y-8">
+    <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 24px', fontFamily: "'Inter', sans-serif" }}>
       
-      {/* Título de la Sección */}
-      <div className="text-center space-y-2 border-b-2 border-[#79A3B1]/30 pb-6">
+      {/* Título Principal */}
+      <div style={{ textAlign: 'center', marginBottom: '28px' }}>
         <h1 
-          style={{ fontFamily: "'Oswald', sans-serif" }} 
-          className="text-3xl md:text-4xl font-bold uppercase text-[#456268] tracking-wide"
+          style={{ 
+            fontFamily: "'Oswald', sans-serif", 
+            color: '#456268', 
+            fontSize: '2.8rem', 
+            textTransform: 'uppercase', 
+            margin: '0 0 16px 0', 
+            letterSpacing: '0.04em' 
+          }}
         >
           Secretaría Escolar
         </h1>
-        <p 
-          style={{ fontFamily: "'Inter', sans-serif" }} 
-          className="text-sm md:text-base text-slate-600 max-w-2xl mx-auto"
+        
+        {/* Banner de Aviso Institucional */}
+        <div 
+          style={{ 
+            backgroundColor: '#D0E8F2', 
+            borderLeft: '4px solid #79A3B1', 
+            padding: '12px 24px', 
+            borderRadius: '8px', 
+            display: 'inline-block',
+            maxWidth: '780px'
+          }}
         >
-          Gestión de trámites, constancias, legalizaciones y atención a la comunidad educativa de la EPET N° 20.
-        </p>
+          <p style={{ margin: 0, fontSize: '0.85rem', fontWeight: '700', color: '#456268', letterSpacing: '0.03em' }}>
+            EL INGRESO A LA INSTITUCIÓN SERÁ EXCLUSIVO DEL ESTUDIANTADO Y PERSONAL
+          </p>
+        </div>
       </div>
 
-      {/* Horarios y Atención */}
+      {/* Tarjeta de Días y Horarios */}
       <div 
-        style={{ backgroundColor: '#456268' }} 
-        className="rounded-2xl p-6 md:p-8 text-white shadow-md border-t-4 border-[#79A3B1]"
+        style={{ 
+          backgroundColor: '#456268', 
+          color: '#ffffff', 
+          borderRadius: '16px', 
+          padding: '28px 36px', 
+          marginBottom: '36px', 
+          boxShadow: '0 4px 12px rgba(0,0,0,0.06)' 
+        }}
       >
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="space-y-1 text-center md:text-left">
-            <h2 
-              style={{ fontFamily: "'Oswald', sans-serif" }} 
-              className="text-xl md:text-2xl font-semibold uppercase tracking-wide"
-            >
-              Horarios de Atención Presencial
-            </h2>
-            <p style={{ fontFamily: "'Inter', sans-serif" }} className="text-sm text-slate-200">
-              Turno Mañana: 08:00 a 12:00 hs. | Turno Tarde: 13:30 a 17:30 hs.
-            </p>
-          </div>
-          <a
-            href="mailto:secretaria@epet20.edu.ar"
-            style={{ backgroundColor: '#79A3B1', fontFamily: "'Inter', sans-serif" }}
-            className="px-5 py-2.5 rounded-xl font-medium text-white hover:bg-[#5e8896] transition-colors text-sm shadow-sm whitespace-nowrap"
+        <h2 
+          style={{ 
+            fontFamily: "'Oswald', sans-serif", 
+            fontSize: '1.8rem', 
+            textTransform: 'uppercase', 
+            margin: '0 0 6px 0', 
+            letterSpacing: '0.05em',
+            textAlign: 'center'
+          }}
+        >
+          Días y Horarios de Atención
+        </h2>
+        <p style={{ textAlign: 'center', color: '#D0E8F2', fontSize: '0.85rem', margin: '0 0 20px 0', fontWeight: '500' }}>
+          Lunes a Viernes (excepto Jueves)
+        </p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', maxWidth: '600px', margin: '0 auto' }}>
+          <div 
+            style={{ 
+              backgroundColor: 'rgba(255, 255, 255, 0.08)', 
+              border: '1px solid rgba(121, 163, 177, 0.4)', 
+              borderRadius: '12px', 
+              padding: '14px', 
+              textAlign: 'center' 
+            }}
           >
-            Enviar Consulta
-          </a>
+            <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#D0E8F2', fontWeight: '600', display: 'block', marginBottom: '4px' }}>
+              Turno Mañana
+            </span>
+            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.25rem', letterSpacing: '0.03em' }}>
+              08:30 a 12:30 HS
+            </span>
+          </div>
+
+          <div 
+            style={{ 
+              backgroundColor: 'rgba(255, 255, 255, 0.08)', 
+              border: '1px solid rgba(121, 163, 177, 0.4)', 
+              borderRadius: '12px', 
+              padding: '14px', 
+              textAlign: 'center' 
+            }}
+          >
+            <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: '#D0E8F2', fontWeight: '600', display: 'block', marginBottom: '4px' }}>
+              Turno Tarde
+            </span>
+            <span style={{ fontFamily: "'Oswald', sans-serif", fontSize: '1.25rem', letterSpacing: '0.03em' }}>
+              14:00 a 18:00 HS
+            </span>
+          </div>
         </div>
       </div>
 
-      {/* Trámites Frecuentes */}
-      <div className="space-y-4">
-        <h2 
-          style={{ fontFamily: "'Oswald', sans-serif" }} 
-          className="text-2xl font-bold text-[#456268] uppercase tracking-wide"
-        >
-          Trámites y Solicitudes
-        </h2>
+      {/* Subtítulo de Sección */}
+      <h3 
+        style={{ 
+          fontFamily: "'Oswald', sans-serif", 
+          color: '#456268', 
+          fontSize: '1.4rem', 
+          textAlign: 'center', 
+          marginBottom: '24px', 
+          textTransform: 'uppercase', 
+          letterSpacing: '0.03em' 
+        }}
+      >
+        Formularios de inscripción anual y registros de asistencia
+      </h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          {/* Card 1 */}
-          <div className="bg-white p-6 rounded-2xl border border-[#79A3B1]/30 shadow-sm space-y-3 flex flex-col justify-between">
-            <div className="space-y-2">
-              <div className="w-10 h-10 rounded-xl bg-[#D0E8F2] text-[#456268] flex items-center justify-center font-bold text-lg">
-                📄
-              </div>
-              <h3 style={{ fontFamily: "'Oswald', sans-serif" }} className="text-lg font-semibold text-[#456268]">
-                Constancia de Alumno Regular
-              </h3>
-              <p style={{ fontFamily: "'Inter', sans-serif" }} className="text-xs text-slate-600 leading-relaxed">
-                Solicitud digital o presencial para trámites de asignaciones, boleto estudiantil y obra social.
-              </p>
-            </div>
+      {/* Listado de Formularios (Contenedores en #FCF8EC) */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '40px' }}>
+        {formularios.map((item) => (
+          <div 
+            key={item.id} 
+            style={{ 
+              backgroundColor: '#FCF8EC', 
+              border: '1px solid rgba(121, 163, 177, 0.5)', 
+              borderRadius: '10px', 
+              padding: '14px 20px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'space-between', 
+              gap: '20px'
+            }}
+          >
+            <span style={{ color: '#456268', fontWeight: '600', fontSize: '0.88rem', lineHeight: '1.4' }}>
+              {item.titulo}
+            </span>
             <button 
-              style={{ fontFamily: "'Inter', sans-serif" }}
-              className="w-full mt-4 py-2 px-3 text-xs font-semibold text-[#456268] bg-[#D0E8F2]/60 hover:bg-[#D0E8F2] rounded-lg transition-colors border border-[#79A3B1]/20"
+              style={{ 
+                backgroundColor: '#456268', 
+                color: '#ffffff', 
+                border: 'none', 
+                padding: '8px 16px', 
+                borderRadius: '6px', 
+                fontWeight: '600', 
+                fontSize: '0.8rem', 
+                cursor: 'pointer', 
+                whiteSpace: 'nowrap',
+                minWidth: '110px'
+              }}
             >
-              Solicitar Constancia
+              {item.tipo}
             </button>
           </div>
+        ))}
+      </div>
 
-          {/* Card 2 */}
-          <div className="bg-white p-6 rounded-2xl border border-[#79A3B1]/30 shadow-sm space-y-3 flex flex-col justify-between">
-            <div className="space-y-2">
-              <div className="w-10 h-10 rounded-xl bg-[#D0E8F2] text-[#456268] flex items-center justify-center font-bold text-lg">
-                🎓
-              </div>
-              <h3 style={{ fontFamily: "'Oswald', sans-serif" }} className="text-lg font-semibold text-[#456268]">
-                Analíticos y Analíticos Parciales
-              </h3>
-              <p style={{ fontFamily: "'Inter', sans-serif" }} className="text-xs text-slate-600 leading-relaxed">
-                Gestión de certificados de estudios en trámite, pases de establecimiento y duplicados.
-              </p>
-            </div>
+      {/* Normativas (Contenedores en #FCF8EC) */}
+      <div 
+        style={{ 
+          backgroundColor: '#456268', 
+          color: '#ffffff', 
+          padding: '10px 16px', 
+          borderRadius: '8px', 
+          marginBottom: '12px' 
+        }}
+      >
+        <h3 style={{ fontFamily: "'Oswald', sans-serif", margin: 0, fontSize: '1.2rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+          Normativas
+        </h3>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+        {normativas.map((item) => (
+          <div 
+            key={item.id} 
+            style={{ 
+              backgroundColor: '#FCF8EC', 
+              border: '1px solid rgba(121, 163, 177, 0.5)', 
+              borderRadius: '10px', 
+              padding: '14px 20px', 
+              display: 'flex', 
+              alignItems: 'center', 
+              justifyContent: 'space-between', 
+              gap: '20px'
+            }}
+          >
+            <span style={{ color: '#456268', fontWeight: '600', fontSize: '0.88rem' }}>
+              {item.titulo}
+            </span>
             <button 
-              style={{ fontFamily: "'Inter', sans-serif" }}
-              className="w-full mt-4 py-2 px-3 text-xs font-semibold text-[#456268] bg-[#D0E8F2]/60 hover:bg-[#D0E8F2] rounded-lg transition-colors border border-[#79A3B1]/20"
+              style={{ 
+                backgroundColor: '#79A3B1', 
+                color: '#ffffff', 
+                border: 'none', 
+                padding: '8px 16px', 
+                borderRadius: '6px', 
+                fontWeight: '600', 
+                fontSize: '0.8rem', 
+                cursor: 'pointer', 
+                whiteSpace: 'nowrap',
+                minWidth: '110px'
+              }}
             >
-              Consultar Requisitos
+              {item.tipo}
             </button>
           </div>
-
-          {/* Card 3 */}
-          <div className="bg-white p-6 rounded-2xl border border-[#79A3B1]/30 shadow-sm space-y-3 flex flex-col justify-between">
-            <div className="space-y-2">
-              <div className="w-10 h-10 rounded-xl bg-[#D0E8F2] text-[#456268] flex items-center justify-center font-bold text-lg">
-                📝
-              </div>
-              <h3 style={{ fontFamily: "'Oswald', sans-serif" }} className="text-lg font-semibold text-[#456268]">
-                Inscripciones y Mesas de Examen
-              </h3>
-              <p style={{ fontFamily: "'Inter', sans-serif" }} className="text-xs text-slate-600 leading-relaxed">
-                Fechas de mesas previas, equivalencias y formularios de matriculación para el ciclo lectivo.
-              </p>
-            </div>
-            <button 
-              style={{ fontFamily: "'Inter', sans-serif" }}
-              className="w-full mt-4 py-2 px-3 text-xs font-semibold text-[#456268] bg-[#D0E8F2]/60 hover:bg-[#D0E8F2] rounded-lg transition-colors border border-[#79A3B1]/20"
-            >
-              Ver Fechas
-            </button>
-          </div>
-
-        </div>
+        ))}
       </div>
 
     </div>

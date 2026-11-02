@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <div style={{ backgroundColor: '#D0E8F2' }} className="min-h-screen flex flex-col items-center p-0 md:p-6 font-sans">
         <div 
-          style={{ backgroundColor: '#FCF8EC' }} 
+          style={{ backgroundColor: '#D0E8F2' }} 
           className="w-full max-w-7xl min-h-[92vh] flex flex-col justify-between rounded-3xl shadow-2xl overflow-hidden border border-[#79A3B1]/30"
         >
           <div>
