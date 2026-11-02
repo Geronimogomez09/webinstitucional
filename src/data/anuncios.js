@@ -70,7 +70,7 @@ const anuncios = [
     fecha: "26 octubre, 2026",
   },
     {
-    id: 3,
+    id: 4,
     categoria: "Novedades",
     titulo: "Comunicado institucional para estudiantes",
     imagen: "../../public/imagenes/anuncios/images-3.jpg",
