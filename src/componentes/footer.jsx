@@ -16,16 +16,6 @@ export default function Footer() {
           className="mx-auto flex flex-col items-center text-center" 
           style={{ maxWidth: '620px' }}
         >
-          <h2 
-            style={{ 
-              fontFamily: "'Oswald', sans-serif",
-              letterSpacing: '0.04em',
-              marginBottom: '12px'
-            }} 
-            className="text-2xl md:text-3xl font-bold uppercase text-white"
-          >
-            EPET N° 20
-          </h2>
           <p 
             style={{ 
               fontFamily: "'Inter', sans-serif",
