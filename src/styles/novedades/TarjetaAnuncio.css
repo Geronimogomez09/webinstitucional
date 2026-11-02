@@ -1,0 +1,140 @@
+
+/* =========================================
+   TARJETA DE ANUNCIO
+========================================= */
+
+.tarjeta-anuncio {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    height: 100%;
+
+    padding: 17px 20px 15px;
+
+    background: #fbf8ed;
+    border: 2px solid #b9dce0;
+    border-radius: 4px;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.tarjeta-anuncio:hover {
+    transform: translateY(-4px);
+    border-color: #8bbfc8;
+
+    box-shadow:
+        0 8px 20px rgba(25, 54, 95, 0.10);
+}
+
+/* Categoría */
+
+.anuncio-categoria {
+    margin-bottom: 7px;
+
+    color: #414141;
+    font-family: inter, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Título */
+
+.anuncio-titulo {
+    margin: 0 0 7px;
+
+    color: #111;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.25;
+
+    text-transform: uppercase;
+}
+
+/* Imagen */
+
+.anuncio-imagen-contenedor {
+    width: 100%;
+    height: 175px;
+    min-height: 175px;
+
+    overflow: hidden;
+    background: #e8eef1;
+}
+
+.anuncio-imagen {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.4s ease;
+}
+
+.tarjeta-anuncio:hover .anuncio-imagen {
+    transform: scale(1.025);
+}
+
+/* Descripción */
+
+.anuncio-descripcion {
+    margin: 9px 0 5px;
+
+    color: #222;
+    font-family: inter, sans-serif;
+    font-size: 12px;
+    line-height: 1.45;
+}
+
+/* Autor y fecha */
+
+.anuncio-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+
+    margin-top: auto;
+
+    color: #555;
+    font-family: inter, sans-serif;
+    font-size: 10px;
+}
+
+.anuncio-separador {
+    color: #999;
+}
+
+.tarjeta-anuncio-link {
+    display: block;
+    height: 100%;
+    min-width: 0;
+
+    color: inherit;
+    text-decoration: none !important;
+}
+
+.tarjeta-anuncio-link:visited {
+    color: inherit;
+}
+
+.tarjeta-anuncio-link:focus-visible {
+    outline: 3px solid #284d75;
+    outline-offset: 4px;
+    border-radius: 5px;
+}
+
+.tarjeta-anuncio-link .tarjeta-anuncio {
+    height: 100%;
+    cursor: pointer;
+}
+

@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Inicio from './pages/index'
-import NuestraHistoria from './pages/NuestraHistoria'
-import Header from './componentes/header';
-import Footer from "./componentes/footer";
 import Secretaria from './pages/secretaria';
+import Inicio from './pages/index';
+import NuestraHistoria from './pages/NuestraHistoria';
+import Novedades from "./pages/Novedades";
+import NovedadDetalle from "./pages/NovedadDetalle";
+import Header from './componentes/header';
+import Footer from './componentes/footer';
 
 import './App.css';
 
@@ -26,6 +28,8 @@ function App() {
                 <Route path="/" element={<Inicio />} />
                 <Route path="/secretaria" element={<Secretaria />} />
                 <Route path="/NuestraHistoria" element={<NuestraHistoria />} />
+                <Route path="/novedades" element={<Novedades />} />
+                <Route path="/novedades/:id" element={<NovedadDetalle />} />
               </Routes>
             </main>
           </div>
@@ -34,7 +38,6 @@ function App() {
       </div>
     </BrowserRouter>
   );
-
 }
 
 export default App;

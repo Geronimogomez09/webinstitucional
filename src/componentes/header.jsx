@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../styles/header.css";
 
@@ -9,12 +9,34 @@ const enlaces = [
   { nombre: "Talleres", ruta: "/talleres" },
   { nombre: "Secretaría", ruta: "/secretaria" },
   { nombre: "Asesoría", ruta: "/asesoria" },
-  { nombre: "Historia", ruta: "/historia" },
+  { nombre: "Historia", ruta: "/NuestraHistoria" },
   { nombre: "Contacto", ruta: "/contacto" },
 ];
 
 export default function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const [headerScroll, setHeaderScroll] = useState(false);
+
+  useEffect(() => {
+    const controlarScroll = () => {
+      setHeaderScroll(window.scrollY > 40);
+    };
+
+    window.addEventListener("scroll", controlarScroll, {
+      passive: true,
+    });
+
+    controlarScroll();
+
+    return () => {
+      window.removeEventListener("scroll", controlarScroll);
+    };
+  }, []);
+
+  // Cerrar menú al cambiar de ruta
+  useEffect(() => {
+    setMenuAbierto(false);
+  }, []);
 
   const navegacion = (
     <>
@@ -35,41 +57,67 @@ export default function Header() {
 
   return (
     <>
-      <header className="header">
-        <Link to="/" className="header-logo">
-          <img src="../../public/imagenes/escudo-epet.png" alt="Escudo EPET N°20" />
-          <span>EPET N°20</span>
-        </Link>
-
-        <nav className="header-nav">{navegacion}</nav>
-
-        <a
-          href="https://wa.me/"
-          target="_blank"
-          rel="noreferrer"
-          className="header-whatsapp"
+      <div className="header-container">
+        <header
+          className={`header ${
+            headerScroll ? "header-scrolled" : ""
+          }`}
         >
-          <strong>CANAL WHATSAPP</strong>
-          <small>Comunidad Educativa</small>
-        </a>
+          <Link to="/" className="header-logo">
+            <img
+              src="/imagenes/escudo-epet.png"
+              alt="Escudo EPET N°20"
+            />
+            <span>EPET<br />N°20</span>
+          </Link>
 
-        <button
-          className="header-toggle"
-          onClick={() => setMenuAbierto(!menuAbierto)}
-          aria-label="Abrir menú"
-          aria-expanded={menuAbierto}
-        >
-          <i className={`bi ${menuAbierto ? "bi-x-lg" : "bi-list"}`} />
-        </button>
-      </header>
+          <nav className="header-nav">
+            {navegacion}
+          </nav>
 
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noreferrer"
+            className="header-whatsapp"
+          >
+            <strong>CANAL WHATSAPP</strong>
+            <small>Canal de whatsapp</small>
+          </a>
+
+          <button
+            type="button"
+            className="header-toggle"
+            onClick={() => setMenuAbierto(!menuAbierto)}
+            aria-label={menuAbierto ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuAbierto}
+          >
+            <i
+              className={`bi ${
+                menuAbierto ? "bi-x-lg" : "bi-list"
+              }`}
+            />
+          </button>
+        </header>
+      </div>
+
+      {/* Fondo oscuro */}
       <div
-        className={`header-overlay ${menuAbierto ? "visible" : ""}`}
+        className={`header-overlay ${
+          menuAbierto ? "visible" : ""
+        }`}
         onClick={() => setMenuAbierto(false)}
       />
 
-      <aside className={`header-sidebar ${menuAbierto ? "abierto" : ""}`}>
-        <div className="sidebar-nav">{navegacion}</div>
+      {/* Menú lateral */}
+      <aside
+        className={`header-sidebar ${
+          menuAbierto ? "abierto" : ""
+        }`}
+      >
+        <nav className="sidebar-nav">
+          {navegacion}
+        </nav>
 
         <a
           href="https://wa.me/"
@@ -77,7 +125,8 @@ export default function Header() {
           rel="noreferrer"
           className="sidebar-whatsapp"
         >
-          <i className="bi bi-whatsapp" /> Canal WhatsApp
+          <i className="bi bi-whatsapp" />
+          Canal WhatsApp
         </a>
       </aside>
     </>
