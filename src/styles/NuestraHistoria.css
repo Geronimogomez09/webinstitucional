@@ -1,24 +1,30 @@
-/* Paleta de colores oficial */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap');
+
+/* Paleta de colores y tipografías globales */
 :root {
-  --color-bg-celeste: #D0E8F2; /* Fondo general celeste */
-  --color-card-bg: #FFFFFF;    /* Fondo de los cuadrados en blanco */
-  --color-blue-mid: #79A3B1;
-  --color-dark-slate: #456268;
+  --color-bg-celeste: #D0E8F2; /* Fondo general de la página */
+  --color-card-bg: #FCF8EC;    /* Cajas y Header */
+  --color-blue-mid: #79A3B1;   /* Detalles estéticos, bordes */
+  --color-dark-slate: #456268; /* Footer y página seleccionada / acentos */
   --color-white: #FFFFFF;
 }
 
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--color-bg-celeste); /* <--- Acá está el celeste de fondo */
+  font-family: 'Inter', sans-serif; /* Tipografía para texto */
+  background-color: var(--color-bg-celeste);
   color: var(--color-dark-slate);
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand, .anio {
+  font-family: 'Oswald', sans-serif; /* Tipografía para títulos y logotipos */
 }
 
 .historia-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--color-bg-celeste); /* <--- Aseguramos que todo el contenedor sea celeste */
+  background-color: var(--color-bg-celeste);
 }
 
 /* Cabecera */
@@ -42,6 +48,7 @@ body {
   margin: 0.5rem 0 0 0;
   color: var(--color-blue-mid);
   font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
 }
 
 .btn-volver {
@@ -52,6 +59,7 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.2s ease;
+  font-family: 'Inter', sans-serif;
 }
 
 .btn-volver:hover {
@@ -69,12 +77,11 @@ body {
 
 /* Cuadrado principal (Historia de la EPET N°20) */
 .intro-seccion {
-  background-color: var(--color-card-bg); /* Cuadrado blanco */
-  padding: 2.5rem;
+  background-color: var(--color-card-bg);
   border-radius: 8px;
   border: 1px solid var(--color-blue-mid);
   margin-bottom: 3rem;
-  box-shadow: 0 4px 10px rgba(69, 98, 104, 0.12); /* Sombra */
+  box-shadow: 0 4px 10px rgba(69, 98, 104, 0.12);
 }
 
 .intro-seccion h2 {
@@ -84,12 +91,13 @@ body {
 }
 
 .intro-seccion p {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.6;
-  color: #557075;
+  color: var(--color-dark-slate);
+  font-family: 'Inter', sans-serif;
 }
 
-/* Cuadrados de la línea de tiempo (blancos con sombra) */
+/* Cuadrados de la línea de tiempo */
 .timeline-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -97,14 +105,14 @@ body {
 }
 
 .timeline-card {
-  background-color: var(--color-card-bg); /* Cuadrado blanco */
+  background-color: var(--color-card-bg);
   padding: 2rem;
   border-radius: 8px;
   border-top: 5px solid var(--color-blue-mid);
-  border-left: 1px solid #c0d8e2;
-  border-right: 1px solid #c0d8e2;
-  border-bottom: 1px solid #c0d8e2;
-  box-shadow: 0 4px 10px rgba(69, 98, 104, 0.12); /* Sombra */
+  border-left: 1px solid var(--color-blue-mid);
+  border-right: 1px solid var(--color-blue-mid);
+  border-bottom: 1px solid var(--color-blue-mid);
+  box-shadow: 0 4px 10px rgba(69, 98, 104, 0.12);
   transition: transform 0.2s ease;
 }
 
@@ -131,8 +139,22 @@ body {
 
 .timeline-card p {
   margin: 0;
-  color: #557075;
+  color: var(--color-dark-slate);
   line-height: 1.5;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Estilos para las tarjetas de Autoridades y Preceptores */
+.autoridades-seccion .card {
+  background-color: var(--color-card-bg) !important;
+  border: 1px solid var(--color-blue-mid) !important;
+  box-shadow: 0 4px 10px rgba(69, 98, 104, 0.08);
+}
+
+.autoridades-seccion ul li {
+  font-family: 'Inter', sans-serif;
+  color: var(--color-dark-slate);
+  margin-bottom: 0.4rem;
 }
 
 /* Pie de página */
@@ -142,4 +164,5 @@ body {
   text-align: center;
   padding: 1.5rem;
   font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
 }
