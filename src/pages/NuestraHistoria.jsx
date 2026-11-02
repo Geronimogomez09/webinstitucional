@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "../styles/NuestraHistoria.css";
 
 const Historia = () => {
@@ -7,11 +6,13 @@ const Historia = () => {
     <div className="historia-container">
       <main className="historia-main">
         
+        {/* Sección de Historia con la foto arriba dentro de la caja color crema */}
         <section className="intro-seccion card shadow-sm p-0 border-0 mb-4 overflow-hidden" style={{ backgroundColor: '#FCF8EC' }}>
           
           {/* Imagen arriba ocupando todo el ancho de la caja */}
           <div className="w-100">
-            <img src="/img/epet-20-fachada.avif"
+            <img 
+              src="/img/epet-20-fachada.avif" 
               alt="Fachada EPET N°20" 
               className="img-fluid w-100"
               style={{ maxHeight: '350px', objectFit: 'cover' }}
@@ -66,8 +67,8 @@ const Historia = () => {
             
             {/* Directivos */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-4 h-100 border-0">
-                <h4 className="text-primary mb-3">Directivos</h4>
+              <div className="card shadow-sm p-4 h-100 border-0" style={{ backgroundColor: '#FCF8EC' }}>
+                <h4 className="mb-3" style={{ color: '#456268' }}>Directivos</h4>
                 <ul className="list-unstyled">
                   <li><strong>Director:</strong> Perez, Jesus</li>
                   <li><strong>Vicedirector:</strong> Ortega, Enrique</li>
@@ -80,8 +81,8 @@ const Historia = () => {
 
             {/* Área Técnica y Taller */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-4 h-100 border-0">
-                <h4 className="text-primary mb-3">Área Técnica y Taller</h4>
+              <div className="card shadow-sm p-4 h-100 border-0" style={{ backgroundColor: '#FCF8EC' }}>
+                <h4 className="mb-3" style={{ color: '#456268' }}>Área Técnica y Taller</h4>
                 <ul className="list-unstyled">
                   <li><strong>Jefe General de Taller:</strong> De Ferraris, Rodrigo</li>
                   <li><strong>Jefe de Sección Turno Mañana:</strong> Lamas, Laura</li>
@@ -94,8 +95,8 @@ const Historia = () => {
 
             {/* Secretaría */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-4 h-100 border-0">
-                <h4 className="text-primary mb-3">Secretaría</h4>
+              <div className="card shadow-sm p-4 h-100 border-0" style={{ backgroundColor: '#FCF8EC' }}>
+                <h4 className="mb-3" style={{ color: '#456268' }}>Secretaría</h4>
                 <ul className="list-unstyled">
                   <li><strong>Secretaría:</strong> Vacas, Natalia</li>
                   <li><strong>Pro – Secretaría – T.T.:</strong> Sasso, Beatriz Alejandra</li>
@@ -106,8 +107,8 @@ const Historia = () => {
 
             {/* Equipo de Apoyo y Asesoría */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-4 h-100 border-0">
-                <h4 className="text-primary mb-3">Equipo de Apoyo y Asesoría</h4>
+              <div className="card shadow-sm p-4 h-100 border-0" style={{ backgroundColor: '#FCF8EC' }}>
+                <h4 className="mb-3" style={{ color: '#456268' }}>Equipo de Apoyo y Asesoría</h4>
                 <ul className="list-unstyled">
                   <li><strong>Asesoría Pedagógica:</strong> Vicente, Nestor</li>
                   <li><strong>Aux. Asesoría Pedagógica:</strong> Vilcaes, Laura</li>
@@ -119,8 +120,8 @@ const Historia = () => {
 
             {/* Biblioteca y Redes */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-4 h-100 border-0">
-                <h4 className="text-primary mb-3">Biblioteca y Redes</h4>
+              <div className="card shadow-sm p-4 h-100 border-0" style={{ backgroundColor: '#FCF8EC' }}>
+                <h4 className="mb-3" style={{ color: '#456268' }}>Biblioteca y Redes</h4>
                 <ul className="list-unstyled">
                   <li><strong>Jefe de Preceptores – T.M.:</strong> Carlos, Avendanio</li>
                   <li><strong>Subjefe de Preceptores – T.M.:</strong> Lucas Figueroa</li>
@@ -132,8 +133,8 @@ const Historia = () => {
 
             {/* Preceptoría y Laboratorio */}
             <div className="col-md-6">
-              <div className="card shadow-sm p-4 h-100 border-0">
-                <h4 className="text-primary mb-3">Preceptoría y Laboratorio</h4>
+              <div className="card shadow-sm p-4 h-100 border-0" style={{ backgroundColor: '#FCF8EC' }}>
+                <h4 className="mb-3" style={{ color: '#456268' }}>Preceptoría y Laboratorio</h4>
                 <ul className="list-unstyled">
                   <li><strong>Bibliotecaria – T.M.:</strong> Sandra, Bono</li>
                   <li><strong>Bibliotecaria – T.T.:</strong> Alarcón, Romina</li>
@@ -147,13 +148,13 @@ const Historia = () => {
 
           {/* Listado de Preceptores por Turno */}
           <div className="mt-5">
-            <h3 className="text-center mb-4">Preceptores</h3>
+            <h3 className="text-center mb-4" style={{ color: '#456268' }}>Preceptores</h3>
             
             <div className="row g-4">
               {/* Turno Mañana */}
               <div className="col-md-6">
-                <div className="card shadow-sm p-4 h-100 border-0 bg-light">
-                  <h4 className="text-secondary mb-3">Turno Mañana</h4>
+                <div className="card shadow-sm p-4 h-100 border-0" style={{ backgroundColor: '#FCF8EC' }}>
+                  <h4 className="mb-3" style={{ color: '#456268' }}>Turno Mañana</h4>
                   <ul className="list-unstyled">
                     <li className="mb-2"><strong>1°1° / ED. Física:</strong> Bastian, Facundo</li>
                     <li className="mb-2"><strong>1°3° / 2°1°:</strong> Melisa, Criuello</li>
@@ -167,8 +168,8 @@ const Historia = () => {
 
               {/* Turno Tarde */}
               <div className="col-md-6">
-                <div className="card shadow-sm p-4 h-100 border-0 bg-light">
-                  <h4 className="text-secondary mb-3">Turno Tarde</h4>
+                <div className="card shadow-sm p-4 h-100 border-0" style={{ backgroundColor: '#FCF8EC' }}>
+                  <h4 className="mb-3" style={{ color: '#456268' }}>Turno Tarde</h4>
                   <ul className="list-unstyled">
                     <li className="mb-2"><strong>1°2° / 3°1°:</strong> Dalceggio, Nati</li>
                     <li className="mb-2"><strong>1°4° / 2°4°:</strong> Arribere, Laura</li>
