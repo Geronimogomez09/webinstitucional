@@ -1,201 +1,490 @@
 
-.header {
-  --azul: #284780;
-  --texto: #19365f;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
 
-  position: relative;
-  z-index: 1000;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  min-height: 120px;
-  padding: 0 4.5%;
-  background: #fff;
-  border-top: 3px solid #403c2b;
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root {
+    --azul: #284d75;
+    --texto: #456268;
+    --crema: #FCF8EC;
+    --activo: #456268;
+    --verde: #0bad50;
+    --altura-header: 86px;
 }
 
+/* =========================================
+   CONTENEDOR DEL HEADER
+========================================= */
+
+.header-container {
+    position: relative;
+    width: 100%;
+    height: var(--altura-header);
+    z-index: 1300;
+}
+
+/* =========================================
+   HEADER PRINCIPAL
+========================================= */
+
+.header {
+    position: relative;
+    z-index: 1300;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    width: 100%;
+    min-height: var(--altura-header);
+    padding: 0 2%;
+
+    box-sizing: border-box;
+
+    background: var(--crema);
+    border-bottom: 1px solid #456268;
+
+    transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.4s cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
 .header-logo {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  color: #3861a7;
-  text-decoration: none;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: var(--azul);
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .header-logo img {
-  width: 38px;
-  height: 52px;
-  object-fit: contain;
+    display: block;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
 }
 
 .header-logo span {
-  font-size: 24px;
-  font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 4px;
+    color: var(--texto);
 }
 
+/* =========================================
+   NAVEGACIÓN DESKTOP
+========================================= */
+
 .header-nav {
-  display: flex;
-  align-items: stretch;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
 }
 
 .header-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 17px;
-  color: var(--texto);
-  background: transparent;
-  font-size: 15px;
-  text-decoration: none !important;
-  white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 12px;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    line-height: 1.3;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: var(--texto);
+    background: transparent;
+
+    text-decoration: none !important;
+    white-space: normal;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
 .header-link:visited,
 .header-link:focus,
 .header-link:active {
-  color: var(--texto);
-  text-decoration: none;
+    color: var(--texto);
+    text-decoration: none;
 }
 
 .header-link:hover {
-  color: var(--azul);
-  background: #f4f6fa;
+    color: var(--azul);
+    background: #f0eddf;
+    box-shadow: #284d75 0px 2px 5px -1px;
 }
 
 .header-link.activo,
 .header-link.activo:visited,
 .header-link.activo:hover {
-  color: #fff;
-  background: var(--azul);
+    color: #fff;
+    background: var(--activo);
+    box-shadow: #284d75 0px 2px 5px -1px;
 }
+
+/* =========================================
+   BOTÓN WHATSAPP DESKTOP
+========================================= */
 
 .header-whatsapp {
-  align-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  padding: 15px 22px;
-  border-radius: 40px;
-  background: #f5f8fc;
-  color: var(--azul);
-  text-decoration: none !important;
-  white-space: nowrap;
+    align-self: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+
+    padding: 13px 17px;
+
+    border-radius: 50px;
+    background: var(--verde);
+
+    color: #fff !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    box-shadow: #0bad50 0px 2px 5px -1px;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-.header-whatsapp:visited,
 .header-whatsapp:hover {
-  color: var(--azul);
+    color: #fff !important;
+    background: #079344;
+    transform: translateY(-2px);
+    box-shadow: #079344 0px 2px 5px -1px;
 }
 
 .header-whatsapp strong {
-  font-size: 14px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .header-whatsapp small {
-  font-size: 12px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
 }
+
+/* =========================================
+   BOTÓN HAMBURGUESA
+========================================= */
 
 .header-toggle {
-  display: none;
-  align-self: center;
-  border: 0;
-  border-radius: 8px;
-  padding: 8px 12px;
-  background: #f4f6fa;
-  color: var(--azul);
-  font-size: 26px;
+    display: none;
+    align-self: center;
+
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+
+    background: transparent;
+    color: var(--azul);
+
+    font-size: 27px;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
 }
 
+.header-toggle:hover {
+    background: #eeeadd;
+}
+
+/* =========================================
+   HEADER CON SCROLL
+========================================= */
+
+.header.header-scrolled {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    background: rgba(251, 248, 237, 0.97);
+
+    box-shadow: 0 5px 22px rgba(25, 43, 65, 0.13);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    animation: headerEntrada 0.4s ease;
+}
+
+@keyframes headerEntrada {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   FONDO OSCURO DEL MENÚ
+========================================= */
+
 .header-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1090;
-  visibility: hidden;
-  background: rgb(0 0 0 / 45%);
-  opacity: 0;
-  transition: 0.25s;
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+
+    visibility: hidden;
+    opacity: 0;
+
+    background: rgba(15, 25, 40, 0.55);
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
 }
 
 .header-overlay.visible {
-  visibility: visible;
-  opacity: 1;
+    visibility: visible;
+    opacity: 1;
 }
 
+/* =========================================
+   MENÚ LATERAL
+========================================= */
+
 .header-sidebar {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1100;
-  display: flex;
-  flex-direction: column;
-  width: min(320px, 85vw);
-  height: 100dvh;
-  padding: 25px 18px;
-  background: #fff;
-  transform: translateX(100%);
-  transition: transform 0.25s ease;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 1200;
+
+    display: flex;
+    flex-direction: column;
+
+    width: min(340px, 88vw);
+    height: 100vh;
+    height: 100dvh;
+
+    /* Espacio para el header y el botón X */
+    padding: 105px 20px 20px;
+
+    box-sizing: border-box;
+
+    background: var(--crema);
+    box-shadow: -8px 0 25px rgba(0, 0, 0, 0.12);
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+
+    transform: translateX(105%);
+    visibility: hidden;
+
+    transition:
+        transform 0.35s cubic-bezier(0.22, 0.8, 0.24, 1),
+        visibility 0.35s ease;
 }
 
 .header-sidebar.abierto {
-  transform: translateX(0);
+    transform: translateX(0);
+    visibility: visible;
 }
 
+/* =========================================
+   ENLACES DEL MENÚ LATERAL
+========================================= */
+
 .sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 100%;
+    flex-shrink: 0;
 }
 
 .sidebar-nav .header-link {
-  justify-content: flex-start;
-  min-height: 48px;
-  padding: 0 15px;
-  border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-height: 50px;
+
+    padding: 15px 16px;
+
+    box-sizing: border-box;
+    flex-shrink: 0;
+
+    border-radius: 7px;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    gap: 30px;
+    text-align: left;
+    color: var(--texto);
+    background: transparent;
 }
+
+.sidebar-nav .header-link:hover {
+    color: var(--azul);
+    background: #eeeadd;
+}
+
+.sidebar-nav .header-link.activo {
+    color: #fff;
+    background: var(--activo);
+}
+
+/* =========================================
+   WHATSAPP DEL MENÚ LATERAL
+========================================= */
 
 .sidebar-whatsapp {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: auto;
-  padding: 15px;
-  border-radius: 10px;
-  background: #f5f8fc;
-  color: var(--azul);
-  text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    min-height: 48px;
+
+    margin-top: auto;
+    padding: 12px;
+
+    box-sizing: border-box;
+    flex-shrink: 0;
+
+    border-radius: 10px;
+
+    background: var(--verde);
+    color: #fff !important;
+
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: background 0.3s ease;
 }
-.header-logo img {
-  width: 38px;
-  height: 52px;
-  object-fit: contain;
-  display: block;
+
+.sidebar-whatsapp:hover {
+    background: #079344;
 }
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
 @media (max-width: 1100px) {
-  .header {
-    min-height: 85px;
-    padding: 0 20px;
-  }
 
-  .header-logo span {
-    font-size: 21px;
-  }
+    :root {
+        --altura-header: 85px;
+    }
 
-  .header-nav,
-  .header > .header-whatsapp {
-    display: none;
-  }
+    .header {
+        min-height: 85px;
+        padding: 0 20px;
+    }
 
-  .header-toggle {
-    display: block;
-  }
+    .header-logo {
+        gap: 12px;
+    }
+
+    .header-logo img {
+        width: 45px;
+        height: 65px;
+    }
+
+    .header-logo span {
+        font-size: 27px;
+        letter-spacing: 3px;
+    }
+
+    .header-nav,
+    .header > .header-whatsapp {
+        display: none;
+    }
+
+    .header-toggle {
+        display: block;
+    }
 }
+
+/* =========================================
+   PANTALLAS DE POCA ALTURA
+========================================= */
+
+@media (max-height: 650px) {
+
+    .header-sidebar {
+        padding-top: 95px;
+        padding-bottom: 12px;
+    }
+
+    .sidebar-nav {
+        gap: 15px;
+    }
+
+    .sidebar-nav .header-link {
+        min-height: 38px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    .sidebar-whatsapp {
+        min-height: 42px;
+        margin-top: 12px;
+    }
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
 
 @media (min-width: 1101px) {
-  .header-overlay,
-  .header-sidebar {
-    display: none;
-  }
+
+    .header-overlay,
+    .header-sidebar {
+        display: none;
+    }
+}
+
+/* =========================================
+   ACCESIBILIDAD
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .header,
+    .header *,
+    .header-sidebar,
+    .header-overlay {
+        animation: none !important;
+        transition: none !important;
+    }
 }
