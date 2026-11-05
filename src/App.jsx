@@ -6,6 +6,7 @@ import Novedades from "./pages/Novedades";
 import NovedadDetalle from "./pages/NovedadDetalle";
 import Header from './componentes/header';
 import Footer from './componentes/footer';
+import ContactosyUbi from './pages/ContactosyUbi'; 
 
 import './App.css';
 
@@ -30,6 +31,8 @@ function App() {
                 <Route path="/NuestraHistoria" element={<NuestraHistoria />} />
                 <Route path="/novedades" element={<Novedades />} />
                 <Route path="/novedades/:id" element={<NovedadDetalle />} />
+                <Route path="/ContactosyUbi" element={<ContactosyUbi />} />
+                <Route path="/contacto" element={<ContactosyUbi />} />
               </Routes>
             </main>
           </div>
