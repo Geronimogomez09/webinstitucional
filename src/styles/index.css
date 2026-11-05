@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap');
+
 :root {
     --color-beige: #FCF8EC;
     --color-celeste: #D0E8F2;
@@ -5,7 +7,18 @@
     --color-oscuro: #456268;
     --blanco: #FFFFFF;
     --texto-oscuro: #2D3748;
+    
+    /* Definimos las tipografías */
+    --fuente-titulos: 'Oswald', sans-serif;
+    --fuente-texto: 'Inter', sans-serif;
 }
+
+/* Aplicamos Inter por defecto a todo el cuerpo de texto de la página */
+body {
+    font-family: var(--fuente-texto);
+    color: var(--texto-oscuro);
+}
+
 .contenedor-ancho {
     max-width: 1300px;
     margin: 0 auto;
@@ -48,15 +61,17 @@
 }
 
 .overlay-hero h1 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--fuente-titulos);
     font-size: 48px;
     letter-spacing: 1.5px;
     margin-bottom: 10px;
 }
 
 .overlay-hero p {
+    font-family: var(--fuente-texto);
     font-size: 17px;
     opacity: 0.95;
+    font-weight: 300;
 }
 
 /* NOVEDADES */
@@ -65,11 +80,12 @@
 }
 
 .titulo-seccion-boceto {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--fuente-titulos);
     font-size: 30px;
     color: var(--color-oscuro);
     margin-bottom: 25px;
     text-align: center;
+    letter-spacing: 0.5px;
 }
 
 .grilla-5-novedades {
@@ -85,14 +101,16 @@
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .tarjeta-novedad:hover {
     transform: translateY(-4px);
+    box-shadow: 0 8px 15px rgba(69, 98, 104, 0.15);
 }
 
 .etiqueta-tarjeta {
+    font-family: var(--fuente-texto);
     font-size: 10px;
     font-weight: 700;
     color: var(--color-azul-medio);
@@ -100,22 +118,28 @@
 }
 
 .tarjeta-novedad h3 {
-    font-size: 16px;
+    font-family: var(--fuente-titulos);
+    font-size: 18px;
     margin: 8px 0;
     color: var(--color-oscuro);
+    letter-spacing: 0.3px;
 }
 
 .tarjeta-novedad p {
+    font-family: var(--fuente-texto);
     font-size: 12px;
     color: #555;
     margin-bottom: 15px;
+    line-height: 1.4;
 }
 
 .tarjeta-novedad a {
     margin-top: auto;
+    font-family: var(--fuente-texto);
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--color-oscuro);
+    text-decoration: none;
 }
 
 /* ESTADÍSTICAS */
@@ -135,17 +159,20 @@
 }
 
 .cifra {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--fuente-titulos);
     font-size: 42px;
     font-weight: 700;
     display: block;
     color: var(--color-beige);
+    letter-spacing: 1px;
 }
 
 .label-dato {
+    font-family: var(--fuente-texto);
     font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
 /* TRAYECTOS FORMATIVOS */
