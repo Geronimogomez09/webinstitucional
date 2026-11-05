@@ -6,3 +6,201 @@
     --blanco: #FFFFFF;
     --texto-oscuro: #2D3748;
 }
+.contenedor-ancho {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* HERO CENTRADO VERTICALMENTE */
+.banner-escuela {
+    padding: 30px 20px;
+}
+
+.contenedor-hero-foto {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 480px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.foto-frente-escuela {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.overlay-hero.centrado-vertical {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(69, 98, 104, 0.4) 0%, rgba(69, 98, 104, 0.8) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    color: var(--blanco);
+}
+
+.overlay-hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.overlay-hero p {
+    font-size: 17px;
+    opacity: 0.95;
+}
+
+/* NOVEDADES */
+.seccion-novedades {
+    padding: 50px 0;
+}
+
+.titulo-seccion-boceto {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    color: var(--color-oscuro);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.grilla-5-novedades {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.tarjeta-novedad {
+    background-color: var(--blanco);
+    border: 1px solid var(--color-azul-medio);
+    border-radius: 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
+}
+
+.tarjeta-novedad:hover {
+    transform: translateY(-4px);
+}
+
+.etiqueta-tarjeta {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--color-azul-medio);
+    letter-spacing: 0.5px;
+}
+
+.tarjeta-novedad h3 {
+    font-size: 16px;
+    margin: 8px 0;
+    color: var(--color-oscuro);
+}
+
+.tarjeta-novedad p {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.tarjeta-novedad a {
+    margin-top: auto;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--color-oscuro);
+}
+
+/* ESTADÍSTICAS */
+.seccion-estadisticas {
+    background-color: var(--color-oscuro);
+    color: var(--blanco);
+    padding: 35px 20px;
+    margin: 20px 0;
+}
+
+.contenedor-estadisticas {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+}
+
+.cifra {
+    font-family: 'Oswald', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    display: block;
+    color: var(--color-beige);
+}
+
+.label-dato {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* TRAYECTOS FORMATIVOS */
+.seccion-trayectos {
+    padding: 60px 0;
+}
+
+.grilla-ciclos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-ciclo {
+    background-color: var(--blanco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.contenedor-foto-ciclo {
+    height: 220px;
+    overflow: hidden;
+}
+
+.contenedor-foto-ciclo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.info-ciclo {
+    padding: 20px;
+}
+
+.info-ciclo h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 22px;
+    color: var(--color-oscuro);
+    margin-bottom: 10px;
+}
+
+.info-ciclo p {
+    font-size: 13px;
+    color: #4A5568;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+    .grilla-5-novedades { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .grilla-5-novedades, .grilla-ciclos, .contenedor-estadisticas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
