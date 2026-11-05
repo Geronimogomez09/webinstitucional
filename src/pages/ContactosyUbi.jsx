@@ -1,7 +1,40 @@
-import React from 'react';
-import '../styles/ContactosYUbicacion.css';
+import React, { useState } from 'react';
+import '../styles/ContactosyUbi.css';
 
 const ContactosYUbicacion = () => {
+  // Estados para capturar los valores de los inputs
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    asunto: '',
+    mensaje: ''
+  });
+
+  // Estado para mostrar un mensaje de éxito cuando se envía
+  const [enviado, setEnviado] = useState(false);
+
+  // Función que actualiza el estado cada vez que el usuario escribe algo
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  // Función que maneja el envío del formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Datos enviados:", formData);
+    
+    setEnviado(true);
+
+    // Limpiamos el formulario después de 4 segundos
+    setTimeout(() => {
+      setFormData({ nombre: '', email: '', asunto: '', mensaje: '' });
+      setEnviado(false);
+    }, 4000);
+  };
+
   return (
     <div className="contactos-ubicacion-container">
       <main className="contactos-ubicacion-main">
@@ -56,26 +89,65 @@ const ContactosYUbicacion = () => {
             </div>
           </div>
 
-          {/* Bloque de Formulario de Consulta */}
+          {/* Bloque de Formulario de Consulta Dinámico */}
           <div className="col-lg-6">
             <div className="card shadow-sm p-4 h-100 border-0 contacto-card">
               <h3 className="mb-4">Envianos tu Consulta</h3>
-              <form onSubmit={(e) => e.preventDefault()}>
+              
+              {enviado && (
+                <div className="alert alert-success text-center py-2 mb-3 fw-semibold" role="alert">
+                  ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label htmlFor="nombre" className="form-label fw-semibold">Nombre y Apellido</label>
-                  <input type="text" className="form-control input-custom" id="nombre" placeholder="Tu nombre completo" required />
+                  <input 
+                    type="text" 
+                    className="form-control input-custom" 
+                    id="nombre" 
+                    value={formData.nombre}
+                    onChange={handleChange}
+                    placeholder="Tu nombre completo" 
+                    required 
+                  />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="email" className="form-label fw-semibold">Correo Electrónico</label>
-                  <input type="email" className="form-control input-custom" id="email" placeholder="nombre@ejemplo.com" required />
+                  <input 
+                    type="email" 
+                    className="form-control input-custom" 
+                    id="email" 
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="nombre@ejemplo.com" 
+                    required 
+                  />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="asunto" className="form-label fw-semibold">Asunto</label>
-                  <input type="text" className="form-control input-custom" id="asunto" placeholder="Ej: Consulta por inscripciones" required />
+                  <input 
+                    type="text" 
+                    className="form-control input-custom" 
+                    id="asunto" 
+                    value={formData.asunto}
+                    onChange={handleChange}
+                    placeholder="Ej: Consulta por inscripciones" 
+                    required 
+                  />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="mensaje" className="form-label fw-semibold">Mensaje</label>
-                  <textarea className="form-control input-custom" id="mensaje" rows="4" placeholder="Escribí tu mensaje acá..." required></textarea>
+                  <textarea 
+                    className="form-control input-custom" 
+                    id="mensaje" 
+                    rows="4" 
+                    value={formData.mensaje}
+                    onChange={handleChange}
+                    placeholder="Escribí tu mensaje acá..." 
+                    required
+                  ></textarea>
                 </div>
                 <button type="submit" className="btn btn-enviar w-100 fw-bold">
                   Enviar Mensaje

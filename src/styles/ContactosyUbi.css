@@ -3,7 +3,7 @@
 /* Variables globales de color y tipografía */
 :root {
   --color-bg-celeste: #D0E8F2; /* Fondo general celeste */
-  --color-card-bg: #FEEAC7;    /* Cajas en crema cálido */
+  --color-card-bg: #FCF8EC;    /* Cajas en crema cálido */
   --color-blue-mid: #79A3B1;   /* Bordes y detalles */
   --color-dark-slate: #456268; /* Títulos y acentos dark */
   --color-white: #FFFFFF;
