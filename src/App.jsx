@@ -5,7 +5,7 @@ import Novedades from "./pages/Novedades";
 import NovedadDetalle from "./pages/NovedadDetalle";
 import Header from './componentes/header';
 import Footer from './componentes/footer';
-import ContactosYUbicacion from './pages/ContactosyUbi'; 
+import ContactosyUbi from './pages/ContactosyUbi'; 
 
 import './App.css';
 
