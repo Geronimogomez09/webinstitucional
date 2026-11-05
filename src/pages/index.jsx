@@ -79,44 +79,48 @@ export default function Inicio() {
       </section>
 
       {/* SECCIÓN ÚLTIMAS NOVEDADES */}
-      <section className="seccion-novedades" id="novedades">
-        <div className="contenedor-ancho">
-          <h2 className="titulo-seccion-boceto">Últimas Novedades de la EPET N° 20</h2>
+<section className="seccion-novedades" id="novedades">
+  <div className="contenedor-ancho">
+    <h2 className="titulo-seccion-boceto">Últimas Novedades de la EPET N° 20</h2>
 
-          <div className="grilla-5-novedades">
-            <article className="tarjeta-novedad">
-              <span className="etiqueta-tarjeta">EXÁMENES</span>
-              <h3>Mesas de Octubre</h3>
-              <p>Inscripción y fechas confirmadas para estudiantes egresados.</p>
-              <a href="#secretaria">Ver fechas →</a>
-            </article>
-            <article className="tarjeta-novedad">
-              <span className="etiqueta-tarjeta">INGRESO</span>
-              <h3>Preinscripción 2027</h3>
-              <p>Requisitos y documentación para los nuevos aspirantes.</p>
-              <a href="#secretaria">Ver requisitos →</a>
-            </article>
-            <article className="tarjeta-novedad">
-              <span className="etiqueta-tarjeta">TALLER</span>
-              <h3>Fortalecimiento 3° Año</h3>
-              <p>Clases de consulta y trabajos prácticos obligatorios.</p>
-              <a href="#talleres">Más info →</a>
-            </article>
-            <article className="tarjeta-novedad">
-              <span className="etiqueta-tarjeta">RECURSOS</span>
-              <h3>Cuadernillos Técnicos</h3>
-              <p>Descarga de material de apoyo para el ciclo lectivo.</p>
-              <a href="#talleres">Descargar →</a>
-            </article>
-            <article className="tarjeta-novedad">
-              <span className="etiqueta-tarjeta">ACTOS</span>
-              <h3>Actividades Escolares</h3>
-              <p>Información sobre jornadas y actos institucionales.</p>
-              <a href="#novedades">Ver detalles →</a>
-            </article>
-          </div>
-        </div>
-      </section>
+    <div className="grilla-5-novedades">
+      <article className="tarjeta-novedad">
+        <span className="etiqueta-tarjeta">EXÁMENES</span>
+        <h3>Mesas de Octubre</h3>
+        <p>Inscripción y fechas confirmadas para estudiantes egresados.</p>
+        <Link to="/secretaria">Ver fechas →</Link>
+      </article>
+
+      <article className="tarjeta-novedad">
+        <span className="etiqueta-tarjeta">INGRESO</span>
+        <h3>Preinscripción 2027</h3>
+        <p>Requisitos y documentación para los nuevos aspirantes.</p>
+        <Link to="/secretaria">Ver requisitos →</Link>
+      </article>
+
+      <article className="tarjeta-novedad">
+        <span className="etiqueta-tarjeta">TALLER</span>
+        <h3>Fortalecimiento 3° Año</h3>
+        <p>Clases de consulta y trabajos prácticos obligatorios.</p>
+        <Link to="/novedades">Más info →</Link>
+      </article>
+
+      <article className="tarjeta-novedad">
+        <span className="etiqueta-tarjeta">RECURSOS</span>
+        <h3>Cuadernillos Técnicos</h3>
+        <p>Descarga de material de apoyo para el ciclo lectivo.</p>
+        <Link to="/novedades">Descargar →</Link>
+      </article>
+
+      <article className="tarjeta-novedad">
+        <span className="etiqueta-tarjeta">ACTOS</span>
+        <h3>Actividades Escolares</h3>
+        <p>Información sobre jornadas y actos institucionales.</p>
+        <Link to="/novedades">Ver detalles →</Link>
+      </article>
+    </div>
+  </div>
+</section>
 
       {/* SECCIÓN ESTADÍSTICAS CON CONTADOR ANIMADO */}
       <section className="seccion-estadisticas" ref={seccionRef}>
