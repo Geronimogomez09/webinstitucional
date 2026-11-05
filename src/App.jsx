@@ -6,7 +6,7 @@ import Novedades from "./pages/Novedades";
 import NovedadDetalle from "./pages/NovedadDetalle";
 import Header from './componentes/header';
 import Footer from './componentes/footer';
-
+import TrayectosFormativos from "./pages/TrayectosFormativos";
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -24,13 +24,19 @@ function App() {
           <div>
             <Header />
             <main className="py-6">
-              <Routes>
-                <Route path="/" element={<Inicio />} />
+             <Routes>
+              <Route path="/" element={<Inicio />} />
                 <Route path="/secretaria" element={<Secretaria />} />
                 <Route path="/NuestraHistoria" element={<NuestraHistoria />} />
                 <Route path="/novedades" element={<Novedades />} />
                 <Route path="/novedades/:id" element={<NovedadDetalle />} />
-              </Routes>
+
+  {/* TRAYECTOS FORMATIVOS */}
+  <Route
+    path="/trayectos-formativos"
+    element={<TrayectosFormativos />}
+  />
+</Routes>
             </main>
           </div>
           <Footer />

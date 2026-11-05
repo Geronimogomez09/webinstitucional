@@ -5,7 +5,7 @@ import "../styles/header.css";
 
 const enlaces = [
   { nombre: "Novedades", ruta: "/novedades" },
-  { nombre: "Trayecto formativo", ruta: "/trayecto-formativos" },
+  { nombre: "Trayecto formativo", ruta: "/trayectos-formativos" },
   { nombre: "Talleres", ruta: "/talleres" },
   { nombre: "Secretaría", ruta: "/secretaria" },
   { nombre: "Asesoría", ruta: "/asesoria" },

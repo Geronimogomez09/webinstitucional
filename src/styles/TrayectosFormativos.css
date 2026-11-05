@@ -1,0 +1,150 @@
+
+/* =====================================================
+   TRAYECTOS FORMATIVOS - EPET N.º 20
+   ===================================================== */
+
+.trayectos-page {
+  width: 100%;
+  color: #456268;
+  font-family: 'Inter', sans-serif;
+  background-color: #D0E8F2;
+  padding-bottom: 60px;
+}
+
+/* ---------- PORTADA ---------- */
+
+.trayectos-hero {
+  position: relative;
+  padding: 75px 30px 85px;
+  text-align: center;
+  background-color: #FCF8EC;
+  border-bottom: 4px solid #79A3B1;
+}
+
+.trayectos-etiqueta {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 7px 20px;
+  border: 1px solid #79A3B1;
+  border-radius: 30px;
+  color: #456268;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.trayectos-hero h1 {
+  margin-bottom: 18px;
+  color: #456268;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.trayectos-hero > p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #647F84;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ---------- CONTENIDO PRINCIPAL ---------- */
+
+.trayectos-contenido {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  padding-top: 65px;
+}
+
+.trayectos-introduccion {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.trayectos-introduccion h2 {
+  margin-bottom: 12px;
+  color: #456268;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.trayectos-introduccion p {
+  color: #647F84;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+/* ---------- TARJETAS ---------- */
+
+.trayectos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.trayecto-card {
+  position: relative;
+  min-height: 230px;
+  padding: 35px;
+  overflow: hidden;
+  background-color: #FCF8EC;
+  border: 1px solid #79A3B1;
+  border-radius: 18px;
+  box-shadow: 0 5px 15px rgba(69, 98, 104, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.trayecto-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(69, 98, 104, 0.15);
+}
+
+.trayecto-numero {
+  display: block;
+  margin-bottom: 15px;
+  color: #79A3B1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.trayecto-card h3 {
+  margin-bottom: 12px;
+  color: #456268;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.trayecto-card p {
+  margin: 0;
+  color: #647F84;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 700px) {
+  .trayectos-hero {
+    padding: 55px 20px 65px;
+  }
+
+  .trayectos-contenido {
+    width: 90%;
+    padding-top: 45px;
+  }
+
+  .trayectos-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .trayecto-card {
+    min-height: auto;
+    padding: 28px;
+  }
+}
