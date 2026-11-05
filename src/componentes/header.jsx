@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "../styles/header.css";
@@ -75,14 +74,15 @@ export default function Header() {
             {navegacion}
           </nav>
 
+          {/* Botón de escritorio con el icono de Bootstrap integrado */}
           <a
             href="https://wa.me/"
             target="_blank"
             rel="noreferrer"
             className="header-whatsapp"
           >
-            <strong>CANAL WHATSAPP</strong>
-            <small>Canal de whatsapp</small>
+            <i className="bi bi-whatsapp" style={{ fontSize: "1.2rem" }} />
+            <small>Canal WhatsApp</small>
           </a>
 
           <button
