@@ -97,7 +97,6 @@ export default function Asesoria() {
           textAlign: 'center'
         }}
       >
-        <div style={{ fontSize: '1.8rem', marginBottom: '8px' }}>🕒</div>
         <h2 
           style={{ 
             fontFamily: "'Oswald', sans-serif", 
@@ -144,7 +143,7 @@ export default function Asesoria() {
         }}
       >
         <h3 style={{ fontFamily: "'Oswald', sans-serif", margin: 0, fontSize: '1.3rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-          Documentacion para Estudinates
+          Documentacion para Estudiantes
         </h3>
       </div>
 
