@@ -2,14 +2,54 @@ import React from 'react';
 
 export default function Asesoria() {
   const documentosEstudiantes = [
-    { id: 1, titulo: 'Constancia De Alumno Regular', tipo: 'Descargar', link: '#' },
-    { id: 2, titulo: 'Autorización De Retiro', tipo: 'Descargar', link: '#' },
-    { id: 3, titulo: 'Escudo de la Escuela', tipo: 'Descargar', link: '#' },
-    { id: 4, titulo: 'Horarios Vespertino', tipo: 'Haz clic aquí', link: '#' },
-    { id: 5, titulo: 'Cuaderno de Comunicaciones 2025', tipo: 'Haz clic aquí', link: '#' },
-    { id: 6, titulo: 'Link de mesa de finalización de estudios', tipo: 'Haz clic aquí', link: '#' },
-    { id: 7, titulo: 'Acuerdos Escolares de Convivencia 2025-2026', tipo: 'Descargar', link: '#' },
-    { id: 8, titulo: 'Fortalecimientos de Octubre de 2026', tipo: 'Haz clic aquí', link: '#' },
+    { 
+      id: 1, 
+      titulo: 'Constancia De Alumno Regular', 
+      tipo: 'Descargar', 
+      link: 'https://drive.google.com/file/d/1w-PzCZN1LfmimsTvEuxdM1ZPdNHEKuCP/preview' 
+    },
+    { 
+      id: 2, 
+      titulo: 'Autorización De Retiro', 
+      tipo: 'Descargar', 
+      link: 'https://drive.google.com/file/d/1GRUX_7T9arpCDP5PZrUvjgPJj3j-6Odx/preview' 
+    },
+    { 
+      id: 3, 
+      titulo: 'Escudo de la Escuela', 
+      tipo: 'Descargar', 
+      link: 'https://drive.google.com/file/d/1_6vy35uwS0Bq6CdV-_n4YEK7fMkT4XIc/preview' 
+    },
+    { 
+      id: 4, 
+      titulo: 'Horarios Vespertino', 
+      tipo: 'Haz clic aquí', 
+      link: '#' 
+    },
+    { 
+      id: 5, 
+      titulo: 'Cuaderno de Comunicaciones 2025', 
+      tipo: 'Haz clic aquí', 
+      link: '#' 
+    },
+    { 
+      id: 6, 
+      titulo: 'Link de mesa de finalización de estudios', 
+      tipo: 'Haz clic aquí', 
+      link: '#' 
+    },
+    { 
+      id: 7, 
+      titulo: 'Acuerdos Escolares de Convivencia 2025-2026', 
+      tipo: 'Descargar', 
+      link: 'https://drive.google.com/file/d/1P5hkS_W2EZ9reyiX2qNpJc0lrYjdmuOl/preview' 
+    },
+    { 
+      id: 8, 
+      titulo: 'Fortalecimientos de Octubre de 2026', 
+      tipo: 'Haz clic aquí', 
+      link: '#' 
+    },
   ];
 
   const buttonStyle = {
@@ -31,7 +71,6 @@ export default function Asesoria() {
   return (
     <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 24px', fontFamily: "'Inter', sans-serif" }}>
       
-      {/* Título Principal */}
       <div style={{ textAlign: 'center', marginBottom: '28px' }}>
         <h1 
           style={{ 
@@ -47,7 +86,6 @@ export default function Asesoria() {
         </h1>
       </div>
 
-      {/* Tarjeta de Días y Horarios de Atención */}
       <div 
         style={{ 
           backgroundColor: '#456268', 
@@ -59,6 +97,7 @@ export default function Asesoria() {
           textAlign: 'center'
         }}
       >
+        <div style={{ fontSize: '1.8rem', marginBottom: '8px' }}>🕒</div>
         <h2 
           style={{ 
             fontFamily: "'Oswald', sans-serif", 
@@ -94,7 +133,6 @@ export default function Asesoria() {
         </div>
       </div>
 
-      {/* Encabezado de Sección: Documentación para Estudiantes */}
       <div 
         style={{ 
           backgroundColor: '#456268', 
@@ -110,7 +148,6 @@ export default function Asesoria() {
         </h3>
       </div>
 
-      {/* Listado de Documentos */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         {documentosEstudiantes.map((item) => (
           <div 
@@ -133,7 +170,11 @@ export default function Asesoria() {
               href={item.link} 
               target="_blank" 
               rel="noopener noreferrer" 
-              style={buttonStyle}
+              style={{
+                ...buttonStyle,
+                opacity: item.link === '#' ? 0.6 : 1,
+                pointerEvents: item.link === '#' ? 'none' : 'auto'
+              }}
             >
               {item.tipo}
             </a>
