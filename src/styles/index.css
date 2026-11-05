@@ -8,12 +8,10 @@
     --blanco: #FFFFFF;
     --texto-oscuro: #2D3748;
     
-    /* Definimos las tipografías */
     --fuente-titulos: 'Oswald', sans-serif;
     --fuente-texto: 'Inter', sans-serif;
 }
 
-/* Aplicamos Inter por defecto a todo el cuerpo de texto de la página */
 body {
     font-family: var(--fuente-texto);
     color: var(--texto-oscuro);
@@ -175,28 +173,36 @@ body {
     font-weight: 500;
 }
 
-/* TRAYECTOS FORMATIVOS */
+/* TRAYECTOS FORMATIVOS - CUADRADAS Y COMPACTAS */
+.seccion-trayectos {
+    padding: 60px 0;
+}
+
+.grilla-ciclos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
 .tarjeta-ciclo {
     background-color: var(--blanco);
     border-radius: 12px;
     overflow: hidden;
-    /* Transición suave para todos los cambios */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Efecto al pasar el cursor por encima */
 .tarjeta-ciclo:hover {
-    transform: translateY(-8px); /* Eleva la tarjeta hacia arriba */
-    box-shadow: 0 12px 25px rgba(69, 98, 104, 0.2); /* Sombra más envolvente */
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(69, 98, 104, 0.2);
 }
 
+/* Altura fija controlada para que la foto no se estire */
 .contenedor-foto-ciclo {
-    height: 220px;
+    height: 200px;
     overflow: hidden;
 }
 
-/* Animación de zoom suave en la imagen */
 .contenedor-foto-ciclo img {
     width: 100%;
     height: 100%;
@@ -205,21 +211,23 @@ body {
 }
 
 .tarjeta-ciclo:hover .contenedor-foto-ciclo img {
-    transform: scale(1.05); /* Hace un zoom sutil del 5% en la foto */
+    transform: scale(1.05);
 }
 
 .info-ciclo {
-    padding: 22px;
+    padding: 20px;
 }
 
 .info-ciclo h3 {
-    font-family: 'Oswald', sans-serif;
+    font-family: var(--fuente-titulos);
     font-size: 22px;
     color: var(--color-oscuro);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
 }
 
 .info-ciclo p {
+    font-family: var(--fuente-texto);
     font-size: 13px;
     color: #4A5568;
     line-height: 1.5;
