@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Oswald:wght@500;600;700&display=swap');
+
+/* Variables globales de color y tipografía */
+:root {
+  --color-bg-celeste: #D0E8F2; /* Fondo general celeste */
+  --color-card-bg: #FEEAC7;    /* Cajas en crema cálido */
+  --color-blue-mid: #79A3B1;   /* Bordes y detalles */
+  --color-dark-slate: #456268; /* Títulos y acentos dark */
+  --color-white: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-bg-celeste);
+  color: var(--color-dark-slate);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Oswald', sans-serif;
+  color: var(--color-dark-slate);
+}
+
+.contactos-ubicacion-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg-celeste);
+}
+
+.contactos-ubicacion-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tarjeta contenedora estilo crema */
+.intro-seccion, .contacto-card {
+  background-color: var(--color-card-bg) !important;
+  border: 1px solid var(--color-blue-mid) !important;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(69, 98, 104, 0.12);
+}
+
+.intro-seccion h2 {
+  font-size: 2rem;
+}
+
+.contacto-card h3 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--color-blue-mid);
+  padding-bottom: 0.5rem;
+}
+
+/* Items con icono de contacto */
+.contacto-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.icono-contacto {
+  font-size: 1.4rem;
+  color: var(--color-dark-slate);
+  background-color: rgba(121, 163, 177, 0.25);
+  padding: 8px 12px;
+  border-radius: 50%;
+}
+
+/* Estilos de inputs e inputs focus */
+.input-custom {
+  border: 1px solid var(--color-blue-mid);
+  background-color: #FFFDF8;
+  color: var(--color-dark-slate);
+  font-family: 'Inter', sans-serif;
+}
+
+.input-custom:focus {
+  border-color: var(--color-dark-slate);
+  box-shadow: 0 0 0 0.25rem rgba(69, 98, 104, 0.25);
+  background-color: #FFFFFF;
+}
+
+/* Botón de Enviar */
+.btn-enviar {
+  background-color: var(--color-dark-slate);
+  color: var(--color-white);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.btn-enviar:hover {
+  background-color: var(--color-blue-mid);
+  color: var(--color-white);
+}
+
+/* Mapa */
+.mapa-responsive {
+  border: 1px solid var(--color-blue-mid) !important;
+}
