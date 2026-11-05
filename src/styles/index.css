@@ -149,21 +149,19 @@
 }
 
 /* TRAYECTOS FORMATIVOS */
-.seccion-trayectos {
-    padding: 60px 0;
-}
-
-.grilla-ciclos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
 .tarjeta-ciclo {
     background-color: var(--blanco);
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    /* Transición suave para todos los cambios */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Efecto al pasar el cursor por encima */
+.tarjeta-ciclo:hover {
+    transform: translateY(-8px); /* Eleva la tarjeta hacia arriba */
+    box-shadow: 0 12px 25px rgba(69, 98, 104, 0.2); /* Sombra más envolvente */
 }
 
 .contenedor-foto-ciclo {
@@ -171,14 +169,20 @@
     overflow: hidden;
 }
 
+/* Animación de zoom suave en la imagen */
 .contenedor-foto-ciclo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.tarjeta-ciclo:hover .contenedor-foto-ciclo img {
+    transform: scale(1.05); /* Hace un zoom sutil del 5% en la foto */
 }
 
 .info-ciclo {
-    padding: 20px;
+    padding: 22px;
 }
 
 .info-ciclo h3 {
@@ -191,6 +195,7 @@
 .info-ciclo p {
     font-size: 13px;
     color: #4A5568;
+    line-height: 1.5;
 }
 
 /* RESPONSIVO */
