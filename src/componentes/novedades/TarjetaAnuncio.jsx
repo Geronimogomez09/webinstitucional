@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import "../../styles/novedades/TarjetaAnuncio.css";
+import "../../styles/novedades-carpeta/TarjetaAnuncio.css";
 
 export default function TarjetaAnuncio({
   id,
