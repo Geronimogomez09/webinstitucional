@@ -67,7 +67,7 @@ export default function Header() {
               src="/imagenes/escudo-epet.png"
               alt="Escudo EPET N°20"
             />
-            <span>EPET<br />N°20</span>
+            <span>EPET N°20</span>
           </Link>
 
           <nav className="header-nav">
@@ -82,7 +82,6 @@ export default function Header() {
             className="header-whatsapp"
           >
             <i className="bi bi-whatsapp" style={{ fontSize: "1.2rem" }} />
-            <small>Canal WhatsApp</small>
           </a>
 
           <button
