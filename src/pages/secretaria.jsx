@@ -68,7 +68,7 @@ export default function Secretaria() {
       id: 11, 
       titulo: 'SISO', 
       tipo: 'Haz clic aquí',
-      link: 'https://play.google.com/store/apps/details?id=com.cpe.sisoapp&hl=es_AR&gl=US&pli=1' 
+      link: 'https://siso.neuquen.edu.ar/index.php/site/login' 
     },
     { 
       id: 12, 
