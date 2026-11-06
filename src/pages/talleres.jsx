@@ -71,7 +71,7 @@ export default function Talleres() {
           Descargá el material bibliográfico y guías prácticas correspondientes al ciclo lectivo.
         </p>
         <a 
-          href="#" 
+          href="https://drive.google.com/drive/folders/1SExRzm451Ej-UwJsg9csKDsVTbuB0NZP" 
           target="_blank" 
           rel="noopener noreferrer" 
           style={buttonStyle}
@@ -107,7 +107,7 @@ export default function Talleres() {
           Consultá los horarios, rotaciones y distribución de comisiones para las actividades prácticas.
         </p>
         <a 
-          href="#" 
+          href="https://drive.google.com/drive/folders/1lIX1NzVOmV10RY5rhCUoDFhcH1hpr0Kq" 
           target="_blank" 
           rel="noopener noreferrer" 
           style={secondaryButtonStyle}
