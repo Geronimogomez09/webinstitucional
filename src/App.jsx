@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Secretaria from './pages/secretaria';
 import Asesoria from './pages/Asesoria';
+import Talleres from './pages/Talleres';
 import Inicio from './pages/index';
 import NuestraHistoria from './pages/NuestraHistoria';
 import Novedades from "./pages/Novedades";
@@ -30,6 +31,7 @@ function App() {
                 <Route path="/" element={<Inicio />} />
                 <Route path="/secretaria" element={<Secretaria />} />
                 <Route path="/asesoria" element={<Asesoria />} />
+                <Route path="/talleres" element={<Talleres />} />
                 <Route path="/NuestraHistoria" element={<NuestraHistoria />} />
                 <Route path="/novedades" element={<Novedades />} />
                 <Route path="/novedades/:id" element={<NovedadDetalle />} />
