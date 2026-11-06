@@ -1,14 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import Secretaria from './pages/secretaria';
 import Asesoria from './pages/Asesoria';
 import Talleres from './pages/Talleres';
 import Inicio from './pages/index';
 import NuestraHistoria from './pages/NuestraHistoria';
-import Novedades from "./pages/Novedades";
-import NovedadDetalle from "./pages/NovedadDetalle";
+import Novedades from './pages/Novedades';
+import NovedadDetalle from './pages/NovedadDetalle';
+import ContactosyUbi from './pages/ContactosyUbi';
 import Header from './componentes/header';
 import Footer from './componentes/footer';
-import ContactosyUbi from './pages/ContactosyUbi'; 
+import TrayectosFormativos from './pages/TrayectosFormativos';
 
 import './App.css';
 
@@ -19,13 +21,17 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ backgroundColor: '#D0E8F2' }} className="min-h-screen flex flex-col items-center p-0 md:p-6 font-sans">
-        <div 
-          style={{ backgroundColor: '#D0E8F2' }} 
+      <div
+        style={{ backgroundColor: '#D0E8F2' }}
+        className="min-h-screen flex flex-col items-center p-0 md:p-6 font-sans"
+      >
+        <div
+          style={{ backgroundColor: '#D0E8F2' }}
           className="w-full max-w-7xl min-h-[92vh] flex flex-col justify-between rounded-3xl shadow-2xl overflow-hidden border border-[#79A3B1]/30"
         >
           <div>
             <Header />
+
             <main className="py-6">
               <Routes>
                 <Route path="/" element={<Inicio />} />
@@ -37,9 +43,16 @@ function App() {
                 <Route path="/novedades/:id" element={<NovedadDetalle />} />
                 <Route path="/ContactosyUbi" element={<ContactosyUbi />} />
                 <Route path="/contacto" element={<ContactosyUbi />} />
+
+                {/* TRAYECTOS FORMATIVOS */}
+                <Route
+                  path="/trayectos-formativos"
+                  element={<TrayectosFormativos />}
+                />
               </Routes>
             </main>
           </div>
+
           <Footer />
         </div>
       </div>
