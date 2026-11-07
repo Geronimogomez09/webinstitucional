@@ -1,241 +1,264 @@
 
 /* ==========================================================
-   EPET N.º 20 - TRAYECTOS FORMATIVOS
-   Identidad institucional
+   TRAYECTOS FORMATIVOS - EPET N.º 20
+   Identidad visual: crema, celeste y verde.
    ========================================================== */
 
-.trayectos-page {
-  --tr-celeste: #D0E8F2;
-  --tr-crema: #FCF8EC;
-  --tr-verde: #456268;
-  --tr-detalle: #79A3B1;
-  --tr-texto-secundario: #647F84;
-
-  width: 100%;
-  padding: 0 0 65px;
-  background-color: var(--tr-celeste);
-  color: var(--tr-verde);
-  font-family: "Inter", sans-serif;
-  scroll-behavior: smooth;
-}
-
-.trayectos-page *,
-.trayectos-page *::before,
-.trayectos-page *::after {
-  box-sizing: border-box;
-}
-
-.trayectos-page a {
-  text-decoration: none;
-}
-
-.trayectos-page section[id] {
-  scroll-margin-top: 105px;
+:root {
+  --tr-crema: #fffdf5;
+  --tr-celeste: #d0e8f2;
+  --tr-celeste-claro: #eaf5f8;
+  --tr-verde: #426b61;
+  --tr-verde-oscuro: #31564e;
+  --tr-detalle: #79a3b1;
+  --tr-texto: #40534e;
+  --tr-texto-secundario: #71817b;
+  --tr-borde: rgba(121, 163, 177, 0.55);
+  --tr-sombra: 0 8px 22px rgba(69, 98, 104, 0.11);
+  --tr-sombra-hover: 0 13px 28px rgba(49, 86, 78, 0.15);
+  --tr-transicion: 0.28s ease;
 }
 
 /* ==========================================================
-   SECCIÓN 0 - PORTADA
+   CONTENEDOR GENERAL
+   ========================================================== */
+
+.trayectos-page {
+  width: 100%;
+  color: var(--tr-texto);
+  overflow: hidden;
+}
+
+.trayectos-page * {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   PORTADA
    ========================================================== */
 
 .trayectos-portada {
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  position: relative;
+  display: flex;
   align-items: center;
-  gap: 35px;
-  padding: 32px 8%;
-  background-color: var(--tr-crema);
+  justify-content: space-between;
+  width: min(1100px, 88%);
+  min-height: 330px;
+  margin: 35px auto 25px;
+  padding: 45px 55px;
+  overflow: hidden;
+  border: 1px solid var(--tr-borde);
+  border-radius: 24px;
+  background: linear-gradient(120deg, #fffdf5 0%, #e5f2f5 100%);
+  transition: box-shadow var(--tr-transicion);
+}
+
+.trayectos-portada:hover {
+  box-shadow: var(--tr-sombra);
 }
 
 .portada-texto {
-  max-width: 550px;
+  position: relative;
+  z-index: 2;
+  max-width: 510px;
 }
 
 .portada-etiqueta,
 .seccion-etiqueta {
-  display: inline-block;
   color: var(--tr-detalle);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 2.2px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 2px;
 }
 
 .portada-texto h1 {
-  margin: 10px 0;
+  margin: 14px 0;
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
-  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-size: clamp(2.6rem, 5vw, 4rem);
   font-weight: 700;
-  line-height: 1.08;
+  line-height: 1.12;
 }
 
 .portada-texto p {
-  max-width: 450px;
+  max-width: 440px;
   margin: 0;
   color: var(--tr-texto-secundario);
-  font-size: 0.9rem;
-  line-height: 1.65;
+  font-size: 0.95rem;
+  line-height: 1.8;
 }
 
-/* Paisajes decorativos */
+/* Paisajes */
 
 .portada-imagenes {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  align-items: center;
-  gap: 15px;
-  min-width: 0;
+  position: absolute;
+  right: 4%;
+  bottom: 0;
+  width: 43%;
+  height: 100%;
 }
 
 .paisaje {
-  position: relative;
-  height: 175px;
+  position: absolute;
   overflow: hidden;
-  border-radius: 17px;
-  background: linear-gradient(
-    180deg,
-    #B9DCE5 0%,
-    #DCECE6 70%,
-    #E8EBD6 100%
-  );
+  border-radius: 50% 50% 0 0;
+  transition: transform 0.5s ease;
+}
+
+.trayectos-portada:hover .paisaje-principal {
+  transform: translateY(-5px);
+}
+
+.trayectos-portada:hover .paisaje-secundario {
+  transform: translateY(-3px);
 }
 
 .paisaje-principal {
-  height: 205px;
+  right: 0;
+  bottom: 0;
+  width: 75%;
+  height: 72%;
+  background: #d4e8e5;
 }
 
 .paisaje-secundario {
-  margin-top: 30px;
-  background: linear-gradient(
-    180deg,
-    #D6E8E8 0%,
-    #E7EBD9 75%,
-    #D3E0C8 100%
-  );
+  right: 48%;
+  bottom: 0;
+  width: 52%;
+  height: 48%;
+  background: #e4edda;
 }
 
 .paisaje-sol {
   position: absolute;
-  top: 17%;
-  right: 18%;
-  width: 45px;
-  height: 45px;
+  top: 18%;
+  right: 22%;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  background-color: #FCF8EC;
+  background: #e9d8a6;
 }
 
 .paisaje-montana {
   position: absolute;
-  right: -10%;
-  bottom: 25%;
-  width: 115%;
-  height: 55%;
-  background: #79A3B1;
-  clip-path: polygon(0 100%, 35% 15%, 55% 55%, 75% 0, 100% 100%);
+  bottom: 0;
+  left: 8%;
+  width: 70%;
+  height: 65%;
+  background: #9abdb1;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
 
 .paisaje-colina {
   position: absolute;
-  right: -15%;
-  bottom: -25%;
-  width: 130%;
-  height: 65%;
+  right: -10%;
+  bottom: -15%;
+  width: 85%;
+  height: 60%;
   border-radius: 50% 50% 0 0;
-  background: #456268;
-}
-
-.paisaje-secundario .paisaje-montana {
-  background: #A7C5B8;
-}
-
-.paisaje-secundario .paisaje-colina {
-  background: #789B86;
+  background: #6e9b85;
 }
 
 /* ==========================================================
-   SECCIÓN 0 - CUATRO TARJETAS DE ACCESO
+   ACCESOS A LAS SECCIONES
    ========================================================== */
 
 .trayectos-accesos {
-  width: min(1200px, 92%);
-  margin: 0 auto;
-  padding: 25px 0 15px;
+  width: min(1100px, 88%);
+  margin: 0 auto 40px;
 }
 
 .accesos-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 14px;
+  gap: 15px;
 }
 
 .acceso-card {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  min-height: 175px;
-  padding: 17px 16px;
-  border: 1px solid rgba(121, 163, 177, 0.7);
+  min-height: 205px;
+  padding: 20px;
+  border: 1px solid var(--tr-borde);
   border-radius: 15px;
-  background-color: var(--tr-crema);
-  color: var(--tr-verde);
+  background: var(--tr-crema);
+  color: var(--tr-texto);
+  text-decoration: none;
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+    transform var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    border-color var(--tr-transicion),
+    background var(--tr-transicion);
 }
 
 .acceso-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--tr-detalle);
-  box-shadow: 0 9px 22px rgba(69, 98, 104, 0.12);
-  color: var(--tr-verde);
+  transform: translateY(-6px);
+  border-color: var(--tr-verde);
+  background: #ffffff;
+  box-shadow: var(--tr-sombra-hover);
+  color: var(--tr-texto);
 }
 
 .acceso-superior {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 
 .acceso-icono {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: var(--tr-celeste);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--tr-celeste);
   color: var(--tr-verde);
-  font-size: 1rem;
+  font-size: 1.2rem;
+  transition:
+    transform var(--tr-transicion),
+    background var(--tr-transicion),
+    color var(--tr-transicion);
+}
+
+.acceso-card:hover .acceso-icono {
+  transform: rotate(-7deg) scale(1.08);
+  background: var(--tr-verde);
+  color: white;
 }
 
 .acceso-numero {
   color: var(--tr-detalle);
-  font-family: "Oswald", sans-serif;
-  font-size: 1.15rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 800;
+  transition: color var(--tr-transicion);
+}
+
+.acceso-card:hover .acceso-numero {
+  color: var(--tr-verde);
 }
 
 .acceso-card h2 {
-  margin: 0 0 6px;
+  margin: 0 0 9px;
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
-  font-size: 1.12rem;
+  font-size: 1.22rem;
   font-weight: 600;
-  line-height: 1.3;
 }
 
 .acceso-card p {
-  margin: 0 0 10px;
+  margin: 0 0 18px;
   color: var(--tr-texto-secundario);
-  font-size: 0.76rem;
-  line-height: 1.5;
+  font-size: 0.78rem;
+  line-height: 1.6;
 }
 
 .acceso-enlace {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
   margin-top: auto;
   color: var(--tr-verde);
   font-size: 0.78rem;
@@ -243,7 +266,7 @@
 }
 
 .acceso-enlace i {
-  transition: transform 0.2s ease;
+  transition: transform var(--tr-transicion);
 }
 
 .acceso-card:hover .acceso-enlace i {
@@ -251,41 +274,50 @@
 }
 
 /* ==========================================================
-   BLOQUE INFORMATIVO INFERIOR
+   RESUMEN INSTITUCIONAL
    ========================================================== */
 
 .trayectos-resumen {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 35px;
   width: min(1100px, 88%);
-  margin: 25px auto 65px;
-  padding: 30px 35px;
-  border-radius: 15px;
-  background-color: var(--tr-crema);
+  margin: 45px auto;
+  padding: 35px;
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: var(--tr-celeste-claro);
+  transition:
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
+}
+
+.trayectos-resumen:hover {
+  border-color: var(--tr-borde);
+  box-shadow: var(--tr-sombra);
 }
 
 .resumen-texto h2 {
   margin: 10px 0;
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
-  font-size: 1.85rem;
+  font-size: 2rem;
 }
 
 .resumen-texto p {
   margin: 0;
   color: var(--tr-texto-secundario);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   line-height: 1.8;
 }
 
 .resumen-datos {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-content: center;
+  grid-template-columns: 1fr 1fr;
   gap: 18px;
   padding-left: 30px;
-  border-left: 1px solid var(--tr-detalle);
+  border-left: 1px solid var(--tr-borde);
 }
 
 .resumen-dato {
@@ -295,11 +327,21 @@
   color: var(--tr-verde);
   font-size: 0.83rem;
   font-weight: 600;
+  transition: transform var(--tr-transicion);
+}
+
+.resumen-dato:hover {
+  transform: translateX(4px);
 }
 
 .resumen-dato i {
   color: var(--tr-detalle);
   font-size: 1.25rem;
+  transition: transform var(--tr-transicion);
+}
+
+.resumen-dato:hover i {
+  transform: scale(1.15);
 }
 
 /* ==========================================================
@@ -337,13 +379,11 @@
    SECCIÓN 1 - TALLERES Y ROTACIONES
    ========================================================== */
 
-/* Organización general de las rotaciones */
-
 .talleres-organizacion {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 .organizacion-item {
@@ -351,51 +391,44 @@
   align-items: flex-start;
   gap: 18px;
   padding: 23px;
-  border: 1px solid rgba(121, 163, 177, 0.7);
+  border: 1px solid var(--tr-borde);
   border-radius: 15px;
-  background-color: var(--tr-crema);
+  background: var(--tr-celeste-claro);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    border-color var(--tr-transicion),
+    background var(--tr-transicion);
 }
 
 .organizacion-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(69, 98, 104, 0.09);
+  transform: translateY(-4px);
+  border-color: var(--tr-detalle);
+  background: #f2fafb;
+  box-shadow: var(--tr-sombra);
 }
 
 .organizacion-numero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-shrink: 0;
-  min-width: 65px;
-  min-height: 65px;
-  padding: 8px;
-  border-radius: 12px;
-  background-color: var(--tr-celeste);
-  color: var(--tr-verde);
+  color: var(--tr-detalle);
   font-family: "Oswald", sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
 .organizacion-item h3 {
-  margin: 0 0 9px;
+  margin: 0 0 7px;
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
-  font-size: 1.35rem;
-  font-weight: 600;
+  font-size: 1.25rem;
 }
 
 .organizacion-item p {
   margin: 0;
   color: var(--tr-texto-secundario);
-  font-size: 0.84rem;
-  line-height: 1.75;
+  font-size: 0.85rem;
+  line-height: 1.7;
 }
-
-/* Tarjetas de talleres por año */
 
 .talleres-grid {
   display: grid;
@@ -406,19 +439,22 @@
 .taller-anio-card {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   padding: 25px;
   border: 1px solid rgba(121, 163, 177, 0.75);
   border-radius: 15px;
   background-color: var(--tr-crema);
   box-shadow: 0 4px 13px rgba(69, 98, 104, 0.05);
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    transform var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    border-color var(--tr-transicion);
 }
 
 .taller-anio-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 9px 22px rgba(69, 98, 104, 0.1);
+  transform: translateY(-5px);
+  border-color: var(--tr-verde);
+  box-shadow: var(--tr-sombra-hover);
 }
 
 .taller-card-encabezado {
@@ -442,6 +478,16 @@
   font-family: "Oswald", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
+  transition:
+    transform var(--tr-transicion),
+    background var(--tr-transicion),
+    color var(--tr-transicion);
+}
+
+.taller-anio-card:hover .taller-anio-numero {
+  transform: scale(1.06);
+  background: var(--tr-verde);
+  color: white;
 }
 
 .taller-ciclo {
@@ -456,6 +502,7 @@
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .taller-listado {
@@ -464,17 +511,24 @@
 
 .taller-listado h4,
 .taller-horarios h4 {
-  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 13px;
   color: var(--tr-verde);
-  font-family: "Oswald", sans-serif;
-  font-size: 1.12rem;
-  font-weight: 600;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.taller-listado h4 i,
+.taller-horarios h4 i {
+  color: var(--tr-detalle);
 }
 
 .taller-listado ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 12px;
+  gap: 10px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -483,10 +537,18 @@
 .taller-listado li {
   display: flex;
   align-items: flex-start;
-  gap: 7px;
+  gap: 8px;
   color: var(--tr-texto-secundario);
-  font-size: 0.82rem;
+  font-size: 0.83rem;
   line-height: 1.5;
+  transition:
+    color var(--tr-transicion),
+    transform var(--tr-transicion);
+}
+
+.taller-listado li:hover {
+  color: var(--tr-verde);
+  transform: translateX(3px);
 }
 
 .taller-listado li i {
@@ -497,100 +559,568 @@
 
 .taller-horarios {
   margin-top: auto;
-  padding-top: 20px;
+  padding: 16px;
+  border-radius: 11px;
+  background: var(--tr-celeste-claro);
 }
 
 .taller-horarios h4 {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.taller-horarios h4 i {
-  color: var(--tr-detalle);
+  margin-bottom: 9px;
 }
 
 .taller-horarios p {
-  margin: 5px 0 0;
+  margin: 5px 0;
   color: var(--tr-texto-secundario);
-  font-size: 0.82rem;
-  line-height: 1.6;
+  font-size: 0.8rem;
 }
 
-/* Botón hacia la página de Talleres */
+/* ==========================================================
+   BOTÓN DE CRONOGRAMA - INDEPENDIENTE
+   ========================================================== */
 
 .talleres-cronograma {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  margin-top: 35px;
-  text-align: center;
+  justify-content: center;
+  margin-top: 28px;
+  padding: 0;
+  background: transparent;
 }
 
 .talleres-cronograma p {
-  margin: 0;
-  color: var(--tr-texto-secundario);
-  font-size: 0.88rem;
+  display: none;
 }
 
 .btn-cronograma {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
-  padding: 13px 25px;
-  border: 1px solid var(--tr-detalle);
-  border-radius: 30px;
-  background-color: var(--tr-detalle);
-  color: var(--tr-crema);
-  font-size: 0.86rem;
+  gap: 10px;
+  padding: 12px 19px;
+  border: 1px solid var(--tr-verde);
+  border-radius: 9px;
+  background: var(--tr-verde);
+  color: white;
+  font-size: 0.82rem;
   font-weight: 700;
+  text-decoration: none;
   transition:
-    background-color 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    background var(--tr-transicion),
+    transform var(--tr-transicion),
+    box-shadow var(--tr-transicion);
 }
 
 .btn-cronograma:hover {
   transform: translateY(-3px);
-  background-color: var(--tr-verde);
-  border-color: var(--tr-verde);
-  color: var(--tr-crema);
-  box-shadow: 0 6px 15px rgba(69, 98, 104, 0.15);
+  background: var(--tr-verde-oscuro);
+  box-shadow: 0 6px 14px rgba(49, 86, 78, 0.2);
+  color: white;
 }
 
 .btn-cronograma i {
-  font-size: 1.1rem;
+  transition: transform var(--tr-transicion);
+}
+
+.btn-cronograma:hover i {
+  transform: translateX(4px);
 }
 
 /* ==========================================================
-   SECCIONES PENDIENTES DE CONTENIDO
+   HORARIOS GENERALES - TALLERES Y MATERIAS
+   ========================================================== */
+
+.materias-horarios {
+  margin-bottom: 30px;
+  padding: 25px;
+  border: 1px solid var(--tr-borde);
+  border-radius: 17px;
+  background: var(--tr-celeste-claro);
+  transition:
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
+}
+
+.materias-horarios:hover {
+  border-color: var(--tr-detalle);
+  box-shadow: var(--tr-sombra);
+}
+
+.materias-horarios-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.materias-horarios-encabezado > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: var(--tr-crema);
+  color: var(--tr-verde);
+  font-size: 1.3rem;
+}
+
+.materias-horarios-encabezado h3 {
+  margin: 0 0 4px;
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.35rem;
+}
+
+.materias-horarios-encabezado p {
+  margin: 0;
+  color: var(--tr-texto-secundario);
+  font-size: 0.82rem;
+}
+
+.materias-turnos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+/* Las dos tarjetas de taller ocupan todo el ancho */
+
+.talleres-turnos-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+}
+
+.materias-turno-card {
+  min-width: 0;
+  padding: 19px;
+  border: 1px solid rgba(121, 163, 177, 0.55);
+  border-radius: 13px;
+  background: var(--tr-crema);
+  transition:
+    transform var(--tr-transicion),
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    background var(--tr-transicion);
+}
+
+.materias-turno-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--tr-verde);
+  background: #ffffff;
+  box-shadow: var(--tr-sombra);
+}
+
+.materias-turno-etiqueta {
+  color: var(--tr-detalle);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.materias-turno-card h4 {
+  margin: 8px 0 12px;
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+}
+
+.materias-turno-card p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  color: var(--tr-texto-secundario);
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+
+.materias-turno-card p i {
+  color: var(--tr-detalle);
+  font-size: 1.15rem;
+  transition:
+    transform var(--tr-transicion),
+    color var(--tr-transicion);
+}
+
+.materias-turno-card:hover p i {
+  transform: scale(1.18);
+  color: var(--tr-verde);
+}
+
+/* ==========================================================
+   SECCIÓN 2 - MATERIAS TEÓRICAS
+   ========================================================== */
+
+.seccion-materias {
+  scroll-margin-top: 25px;
+}
+
+.materias-grid {
+  align-items: stretch;
+}
+
+.materia-anio-card {
+  height: 100%;
+}
+
+.materias-listado {
+  flex-grow: 1;
+}
+
+.materias-listado h4 {
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.materias-listado ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 15px;
+}
+
+.materias-listado li {
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.materias-listado li i {
+  margin-top: 2px;
+}
+
+/* Actividades extracurriculares */
+
+.materias-extracurriculares {
+  margin-top: 23px;
+  padding: 17px;
+  border: 1px solid rgba(121, 163, 177, 0.45);
+  border-radius: 12px;
+  background: var(--tr-celeste-claro);
+  transition:
+    border-color var(--tr-transicion),
+    background var(--tr-transicion);
+}
+
+.materias-extracurriculares:hover {
+  border-color: var(--tr-detalle);
+  background: #e2f1f5;
+}
+
+.materias-extracurriculares h4 {
+  margin-bottom: 13px;
+  font-size: 0.86rem;
+}
+
+.materias-extracurriculares ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.materias-extracurriculares li {
+  color: var(--tr-verde);
+  font-size: 0.82rem;
+}
+
+/* ==========================================================
+   SECCIÓN 3 - PASANTÍAS
+   ========================================================== */
+
+.seccion-pasantias {
+  scroll-margin-top: 25px;
+}
+
+/* Presentación de las pasantías */
+
+.pasantias-introduccion {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 22px;
+  padding: 26px;
+  border: 1px solid var(--tr-borde);
+  border-radius: 16px;
+  background: linear-gradient(120deg, var(--tr-celeste-claro), #f5faf8);
+  transition:
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    transform var(--tr-transicion);
+}
+
+.pasantias-introduccion:hover {
+  transform: translateY(-3px);
+  border-color: var(--tr-detalle);
+  box-shadow: var(--tr-sombra);
+}
+
+.pasantias-intro-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: var(--tr-verde);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.pasantias-introduccion h3 {
+  margin: 2px 0 9px;
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.45rem;
+}
+
+.pasantias-introduccion p {
+  margin: 0;
+  color: var(--tr-texto-secundario);
+  font-size: 0.88rem;
+  line-height: 1.8;
+}
+
+/* Cuatro tarjetas informativas */
+
+.pasantias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.pasantia-card {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid rgba(121, 163, 177, 0.65);
+  border-radius: 15px;
+  background: var(--tr-crema);
+  transition:
+    transform var(--tr-transicion),
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    background var(--tr-transicion);
+}
+
+.pasantia-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--tr-verde);
+  background: #ffffff;
+  box-shadow: var(--tr-sombra-hover);
+}
+
+.pasantia-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin-bottom: 17px;
+  border-radius: 12px;
+  background: var(--tr-celeste);
+  color: var(--tr-verde);
+  font-size: 1.25rem;
+  transition:
+    transform var(--tr-transicion),
+    background var(--tr-transicion),
+    color var(--tr-transicion);
+}
+
+.pasantia-card:hover .pasantia-icono {
+  transform: scale(1.08) rotate(-5deg);
+  background: var(--tr-verde);
+  color: white;
+}
+
+.pasantia-card h3 {
+  margin: 0 0 10px;
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.pasantia-card p {
+  margin: 0 0 14px;
+  color: var(--tr-texto-secundario);
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+.pasantia-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pasantia-card li {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--tr-texto);
+  font-size: 0.84rem;
+  line-height: 1.55;
+}
+
+.pasantia-card li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 7px;
+  height: 7px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--tr-detalle);
+}
+
+/* Bloque destacado de duración */
+
+.pasantias-duracion {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 22px;
+  padding: 25px;
+  border: 1px solid var(--tr-borde);
+  border-radius: 15px;
+  background: var(--tr-celeste-claro);
+  transition:
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    transform var(--tr-transicion);
+}
+
+.pasantias-duracion:hover {
+  transform: translateY(-3px);
+  border-color: var(--tr-detalle);
+  box-shadow: var(--tr-sombra);
+}
+
+.pasantias-duracion-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 15px;
+  background: var(--tr-verde);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.pasantias-duracion-etiqueta {
+  color: var(--tr-detalle);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.pasantias-duracion h3 {
+  margin: 5px 0 8px;
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.65rem;
+}
+
+.pasantias-duracion p {
+  margin: 0;
+  color: var(--tr-texto-secundario);
+  font-size: 0.86rem;
+  line-height: 1.75;
+}
+
+/* Aclaración sobre las actividades escolares */
+
+.pasantias-aclaracion {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 18px;
+  padding: 22px 24px;
+  border: 1px solid rgba(121, 163, 177, 0.5);
+  border-left: 4px solid var(--tr-verde);
+  border-radius: 12px;
+  background: #f5faf8;
+  transition:
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    background var(--tr-transicion);
+}
+
+.pasantias-aclaracion:hover {
+  border-color: var(--tr-detalle);
+  background: #edf6f5;
+  box-shadow: var(--tr-sombra);
+}
+
+.pasantias-aclaracion > i {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--tr-verde);
+  font-size: 1.3rem;
+}
+
+.pasantias-aclaracion h3 {
+  margin: 0 0 7px;
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+}
+
+.pasantias-aclaracion p {
+  margin: 0;
+  color: var(--tr-texto-secundario);
+  font-size: 0.85rem;
+  line-height: 1.75;
+}
+
+/* ==========================================================
+   SECCIONES PENDIENTES
    ========================================================== */
 
 .seccion-pendiente {
-  padding-bottom: 55px;
+  scroll-margin-top: 25px;
 }
 
 .contenido-pendiente {
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 22px 25px;
-  border: 1px dashed var(--tr-detalle);
-  border-radius: 12px;
-  background-color: rgba(252, 248, 236, 0.65);
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 180px;
+  padding: 30px;
+  border: 1px dashed var(--tr-borde);
+  border-radius: 15px;
+  background: var(--tr-celeste-claro);
+  text-align: center;
+  transition:
+    border-color var(--tr-transicion),
+    background var(--tr-transicion),
+    box-shadow var(--tr-transicion);
+}
+
+.contenido-pendiente:hover {
+  border-color: var(--tr-verde);
+  background: #e3f1f4;
+  box-shadow: var(--tr-sombra);
 }
 
 .contenido-pendiente i {
   color: var(--tr-detalle);
-  font-size: 1.5rem;
+  font-size: 2rem;
+  transition: transform var(--tr-transicion);
+}
+
+.contenido-pendiente:hover i {
+  transform: translateY(-4px);
 }
 
 .contenido-pendiente p {
   margin: 0;
   color: var(--tr-texto-secundario);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 
 /* ==========================================================
@@ -598,50 +1128,35 @@
    ========================================================== */
 
 @media (max-width: 900px) {
-  .trayectos-portada {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 20px;
-    padding: 30px 6%;
-  }
-
-  .portada-texto h1 {
-    font-size: clamp(2.2rem, 4vw, 3rem);
-  }
-
-  .paisaje {
-    height: 150px;
-  }
-
-  .paisaje-principal {
-    height: 180px;
-  }
-
   .accesos-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .trayectos-portada {
+    padding: 40px;
+  }
+
   .trayectos-resumen {
-    gap: 20px;
-    padding: 25px;
+    gap: 25px;
+    padding: 28px;
   }
 
-  .resumen-datos {
-    padding-left: 20px;
+  .materias-turnos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .talleres-organizacion {
-    gap: 14px;
+  .materias-turno-card:last-child {
+    grid-column: 1 / -1;
   }
 
-  .organizacion-item {
-    gap: 12px;
-    padding: 18px;
+  /* En horarios de taller se mantienen dos columnas */
+
+  .talleres-turnos-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .organizacion-numero {
-    min-width: 55px;
-    min-height: 55px;
-    font-size: 1rem;
+  .talleres-turnos-grid .materias-turno-card:last-child {
+    grid-column: auto;
   }
 }
 
@@ -651,9 +1166,10 @@
 
 @media (max-width: 650px) {
   .trayectos-portada {
-    grid-template-columns: 1fr;
-    gap: 22px;
-    padding: 35px 7%;
+    width: 92%;
+    min-height: 300px;
+    margin-top: 20px;
+    padding: 30px 25px;
   }
 
   .portada-texto {
@@ -661,34 +1177,32 @@
   }
 
   .portada-texto h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
+  }
+
+  .portada-texto p {
+    max-width: 90%;
+    font-size: 0.85rem;
   }
 
   .portada-imagenes {
-    grid-template-columns: 1.1fr 0.9fr;
-  }
-
-  .paisaje {
-    height: 145px;
-  }
-
-  .paisaje-principal {
-    height: 175px;
+    right: -18%;
+    width: 75%;
+    opacity: 0.35;
   }
 
   .trayectos-accesos,
   .trayectos-resumen,
   .trayectos-seccion {
-    width: 88%;
+    width: 90%;
   }
 
   .accesos-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
   }
 
   .acceso-card {
-    min-height: 150px;
+    min-height: 175px;
   }
 
   .trayectos-resumen {
@@ -700,69 +1214,141 @@
   .resumen-datos {
     grid-template-columns: 1fr 1fr;
     padding: 20px 0 0;
-    border-top: 1px solid var(--tr-detalle);
+    border-top: 1px solid var(--tr-borde);
     border-left: none;
+  }
+
+  .trayectos-seccion {
+    padding: 40px 0;
   }
 
   .talleres-organizacion {
     grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .organizacion-item {
-    padding: 20px;
   }
 
   .talleres-grid {
     grid-template-columns: 1fr;
   }
 
-  .taller-listado ul {
-    grid-template-columns: 1fr 1fr;
+  .taller-anio-card {
+    padding: 21px;
   }
 
-  .trayectos-seccion {
-    padding: 40px 0;
+  .materias-horarios {
+    padding: 19px;
+  }
+
+  .materias-turnos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .materias-turno-card:last-child {
+    grid-column: auto;
+  }
+
+  /* En móvil las tarjetas de taller también se apilan */
+
+  .talleres-turnos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .talleres-turnos-grid .materias-turno-card:last-child {
+    grid-column: auto;
+  }
+
+  .materias-listado ul {
+    grid-template-columns: 1fr;
+  }
+
+  .materias-extracurriculares {
+    padding: 15px;
+  }
+
+  /* Botón independiente en móvil */
+
+  .talleres-cronograma {
+    justify-content: center;
+  }
+
+  /* Pasantías en móvil */
+
+  .pasantias-introduccion {
+    flex-direction: column;
+    gap: 15px;
+    padding: 21px;
+  }
+
+  .pasantias-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pasantia-card {
+    padding: 21px;
+  }
+
+  .pasantias-duracion {
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .pasantias-duracion-icono {
+    width: 48px;
+    height: 48px;
+    font-size: 1.35rem;
+  }
+
+  .pasantias-duracion h3 {
+    font-size: 1.4rem;
+  }
+
+  .pasantias-aclaracion {
+    padding: 19px;
   }
 }
 
 /* ==========================================================
-   RESPONSIVE - CELULARES PEQUEÑOS
+   PANTALLAS MUY PEQUEÑAS
    ========================================================== */
 
 @media (max-width: 380px) {
+  .taller-listado ul {
+    grid-template-columns: 1fr;
+  }
+
   .resumen-datos {
     grid-template-columns: 1fr;
   }
 
   .organizacion-item {
     flex-direction: column;
+    gap: 8px;
   }
 
-  .taller-anio-card {
-    padding: 19px;
+  .materias-horarios-encabezado {
+    align-items: flex-start;
   }
 
-  .taller-listado ul {
-    grid-template-columns: 1fr;
+  .pasantias-duracion {
+    flex-direction: column;
   }
 
-  .btn-cronograma {
-    width: 100%;
+  .pasantias-aclaracion {
     gap: 10px;
-    padding: 12px 15px;
   }
 }
 
 /* ==========================================================
-   ACCESIBILIDAD: MOVIMIENTO REDUCIDO
+   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
    ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  .trayectos-page *,
-  .trayectos-page *::before,
-  .trayectos-page *::after {
+  *,
+  *::before,
+  *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
