@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import ScrollToTop from "./componentes/ScrollToTop";
+
 import Secretaria from './pages/secretaria';
 import Asesoria from './pages/Asesoria';
 import Talleres from './pages/Talleres';
@@ -31,7 +33,7 @@ function App() {
         >
           <div>
             <Header />
-
+            <ScrollToTop />
             <main className="py-6">
               <Routes>
                 <Route path="/" element={<Inicio />} />
