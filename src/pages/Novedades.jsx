@@ -1,7 +1,7 @@
 
 import TarjetaAnuncio from "../componentes/novedades/TarjetaAnuncio";
 import anuncios from "../data/anuncios";
-import "../styles/novedades.css";
+import "../styles/Novedades.css";
 
 export default function Novedades() {
   return (
