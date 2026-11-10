@@ -1,17 +1,18 @@
 
-/* =========================================
-   PÁGINA DE NOVEDADES
-========================================= */
-
 .pagina-novedades {
-    width: 100%;
-    min-height: 100vh;
+  --tr-celeste: #D0E8F2;
+  --tr-crema: #FCF8EC;
+  --tr-verde: #456268;
+  --tr-detalle: #79A3B1;
+  --tr-texto-secundario: #647F84;
 
-    background: #d5edf2;
-
-    box-sizing: border-box;
+  width: 100%;
+  padding: 0 0 65px;
+  background-color: var(--tr-celeste);
+  color: var(--tr-verde);
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
 }
-
 /* =========================================
    CONTENEDOR PRINCIPAL
 ========================================= */
@@ -55,7 +56,48 @@
         cubic-bezier(0.22, 0.8, 0.24, 1)
         forwards;
 }
+/* ==========================================================
+   SECCIÓN 0 - PORTADA
+   ========================================================== */
 
+.trayectos-portada {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 35px;
+  padding: 32px 8%;
+  background-color: var(--tr-crema);
+}
+
+.portada-texto {
+  max-width: 550px;
+}
+
+.portada-etiqueta,
+.seccion-etiqueta {
+  display: inline-block;
+  color: var(--tr-detalle);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 2.2px;
+}
+
+.portada-texto h1 {
+  margin: 10px 0;
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+}
+
+.portada-texto p {
+  max-width: 450px;
+  margin: 0;
+  color: var(--tr-texto-secundario);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
 /* Movimiento de entrada */
 
 @keyframes entradaAnuncio {

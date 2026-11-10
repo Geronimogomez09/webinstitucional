@@ -70,7 +70,7 @@ export default function NovedadDetalle() {
   return (
     <main className="pagina-novedad-detalle">
 
-      <article className="novedad-detalle-contenedor">
+      <article key={id} className="novedad-detalle-contenedor">
 
         {/* VOLVER */}
         <Link

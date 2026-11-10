@@ -4,6 +4,12 @@
 ========================================= */
 
 .pagina-novedad-detalle {
+    --detalle-celeste: #D0E8F2;
+    --detalle-crema: #FCF8EC;
+    --detalle-verde: #456268;
+    --detalle-azul: #79A3B1;
+    --detalle-secundario: #647F84;
+
     width: 100%;
     min-height: 100vh;
 
@@ -11,7 +17,7 @@
 
     box-sizing: border-box;
 
-    background: #d5edf2;
+    background: var(--detalle-celeste);
 }
 
 /* Contenedor */
@@ -25,10 +31,11 @@
 
     box-sizing: border-box;
 
-    background: #fbf8ed;
-
-    border: 2px solid #b9dce0;
-    border-radius: 5px;
+    background: var(--detalle-crema);
+    border: 1px solid var(--detalle-azul);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(69, 98, 104, 0.12);
+    animation: entradaDetalle 0.65s cubic-bezier(0.22, 0.8, 0.24, 1) both;
 }
 
 /* Volver */
@@ -184,6 +191,11 @@
 ========================================= */
 
 .novedad-no-encontrada {
+    --detalle-celeste: #D0E8F2;
+    --detalle-crema: #FCF8EC;
+    --detalle-verde: #456268;
+    --detalle-azul: #79A3B1;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -192,7 +204,7 @@
     padding: 25px;
 
     box-sizing: border-box;
-    background: #d5edf2;
+    background: var(--detalle-celeste);
 
     text-align: center;
 }
@@ -201,9 +213,11 @@
     max-width: 500px;
     padding: 35px;
 
-    background: #fbf8ed;
-    border: 2px solid #b9dce0;
-    border-radius: 8px;
+    background: var(--detalle-crema);
+    border: 1px solid var(--detalle-azul);
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(69, 98, 104, 0.12);
+    animation: entradaDetalle 0.65s cubic-bezier(0.22, 0.8, 0.24, 1) both;
 }
 
 .novedad-no-encontrada h1 {
@@ -463,6 +477,18 @@
     }
 }
 
+@keyframes entradaDetalle {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* =========================================
    TABLETS
 ========================================= */
@@ -515,7 +541,12 @@
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+    .novedad-detalle-contenedor,
     .novedades-relacionadas {
+        animation: none;
+    }
+
+    .novedad-no-encontrada > div {
         animation: none;
     }
 
@@ -552,4 +583,78 @@
     .novedad-detalle-texto {
         font-size: 14px;
     }
+}
+
+/* Colores alineados con la identidad visual de Novedades */
+.pagina-novedad-detalle .novedad-detalle-contenedor {
+    background: var(--detalle-crema);
+    border-color: var(--detalle-azul);
+}
+
+.pagina-novedad-detalle .novedad-volver,
+.pagina-novedad-detalle .novedad-detalle-header h1,
+.pagina-novedad-detalle .novedad-detalle-descripcion,
+.pagina-novedad-detalle .novedad-detalle-texto,
+.pagina-novedad-detalle .novedad-detalle-footer a,
+.pagina-novedad-detalle .novedad-nav-item,
+.pagina-novedad-detalle .novedad-nav-item strong,
+.pagina-novedad-detalle .relacionadas-encabezado h2,
+.pagina-novedad-detalle .relacionadas-ver-todas,
+.pagina-novedad-detalle .novedad-volver-final a {
+    color: var(--detalle-verde);
+}
+
+.pagina-novedad-detalle .novedad-detalle-categoria,
+.pagina-novedad-detalle .novedad-nav-etiqueta,
+.pagina-novedad-detalle .relacionadas-subtitulo {
+    color: var(--detalle-secundario);
+}
+
+.pagina-novedad-detalle .novedad-detalle-metadata,
+.pagina-novedad-detalle .relacionadas-encabezado p {
+    color: var(--detalle-secundario);
+}
+
+.pagina-novedad-detalle .novedad-volver:hover,
+.pagina-novedad-detalle .novedad-detalle-footer a:hover,
+.pagina-novedad-detalle .relacionadas-ver-todas:hover,
+.pagina-novedad-detalle .novedad-volver-final a:hover {
+    color: var(--detalle-azul);
+}
+
+.pagina-novedad-detalle .novedad-detalle-imagen {
+    background: var(--detalle-celeste);
+    border-radius: 8px;
+}
+
+.pagina-novedad-detalle .novedad-navegacion,
+.pagina-novedad-detalle .novedad-detalle-footer,
+.pagina-novedad-detalle .novedad-volver-final {
+    border-color: var(--detalle-azul);
+}
+
+.pagina-novedad-detalle .novedad-nav-item {
+    background: #F3F8F5;
+    border-color: var(--detalle-azul);
+    border-radius: 8px;
+}
+
+.pagina-novedad-detalle .novedad-nav-item:hover {
+    background: var(--detalle-celeste);
+    border-color: var(--detalle-verde);
+}
+
+.pagina-novedad-detalle .novedad-nav-deshabilitado:hover {
+    background: #F3F8F5;
+    border-color: var(--detalle-azul);
+}
+
+.novedad-no-encontrada h1,
+.novedad-no-encontrada p,
+.novedad-no-encontrada a {
+    color: var(--detalle-verde);
+}
+
+.novedad-no-encontrada a:hover {
+    color: var(--detalle-azul);
 }
