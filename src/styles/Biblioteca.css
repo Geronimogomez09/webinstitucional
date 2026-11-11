@@ -1,0 +1,130 @@
+.biblioteca-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+.biblioteca-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.biblioteca-title {
+  font-family: 'Oswald', sans-serif;
+  color: #456268;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.04em;
+}
+
+.biblioteca-subtitle {
+  font-size: 0.95rem;
+  color: #4b5563;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.biblioteca-card {
+  background-color: #FCF8EC;
+  border: 1px solid rgba(121, 163, 177, 0.5);
+  border-radius: 16px;
+  padding: 36px 24px;
+  margin-bottom: 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.biblioteca-card-desc {
+  font-size: 1rem;
+  color: #456268;
+  font-weight: 600;
+  margin: 0 0 24px 0;
+}
+
+.biblioteca-btn-primary {
+  background-color: #456268;
+  color: #ffffff;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.biblioteca-btn-primary:hover {
+  background-color: #344c52;
+}
+
+.biblioteca-contact-card {
+  background-color: #FCF8EC;
+  border: 1px solid rgba(121, 163, 177, 0.5);
+  border-radius: 16px;
+  padding: 30px 24px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.biblioteca-contact-title {
+  font-family: 'Oswald', sans-serif;
+  color: #456268;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.04em;
+}
+
+.biblioteca-contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(121, 163, 177, 0.2);
+}
+
+.biblioteca-contact-row:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.biblioteca-contact-label {
+  font-weight: 600;
+  color: #456268;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.biblioteca-email-link {
+  color: #456268;
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.biblioteca-btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.biblioteca-btn-whatsapp:hover {
+  background-color: #20ba5a;
+}

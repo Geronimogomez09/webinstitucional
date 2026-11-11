@@ -8,6 +8,7 @@ const enlaces = [
   { nombre: "Talleres", ruta: "/talleres" },
   { nombre: "Secretaría", ruta: "/secretaria" },
   { nombre: "Asesoría", ruta: "/asesoria" },
+  { nombre: "Biblioteca", ruta: "/biblioteca"},
   { nombre: "Historia", ruta: "/NuestraHistoria" },
   { nombre: "Contacto", ruta: "/contacto" },
 ];
