@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import ScrollToTop from "./componentes/ScrollToTop";
 
-import Secretaria from './pages/secretaria';
+import Secretaria from './pages/Secretaria';
 import Asesoria from './pages/Asesoria';
 import Talleres from './pages/Talleres';
 import Inicio from './pages/index';
@@ -37,9 +37,9 @@ function App() {
             <main className="py-6">
               <Routes>
                 <Route path="/" element={<Inicio />} />
-                <Route path="/secretaria" element={<Secretaria />} />
-                <Route path="/asesoria" element={<Asesoria />} />
-                <Route path="/talleres" element={<Talleres />} />
+                <Route path="/Secretaria" element={<Secretaria />} />
+                <Route path="/Asesoria" element={<Asesoria />} />
+                <Route path="/Talleres" element={<Talleres />} />
                 <Route path="/NuestraHistoria" element={<NuestraHistoria />} />
                 <Route path="/novedades" element={<Novedades />} />
                 <Route path="/novedades/:id" element={<NovedadDetalle />} />

@@ -1,0 +1,122 @@
+.asesoria-container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  font-family: 'Inter', sans-serif;
+}
+
+.asesoria-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.asesoria-title {
+  font-family: 'Oswald', sans-serif;
+  color: #456268;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.04em;
+}
+
+.asesoria-schedule-card {
+  background-color: #456268;
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 32px 36px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+}
+
+.asesoria-schedule-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.asesoria-schedule-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.05em;
+}
+
+.asesoria-schedule-time {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  color: #D0E8F2;
+  margin-bottom: 12px;
+}
+
+.asesoria-schedule-location {
+  margin: 0 0 16px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.asesoria-schedule-email {
+  color: #D0E8F2;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.asesoria-section-header {
+  background-color: #456268;
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.asesoria-section-title {
+  font-family: 'Oswald', sans-serif;
+  margin: 0;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.asesoria-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.asesoria-item-card {
+  background-color: #FCF8EC;
+  border: 1px solid rgba(121, 163, 177, 0.5);
+  border-radius: 10px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.asesoria-item-text {
+  color: #456268;
+  font-weight: 600;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.asesoria-btn {
+  background-color: #456268;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  min-width: 110px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
