@@ -102,14 +102,14 @@ export default function Inicio() {
         <span className="etiqueta-tarjeta">TALLER</span>
         <h3>Fortalecimiento 3° Año</h3>
         <p>Clases de consulta y trabajos prácticos obligatorios.</p>
-        <Link to="/novedades">Más info →</Link>
+        <Link to="/talleres">Más info →</Link>
       </article>
 
       <article className="tarjeta-novedad">
         <span className="etiqueta-tarjeta">RECURSOS</span>
         <h3>Cuadernillos Técnicos</h3>
         <p>Descarga de material de apoyo para el ciclo lectivo.</p>
-        <Link to="/novedades">Descargar →</Link>
+        <Link to="/talleres">Descargar →</Link>
       </article>
 
       <article className="tarjeta-novedad">
