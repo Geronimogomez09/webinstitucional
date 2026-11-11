@@ -45,3 +45,4 @@ webinstitucional/
 | Secretaría | Agus | Organizó la sección de trámites, instructivos de inscripciones y horarios de atención. |
 | Nuestra Historia | Pilar | Redactó y estructuró los contenidos históricos institucionales y diseño de tarjetas. |
 | Contacto y Ubicación | Pilar | Diseñó la tarjeta de información extendida a ancho completo e integró el mapa interactivo de Google Maps (Lanín 2020). |
+| Biblioteca | Agus | Organizó la pagina ordenando los links. |
