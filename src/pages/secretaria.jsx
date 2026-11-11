@@ -141,7 +141,6 @@ export default function Secretaria() {
   return (
     <div style={{ maxWidth: '960px', margin: '0 auto', padding: '32px 24px', fontFamily: "'Inter', sans-serif" }}>
       
-      {/* Título Principal */}
       <div style={{ textAlign: 'center', marginBottom: '28px' }}>
         <h1 
           style={{ 
@@ -156,7 +155,6 @@ export default function Secretaria() {
           Secretaría Escolar
         </h1>
         
-        {/* Banner de Aviso Institucional con fondo destacado (#79A3B1) y texto blanco */}
         <div 
           style={{ 
             backgroundColor: '#456268', 
@@ -174,7 +172,6 @@ export default function Secretaria() {
         </div>
       </div>
 
-      {/* Tarjeta de Días y Horarios */}
       <div 
         style={{ 
           backgroundColor: '#456268', 
@@ -238,7 +235,6 @@ export default function Secretaria() {
         </div>
       </div>
 
-      {/* Subtítulo de Sección */}
       <h3 
         style={{ 
           fontFamily: "'Oswald', sans-serif", 
@@ -253,7 +249,6 @@ export default function Secretaria() {
         Formularios de inscripción anual y registros de asistencia
       </h3>
 
-      {/* Listado de Formularios */}
       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '40px' }}>
         {formularios.map((item) => (
           <div 
@@ -301,7 +296,6 @@ export default function Secretaria() {
         ))}
       </div>
 
-      {/* Normativas */}
       <div 
         style={{ 
           backgroundColor: '#456268', 
