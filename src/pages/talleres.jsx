@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/talleres.css';
+import '../styles/Talleres.css';
 
 export default function Talleres() {
   return (
