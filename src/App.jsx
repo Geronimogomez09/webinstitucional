@@ -5,6 +5,7 @@ import ScrollToTop from "./componentes/ScrollToTop";
 import Secretaria from './pages/Secretaria';
 import Asesoria from './pages/Asesoria';
 import Talleres from './pages/Talleres';
+import Biblioteca from './pages/Biblioteca';
 import Inicio from './pages/index';
 import NuestraHistoria from './pages/NuestraHistoria';
 import Novedades from './pages/Novedades';
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/Secretaria" element={<Secretaria />} />
                 <Route path="/Asesoria" element={<Asesoria />} />
                 <Route path="/Talleres" element={<Talleres />} />
+                <Route path="/Biblioteca" element={<Biblioteca />} />
                 <Route path="/NuestraHistoria" element={<NuestraHistoria />} />
                 <Route path="/novedades" element={<Novedades />} />
                 <Route path="/novedades/:id" element={<NovedadDetalle />} />
