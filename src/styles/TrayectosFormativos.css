@@ -1,27 +1,61 @@
 
 /* ==========================================================
    TRAYECTOS FORMATIVOS - EPET N.º 20
-   Identidad visual: crema, celeste y verde.
+
+   Hoja de estilos principal de la página.
+
+   Identidad visual:
+   - Crema
+   - Celeste
+   - Verde institucional
+
+   Organización:
+   1. Variables y configuración general
+   2. Portada
+   3. Accesos a las secciones
+   4. Resumen institucional
+   5. Estilos generales de las secciones
+   6. Sección 1: Talleres y rotaciones
+   7. Horarios generales
+   8. Sección 2: Materias teóricas
+   9. Sección 3: Pasantías
+   10. Sección 4: Mesas de examen y POEC
+   11. Botones
+   12. Efectos visuales y accesibilidad
+   13. Diseño adaptable (responsive)
+
+   Los comentarios indican qué elementos se pueden modificar
+   sin necesidad de conocer toda la estructura del archivo.
+   ========================================================== */
+
+
+/* ==========================================================
+   1. VARIABLES Y CONFIGURACIÓN GENERAL
    ========================================================== */
 
 :root {
+  /* Colores principales */
   --tr-crema: #fffdf5;
   --tr-celeste: #d0e8f2;
   --tr-celeste-claro: #eaf5f8;
   --tr-verde: #426b61;
   --tr-verde-oscuro: #31564e;
   --tr-detalle: #79a3b1;
+
+  /* Colores de texto */
   --tr-texto: #40534e;
   --tr-texto-secundario: #71817b;
+
+  /* Bordes y sombras */
   --tr-borde: rgba(121, 163, 177, 0.55);
   --tr-sombra: 0 8px 22px rgba(69, 98, 104, 0.11);
   --tr-sombra-hover: 0 13px 28px rgba(49, 86, 78, 0.15);
+
+  /* Velocidad de las animaciones */
   --tr-transicion: 0.28s ease;
 }
 
-/* ==========================================================
-   CONTENEDOR GENERAL
-   ========================================================== */
+/* Configuración general de la página */
 
 .trayectos-page {
   width: 100%;
@@ -29,39 +63,61 @@
   overflow: hidden;
 }
 
+/* Hace que el padding y los bordes se incluyan
+   dentro del ancho total de cada elemento. */
+
 .trayectos-page * {
   box-sizing: border-box;
 }
 
+
 /* ==========================================================
-   PORTADA
+   2. PORTADA
    ========================================================== */
+
+/* Contenedor principal de la presentación */
 
 .trayectos-portada {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   width: min(1100px, 88%);
   min-height: 330px;
+
   margin: 35px auto 25px;
   padding: 45px 55px;
+
   overflow: hidden;
+
   border: 1px solid var(--tr-borde);
   border-radius: 24px;
-  background: linear-gradient(120deg, #fffdf5 0%, #e5f2f5 100%);
+
+  background: linear-gradient(
+    120deg,
+    #fffdf5 0%,
+    #e5f2f5 100%
+  );
+
   transition: box-shadow var(--tr-transicion);
 }
+
+/* Sombra suave al pasar el cursor */
 
 .trayectos-portada:hover {
   box-shadow: var(--tr-sombra);
 }
+
+/* Contenido textual de la portada */
 
 .portada-texto {
   position: relative;
   z-index: 2;
   max-width: 510px;
 }
+
+/* Etiquetas pequeñas que aparecen sobre los títulos */
 
 .portada-etiqueta,
 .seccion-etiqueta {
@@ -71,8 +127,11 @@
   letter-spacing: 2px;
 }
 
+/* Título principal */
+
 .portada-texto h1 {
   margin: 14px 0;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: clamp(2.6rem, 5vw, 4rem);
@@ -80,30 +139,39 @@
   line-height: 1.12;
 }
 
+/* Descripción de la portada */
+
 .portada-texto p {
   max-width: 440px;
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.95rem;
   line-height: 1.8;
 }
 
-/* Paisajes */
+/* Ilustración decorativa de paisaje */
 
 .portada-imagenes {
   position: absolute;
   right: 4%;
   bottom: 0;
+
   width: 43%;
   height: 100%;
 }
+
+/* Formas principales del paisaje */
 
 .paisaje {
   position: absolute;
   overflow: hidden;
   border-radius: 50% 50% 0 0;
+
   transition: transform 0.5s ease;
 }
+
+/* Movimiento de las formas al pasar el cursor */
 
 .trayectos-portada:hover .paisaje-principal {
   transform: translateY(-5px);
@@ -113,60 +181,86 @@
   transform: translateY(-3px);
 }
 
+/* Montaña principal */
+
 .paisaje-principal {
   right: 0;
   bottom: 0;
+
   width: 75%;
   height: 72%;
+
   background: #d4e8e5;
 }
+
+/* Montaña secundaria */
 
 .paisaje-secundario {
   right: 48%;
   bottom: 0;
+
   width: 52%;
   height: 48%;
+
   background: #e4edda;
 }
+
+/* Sol decorativo */
 
 .paisaje-sol {
   position: absolute;
   top: 18%;
   right: 22%;
+
   width: 48px;
   height: 48px;
+
   border-radius: 50%;
   background: #e9d8a6;
 }
+
+/* Forma triangular de la montaña */
 
 .paisaje-montana {
   position: absolute;
   bottom: 0;
   left: 8%;
+
   width: 70%;
   height: 65%;
+
   background: #9abdb1;
+
   clip-path: polygon(50% 0, 100% 100%, 0 100%);
 }
+
+/* Colina delantera */
 
 .paisaje-colina {
   position: absolute;
   right: -10%;
   bottom: -15%;
+
   width: 85%;
   height: 60%;
+
   border-radius: 50% 50% 0 0;
   background: #6e9b85;
 }
 
+
 /* ==========================================================
-   ACCESOS A LAS SECCIONES
+   3. ACCESOS A LAS SECCIONES
    ========================================================== */
+
+/* Contenedor de las tarjetas de navegación */
 
 .trayectos-accesos {
   width: min(1100px, 88%);
   margin: 0 auto 40px;
 }
+
+/* Distribución de las tarjetas */
 
 .accesos-grid {
   display: grid;
@@ -174,17 +268,33 @@
   gap: 15px;
 }
 
+/* Tarjeta individual de acceso */
+
 .acceso-card {
+  position: relative;
+
   display: flex;
   flex-direction: column;
+
   min-width: 0;
   min-height: 205px;
+
   padding: 20px;
-  border: 1px solid var(--tr-borde);
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
   border-radius: 15px;
-  background: var(--tr-crema);
+
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #f7faf7 100%
+  );
+
   color: var(--tr-texto);
   text-decoration: none;
+
+  box-shadow: 0 5px 15px rgba(49, 86, 78, 0.09);
+
   transition:
     transform var(--tr-transicion),
     box-shadow var(--tr-transicion),
@@ -192,78 +302,120 @@
     background var(--tr-transicion);
 }
 
+/* Efecto visual al interactuar con la tarjeta */
+
 .acceso-card:hover {
   transform: translateY(-6px);
+
   border-color: var(--tr-verde);
-  background: #ffffff;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #eaf5f1 100%
+  );
+
   box-shadow: var(--tr-sombra-hover);
   color: var(--tr-texto);
 }
+
+/* Fila superior: icono y número */
 
 .acceso-superior {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   margin-bottom: 18px;
 }
+
+/* Contenedor del icono */
 
 .acceso-icono {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 42px;
   height: 42px;
+
   border-radius: 12px;
+
   background: var(--tr-celeste);
   color: var(--tr-verde);
+
   font-size: 1.2rem;
+
   transition:
     transform var(--tr-transicion),
     background var(--tr-transicion),
-    color var(--tr-transicion);
+    color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
 }
 
+/* Animación del icono */
+
 .acceso-card:hover .acceso-icono {
-  transform: rotate(-7deg) scale(1.08);
+  transform: rotate(-8deg) scale(1.13);
+
   background: var(--tr-verde);
   color: white;
+
+  box-shadow: 0 5px 12px rgba(49, 86, 78, 0.16);
 }
+
+/* Número de la tarjeta */
 
 .acceso-numero {
   color: var(--tr-detalle);
   font-size: 0.8rem;
   font-weight: 800;
-  transition: color var(--tr-transicion);
+
+  transition:
+    color var(--tr-transicion),
+    transform var(--tr-transicion);
 }
 
 .acceso-card:hover .acceso-numero {
   color: var(--tr-verde);
 }
 
+/* Título de cada acceso */
+
 .acceso-card h2 {
   margin: 0 0 9px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.22rem;
   font-weight: 600;
 }
 
+/* Descripción */
+
 .acceso-card p {
   margin: 0 0 18px;
+
   color: var(--tr-texto-secundario);
   font-size: 0.78rem;
   line-height: 1.6;
 }
 
+/* Texto que indica la navegación */
+
 .acceso-enlace {
   display: flex;
   align-items: center;
   gap: 8px;
+
   margin-top: auto;
+
   color: var(--tr-verde);
   font-size: 0.78rem;
   font-weight: 700;
 }
+
+/* Movimiento de la flecha */
 
 .acceso-enlace i {
   transition: transform var(--tr-transicion);
@@ -273,60 +425,88 @@
   transform: translateX(5px);
 }
 
+
 /* ==========================================================
-   RESUMEN INSTITUCIONAL
+   4. RESUMEN INSTITUCIONAL
    ========================================================== */
+
+/* Bloque informativo ubicado debajo de los accesos */
 
 .trayectos-resumen {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 35px;
+
   width: min(1100px, 88%);
   margin: 45px auto;
   padding: 35px;
-  border: 1px solid transparent;
+
+  border: 1px solid var(--tr-borde);
   border-radius: 18px;
-  background: var(--tr-celeste-claro);
+
+  background: linear-gradient(
+    120deg,
+    #e1eff2 0%,
+    #f0f7f2 100%
+  );
+
+  box-shadow: 0 5px 16px rgba(49, 86, 78, 0.07);
+
   transition:
+    transform var(--tr-transicion),
     border-color var(--tr-transicion),
     box-shadow var(--tr-transicion);
 }
 
 .trayectos-resumen:hover {
+  transform: translateY(-4px);
   border-color: var(--tr-borde);
-  box-shadow: var(--tr-sombra);
+  box-shadow: 0 13px 26px rgba(49, 86, 78, 0.12);
 }
+
+/* Título del resumen */
 
 .resumen-texto h2 {
   margin: 10px 0;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 2rem;
 }
 
+/* Descripción del resumen */
+
 .resumen-texto p {
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.9rem;
   line-height: 1.8;
 }
 
+/* Datos destacados */
+
 .resumen-datos {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
+
   padding-left: 30px;
   border-left: 1px solid var(--tr-borde);
 }
+
+/* Elemento individual del resumen */
 
 .resumen-dato {
   display: flex;
   align-items: center;
   gap: 10px;
+
   color: var(--tr-verde);
   font-size: 0.83rem;
   font-weight: 600;
+
   transition: transform var(--tr-transicion);
 }
 
@@ -334,9 +514,12 @@
   transform: translateX(4px);
 }
 
+/* Iconos del resumen */
+
 .resumen-dato i {
   color: var(--tr-detalle);
   font-size: 1.25rem;
+
   transition: transform var(--tr-transicion);
 }
 
@@ -344,56 +527,84 @@
   transform: scale(1.15);
 }
 
+
 /* ==========================================================
-   SECCIONES GENERALES
+   5. ESTILOS GENERALES DE LAS SECCIONES
    ========================================================== */
+
+/* Contenedor compartido por las distintas secciones */
 
 .trayectos-seccion {
   width: min(1100px, 88%);
   margin: 0 auto;
   padding: 55px 0;
+
   border-top: 1px solid rgba(121, 163, 177, 0.65);
 }
+
+/* Encabezado de cada sección */
 
 .seccion-encabezado {
   max-width: 720px;
   margin-bottom: 32px;
 }
 
+/* Título de cada sección */
+
 .seccion-encabezado h2 {
   margin: 10px 0 12px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 600;
 }
 
+/* Descripción de cada sección */
+
 .seccion-encabezado > p {
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.93rem;
   line-height: 1.8;
 }
 
+
 /* ==========================================================
-   SECCIÓN 1 - TALLERES Y ROTACIONES
+   6. SECCIÓN 1 - TALLERES Y ROTACIONES
    ========================================================== */
+
+/* Bloques que explican la organización de los talleres */
 
 .talleres-organizacion {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+
   margin-bottom: 28px;
 }
+
+/* Tarjeta informativa de organización */
 
 .organizacion-item {
   display: flex;
   align-items: flex-start;
   gap: 18px;
+
   padding: 23px;
-  border: 1px solid var(--tr-borde);
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
   border-radius: 15px;
-  background: var(--tr-celeste-claro);
+
+  background: linear-gradient(
+    135deg,
+    #e8f3f5 0%,
+    #f7fbf8 100%
+  );
+
+  box-shadow: 0 4px 13px rgba(49, 86, 78, 0.08);
+
   transition:
     transform var(--tr-transicion),
     box-shadow var(--tr-transicion),
@@ -401,34 +612,63 @@
     background var(--tr-transicion);
 }
 
+/* Efecto de elevación */
+
 .organizacion-item:hover {
-  transform: translateY(-4px);
-  border-color: var(--tr-detalle);
-  background: #f2fafb;
-  box-shadow: var(--tr-sombra);
+  transform: translateY(-5px);
+
+  border-color: var(--tr-verde);
+
+  background: linear-gradient(
+    135deg,
+    #dff0f2 0%,
+    #f5fbf8 100%
+  );
+
+  box-shadow: var(--tr-sombra-hover);
 }
+
+/* Número de cada bloque */
 
 .organizacion-numero {
   flex-shrink: 0;
+
   color: var(--tr-detalle);
   font-family: "Oswald", sans-serif;
   font-size: 1.3rem;
   font-weight: 700;
+
+  transition:
+    color var(--tr-transicion),
+    transform var(--tr-transicion);
 }
+
+.organizacion-item:hover .organizacion-numero {
+  color: var(--tr-verde);
+  transform: scale(1.08);
+}
+
+/* Título de organización */
 
 .organizacion-item h3 {
   margin: 0 0 7px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.25rem;
 }
 
+/* Descripción de organización */
+
 .organizacion-item p {
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.85rem;
   line-height: 1.7;
 }
+
+/* Distribución de las tarjetas por año */
 
 .talleres-grid {
   display: grid;
@@ -436,59 +676,107 @@
   gap: 20px;
 }
 
+/* Tarjeta individual de cada año */
+
 .taller-anio-card {
+  position: relative;
+
   display: flex;
   flex-direction: column;
+
   min-width: 0;
   padding: 25px;
-  border: 1px solid rgba(121, 163, 177, 0.75);
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
   border-radius: 15px;
-  background-color: var(--tr-crema);
-  box-shadow: 0 4px 13px rgba(69, 98, 104, 0.05);
+
+  background: linear-gradient(
+    155deg,
+    #ffffff 0%,
+    #f8fbf7 100%
+  );
+
+  box-shadow:
+    0 5px 15px rgba(49, 86, 78, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
   transition:
     transform var(--tr-transicion),
     box-shadow var(--tr-transicion),
-    border-color var(--tr-transicion);
+    border-color var(--tr-transicion),
+    background var(--tr-transicion);
 }
 
+/* Efecto hover de las tarjetas */
+
 .taller-anio-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px);
+
   border-color: var(--tr-verde);
-  box-shadow: var(--tr-sombra-hover);
+  background: #ffffff;
+
+  box-shadow:
+    0 17px 32px rgba(49, 86, 78, 0.15),
+    0 5px 12px rgba(49, 86, 78, 0.07);
 }
+
+/* Encabezado de cada tarjeta */
 
 .taller-card-encabezado {
   display: flex;
   align-items: center;
   gap: 15px;
+
   padding-bottom: 18px;
+
   border-bottom: 1px solid rgba(121, 163, 177, 0.5);
+
+  transition: border-color var(--tr-transicion);
 }
+
+.taller-anio-card:hover .taller-card-encabezado {
+  border-bottom-color: var(--tr-detalle);
+}
+
+/* Número del año */
 
 .taller-anio-numero {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
   width: 58px;
   height: 58px;
+
   border-radius: 13px;
-  background-color: var(--tr-celeste);
+
+  background: var(--tr-celeste);
   color: var(--tr-verde);
+
   font-family: "Oswald", sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
+
   transition:
     transform var(--tr-transicion),
     background var(--tr-transicion),
-    color var(--tr-transicion);
+    color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
 }
 
+/* Animación del número */
+
 .taller-anio-card:hover .taller-anio-numero {
-  transform: scale(1.06);
+  transform: scale(1.08) rotate(-3deg);
+
   background: var(--tr-verde);
   color: white;
+
+  box-shadow: 0 5px 12px rgba(49, 86, 78, 0.13);
 }
+
+/* Etiqueta del ciclo */
 
 .taller-ciclo {
   color: var(--tr-detalle);
@@ -497,185 +785,270 @@
   letter-spacing: 1.5px;
 }
 
+/* Título del año */
+
 .taller-card-encabezado h3 {
   margin: 3px 0 0;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
 }
 
+/* Listado de talleres */
+
 .taller-listado {
   margin-top: 20px;
 }
+
+/* Títulos internos de los listados */
 
 .taller-listado h4,
 .taller-horarios h4 {
   display: flex;
   align-items: center;
   gap: 8px;
+
   margin: 0 0 13px;
+
   color: var(--tr-verde);
   font-size: 0.9rem;
   font-weight: 700;
 }
+
+/* Iconos de los subtítulos */
 
 .taller-listado h4 i,
 .taller-horarios h4 i {
   color: var(--tr-detalle);
 }
 
+/* Distribución de los talleres */
+
 .taller-listado ul {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
+
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
+
+/* Elementos del listado */
 
 .taller-listado li {
   display: flex;
   align-items: flex-start;
   gap: 8px;
+
   color: var(--tr-texto-secundario);
   font-size: 0.83rem;
   line-height: 1.5;
+
   transition:
-    color var(--tr-transicion),
-    transform var(--tr-transicion);
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .taller-listado li:hover {
   color: var(--tr-verde);
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
+
+/* Iconos de cada taller */
 
 .taller-listado li i {
   flex-shrink: 0;
+
   color: var(--tr-detalle);
   font-size: 0.95rem;
+
+  transition: transform 0.25s ease;
 }
+
+.taller-listado li:hover i {
+  transform: scale(1.2);
+}
+
+/* Bloque de horarios dentro de cada tarjeta */
 
 .taller-horarios {
   margin-top: auto;
   padding: 16px;
+
   border-radius: 11px;
   background: var(--tr-celeste-claro);
 }
+
+/* Título del bloque de horarios */
 
 .taller-horarios h4 {
   margin-bottom: 9px;
 }
 
+/* Texto de los horarios */
+
 .taller-horarios p {
   margin: 5px 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.8rem;
 }
 
+
 /* ==========================================================
-   BOTÓN DE CRONOGRAMA - INDEPENDIENTE
+   7. BOTÓN Y HORARIOS GENERALES
    ========================================================== */
+
+/* Contenedor del acceso al cronograma de talleres */
 
 .talleres-cronograma {
   display: flex;
   justify-content: center;
+
   margin-top: 28px;
   padding: 0;
+
   background: transparent;
 }
+
+/* Oculta un texto auxiliar si existe en el JSX */
 
 .talleres-cronograma p {
   display: none;
 }
+
+/* Estilo compartido de los botones de cronograma */
 
 .btn-cronograma {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+
   padding: 12px 19px;
+
   border: 1px solid var(--tr-verde);
   border-radius: 9px;
+
   background: var(--tr-verde);
   color: white;
+
   font-size: 0.82rem;
   font-weight: 700;
   text-decoration: none;
+
   transition:
     background var(--tr-transicion),
     transform var(--tr-transicion),
     box-shadow var(--tr-transicion);
 }
 
+/* Estado hover del botón */
+
 .btn-cronograma:hover {
   transform: translateY(-3px);
+
   background: var(--tr-verde-oscuro);
+
   box-shadow: 0 6px 14px rgba(49, 86, 78, 0.2);
+
   color: white;
 }
+
+/* Animación de los iconos */
 
 .btn-cronograma i {
   transition: transform var(--tr-transicion);
 }
 
 .btn-cronograma:hover i {
-  transform: translateX(4px);
+  transform: translateX(5px);
 }
 
-/* ==========================================================
-   HORARIOS GENERALES - TALLERES Y MATERIAS
-   ========================================================== */
+/* Bloque general de horarios */
 
 .materias-horarios {
   margin-bottom: 30px;
   padding: 25px;
+
   border: 1px solid var(--tr-borde);
   border-radius: 17px;
-  background: var(--tr-celeste-claro);
+
+  background: linear-gradient(
+    135deg,
+    #e5f1f4 0%,
+    #f1f8f5 100%
+  );
+
+  box-shadow: 0 5px 15px rgba(49, 86, 78, 0.07);
+
   transition:
+    transform var(--tr-transicion),
     border-color var(--tr-transicion),
     box-shadow var(--tr-transicion);
 }
 
 .materias-horarios:hover {
+  transform: translateY(-4px);
+
   border-color: var(--tr-detalle);
-  box-shadow: var(--tr-sombra);
+
+  box-shadow: 0 12px 25px rgba(49, 86, 78, 0.12);
 }
+
+/* Encabezado del bloque de horarios */
 
 .materias-horarios-encabezado {
   display: flex;
   align-items: center;
   gap: 14px;
+
   margin-bottom: 22px;
 }
+
+/* Icono del encabezado */
 
 .materias-horarios-encabezado > i {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
   width: 46px;
   height: 46px;
+
   border-radius: 12px;
+
   background: var(--tr-crema);
   color: var(--tr-verde);
+
   font-size: 1.3rem;
 }
 
+/* Título del bloque */
+
 .materias-horarios-encabezado h3 {
   margin: 0 0 4px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.35rem;
 }
 
+/* Descripción del bloque */
+
 .materias-horarios-encabezado p {
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.82rem;
 }
+
+/* Distribución de los turnos */
 
 .materias-turnos-grid {
   display: grid;
@@ -683,19 +1056,26 @@
   gap: 15px;
 }
 
-/* Las dos tarjetas de taller ocupan todo el ancho */
+/* En horarios de taller se utilizan dos columnas */
 
 .talleres-turnos-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   width: 100%;
 }
 
+/* Tarjeta de cada turno */
+
 .materias-turno-card {
   min-width: 0;
   padding: 19px;
+
   border: 1px solid rgba(121, 163, 177, 0.55);
   border-radius: 13px;
-  background: var(--tr-crema);
+
+  background: #fffefa;
+
+  box-shadow: 0 4px 12px rgba(49, 86, 78, 0.08);
+
   transition:
     transform var(--tr-transicion),
     border-color var(--tr-transicion),
@@ -703,12 +1083,18 @@
     background var(--tr-transicion);
 }
 
+/* Efecto hover de los turnos */
+
 .materias-turno-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px) scale(1.015);
+
   border-color: var(--tr-verde);
   background: #ffffff;
-  box-shadow: var(--tr-sombra);
+
+  box-shadow: 0 13px 25px rgba(49, 86, 78, 0.14);
 }
+
+/* Etiqueta del turno */
 
 .materias-turno-etiqueta {
   color: var(--tr-detalle);
@@ -717,97 +1103,147 @@
   letter-spacing: 1.2px;
 }
 
+/* Título del turno */
+
 .materias-turno-card h4 {
   margin: 8px 0 12px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.2rem;
 }
 
+/* Texto de los horarios */
+
 .materias-turno-card p {
   display: flex;
   align-items: center;
   gap: 9px;
+
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.83rem;
   font-weight: 600;
 }
 
+/* Iconos de los horarios */
+
 .materias-turno-card p i {
   color: var(--tr-detalle);
   font-size: 1.15rem;
+
   transition:
     transform var(--tr-transicion),
     color var(--tr-transicion);
 }
 
+.materias-turno-card:hover h4 {
+  color: var(--tr-verde-oscuro);
+}
+
 .materias-turno-card:hover p i {
-  transform: scale(1.18);
+  transform: scale(1.15);
   color: var(--tr-verde);
 }
 
+
 /* ==========================================================
-   SECCIÓN 2 - MATERIAS TEÓRICAS
+   8. SECCIÓN 2 - MATERIAS TEÓRICAS
    ========================================================== */
+
+/* Separación al navegar hacia esta sección */
 
 .seccion-materias {
   scroll-margin-top: 25px;
 }
 
+/* Distribución de las tarjetas de materias */
+
 .materias-grid {
   align-items: stretch;
 }
+
+/* Las tarjetas ocupan toda la altura disponible */
 
 .materia-anio-card {
   height: 100%;
 }
 
+/* El listado crece para mantener la distribución */
+
 .materias-listado {
   flex-grow: 1;
 }
+
+/* Títulos del listado de materias */
 
 .materias-listado h4 {
   margin-bottom: 16px;
   font-size: 0.95rem;
 }
 
+/* Distribución de las materias */
+
 .materias-listado ul {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px 15px;
 }
+
+/* Texto de cada materia */
 
 .materias-listado li {
   font-size: 0.84rem;
   line-height: 1.55;
 }
 
+/* Alineación de los iconos */
+
 .materias-listado li i {
   margin-top: 2px;
 }
 
-/* Actividades extracurriculares */
+/* Bloque de actividades extracurriculares */
 
 .materias-extracurriculares {
   margin-top: 23px;
   padding: 17px;
+
   border: 1px solid rgba(121, 163, 177, 0.45);
   border-radius: 12px;
-  background: var(--tr-celeste-claro);
+
+  background: linear-gradient(
+    135deg,
+    #e6f2f5 0%,
+    #f0f7f3 100%
+  );
+
+  box-shadow: inset 0 1px 3px rgba(49, 86, 78, 0.04);
+
   transition:
+    transform var(--tr-transicion),
     border-color var(--tr-transicion),
-    background var(--tr-transicion);
+    background var(--tr-transicion),
+    box-shadow var(--tr-transicion);
 }
 
 .materias-extracurriculares:hover {
-  border-color: var(--tr-detalle);
-  background: #e2f1f5;
+  transform: translateY(-3px);
+
+  border-color: var(--tr-verde);
+  background: #dfedf0;
+
+  box-shadow: 0 7px 16px rgba(49, 86, 78, 0.1);
 }
+
+/* Título de actividades */
 
 .materias-extracurriculares h4 {
   margin-bottom: 13px;
   font-size: 0.86rem;
 }
+
+/* Listado de actividades */
 
 .materias-extracurriculares ul {
   display: flex;
@@ -815,70 +1251,119 @@
   gap: 9px;
 }
 
+/* Elementos del listado */
+
 .materias-extracurriculares li {
   color: var(--tr-verde);
   font-size: 0.82rem;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
 }
 
+.materias-extracurriculares li:hover {
+  transform: translateX(4px);
+  color: var(--tr-verde-oscuro);
+}
+
+
 /* ==========================================================
-   SECCIÓN 3 - PASANTÍAS
+   9. SECCIÓN 3 - PASANTÍAS
    ========================================================== */
+
+/* Evita que el encabezado quede oculto al navegar */
 
 .seccion-pasantias {
   scroll-margin-top: 25px;
 }
 
-/* Presentación de las pasantías */
+/* Introducción de la sección */
 
 .pasantias-introduccion {
   display: flex;
   align-items: flex-start;
   gap: 20px;
+
   margin-bottom: 22px;
   padding: 26px;
+
   border: 1px solid var(--tr-borde);
   border-radius: 16px;
-  background: linear-gradient(120deg, var(--tr-celeste-claro), #f5faf8);
+
+  background: linear-gradient(
+    120deg,
+    #e2f0f3 0%,
+    #f4faf6 100%
+  );
+
+  box-shadow: 0 5px 15px rgba(49, 86, 78, 0.08);
+
   transition:
+    transform var(--tr-transicion),
     border-color var(--tr-transicion),
-    box-shadow var(--tr-transicion),
-    transform var(--tr-transicion);
+    box-shadow var(--tr-transicion);
 }
 
+/* Efecto hover de la introducción */
+
 .pasantias-introduccion:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+
   border-color: var(--tr-detalle);
-  box-shadow: var(--tr-sombra);
+
+  box-shadow: 0 13px 26px rgba(49, 86, 78, 0.13);
 }
+
+/* Icono de introducción */
 
 .pasantias-intro-icono {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
   width: 54px;
   height: 54px;
+
   border-radius: 14px;
+
   background: var(--tr-verde);
   color: white;
+
   font-size: 1.5rem;
+
+  transition:
+    transform var(--tr-transicion),
+    box-shadow var(--tr-transicion);
 }
+
+.pasantias-introduccion:hover .pasantias-intro-icono {
+  transform: rotate(-6deg) scale(1.08);
+  box-shadow: 0 6px 13px rgba(49, 86, 78, 0.18);
+}
+
+/* Título de introducción */
 
 .pasantias-introduccion h3 {
   margin: 2px 0 9px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.45rem;
 }
 
+/* Texto de introducción */
+
 .pasantias-introduccion p {
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.88rem;
   line-height: 1.8;
 }
 
-/* Cuatro tarjetas informativas */
+/* Distribución de las tarjetas de pasantías */
 
 .pasantias-grid {
   display: grid;
@@ -886,12 +1371,23 @@
   gap: 18px;
 }
 
+/* Tarjeta individual */
+
 .pasantia-card {
   min-width: 0;
   padding: 24px;
-  border: 1px solid rgba(121, 163, 177, 0.65);
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
   border-radius: 15px;
-  background: var(--tr-crema);
+
+  background: linear-gradient(
+    155deg,
+    #ffffff 0%,
+    #f7faf7 100%
+  );
+
+  box-shadow: 0 5px 15px rgba(49, 86, 78, 0.09);
+
   transition:
     transform var(--tr-transicion),
     border-color var(--tr-transicion),
@@ -899,115 +1395,199 @@
     background var(--tr-transicion);
 }
 
+/* Efecto hover */
+
 .pasantia-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px);
+
   border-color: var(--tr-verde);
   background: #ffffff;
-  box-shadow: var(--tr-sombra-hover);
+
+  box-shadow:
+    0 16px 30px rgba(49, 86, 78, 0.15),
+    0 4px 10px rgba(49, 86, 78, 0.06);
 }
+
+/* Icono de cada tarjeta */
 
 .pasantia-icono {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 45px;
   height: 45px;
+
   margin-bottom: 17px;
+
   border-radius: 12px;
+
   background: var(--tr-celeste);
   color: var(--tr-verde);
+
   font-size: 1.25rem;
+
   transition:
     transform var(--tr-transicion),
     background var(--tr-transicion),
-    color var(--tr-transicion);
+    color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
 }
 
+/* Animación del icono */
+
 .pasantia-card:hover .pasantia-icono {
-  transform: scale(1.08) rotate(-5deg);
+  transform: scale(1.12) rotate(-7deg);
+
   background: var(--tr-verde);
   color: white;
+
+  box-shadow: 0 5px 12px rgba(49, 86, 78, 0.15);
 }
+
+/* Título de la tarjeta */
 
 .pasantia-card h3 {
   margin: 0 0 10px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.35rem;
   font-weight: 600;
 }
 
+/* Descripción */
+
 .pasantia-card p {
   margin: 0 0 14px;
+
   color: var(--tr-texto-secundario);
   font-size: 0.85rem;
   line-height: 1.75;
 }
 
+/* Listado de información */
+
 .pasantia-card ul {
   display: flex;
   flex-direction: column;
   gap: 9px;
+
   margin: 0;
   padding: 0;
+
   list-style: none;
 }
 
+/* Elementos del listado */
+
 .pasantia-card li {
   position: relative;
+
   display: flex;
   align-items: flex-start;
   gap: 10px;
+
   color: var(--tr-texto);
   font-size: 0.84rem;
   line-height: 1.55;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
 }
+
+.pasantia-card li:hover {
+  transform: translateX(4px);
+  color: var(--tr-verde);
+}
+
+/* Viñetas personalizadas */
 
 .pasantia-card li::before {
   content: "";
+
   flex-shrink: 0;
+
   width: 7px;
   height: 7px;
+
   margin-top: 6px;
+
   border-radius: 50%;
   background: var(--tr-detalle);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
-/* Bloque destacado de duración */
+.pasantia-card li:hover::before {
+  transform: scale(1.35);
+  background: var(--tr-verde);
+}
+
+/* Bloque que destaca la duración */
 
 .pasantias-duracion {
   display: flex;
   align-items: center;
   gap: 20px;
+
   margin-top: 22px;
   padding: 25px;
+
   border: 1px solid var(--tr-borde);
   border-radius: 15px;
-  background: var(--tr-celeste-claro);
+
+  background: linear-gradient(
+    115deg,
+    #e0eff2 0%,
+    #f2f8f3 100%
+  );
+
+  box-shadow: 0 5px 15px rgba(49, 86, 78, 0.08);
+
   transition:
+    transform var(--tr-transicion),
     border-color var(--tr-transicion),
-    box-shadow var(--tr-transicion),
-    transform var(--tr-transicion);
+    box-shadow var(--tr-transicion);
 }
 
 .pasantias-duracion:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px);
+
   border-color: var(--tr-detalle);
-  box-shadow: var(--tr-sombra);
+
+  box-shadow: 0 13px 26px rgba(49, 86, 78, 0.13);
 }
+
+/* Icono de duración */
 
 .pasantias-duracion-icono {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
   width: 58px;
   height: 58px;
+
   border-radius: 15px;
+
   background: var(--tr-verde);
   color: white;
+
   font-size: 1.6rem;
+
+  transition: transform var(--tr-transicion);
 }
+
+.pasantias-duracion:hover .pasantias-duracion-icono {
+  transform: rotate(-7deg) scale(1.08);
+}
+
+/* Etiqueta de duración */
 
 .pasantias-duracion-etiqueta {
   color: var(--tr-detalle);
@@ -1016,32 +1596,42 @@
   letter-spacing: 1.5px;
 }
 
+/* Título de duración */
+
 .pasantias-duracion h3 {
   margin: 5px 0 8px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.65rem;
 }
 
+/* Descripción de duración */
+
 .pasantias-duracion p {
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.86rem;
   line-height: 1.75;
 }
 
-/* Aclaración sobre las actividades escolares */
+/* Aclaración adicional */
 
 .pasantias-aclaracion {
   display: flex;
   align-items: flex-start;
   gap: 15px;
+
   margin-top: 18px;
   padding: 22px 24px;
+
   border: 1px solid rgba(121, 163, 177, 0.5);
   border-left: 4px solid var(--tr-verde);
   border-radius: 12px;
+
   background: #f5faf8;
+
   transition:
     border-color var(--tr-transicion),
     box-shadow var(--tr-transicion),
@@ -1054,102 +1644,850 @@
   box-shadow: var(--tr-sombra);
 }
 
+/* Icono de aclaración */
+
 .pasantias-aclaracion > i {
   flex-shrink: 0;
+
   margin-top: 2px;
+
   color: var(--tr-verde);
   font-size: 1.3rem;
 }
 
+/* Título de aclaración */
+
 .pasantias-aclaracion h3 {
   margin: 0 0 7px;
+
   color: var(--tr-verde);
   font-family: "Oswald", sans-serif;
   font-size: 1.2rem;
 }
 
+/* Texto de aclaración */
+
 .pasantias-aclaracion p {
   margin: 0;
+
   color: var(--tr-texto-secundario);
   font-size: 0.85rem;
   line-height: 1.75;
 }
 
+
 /* ==========================================================
-   SECCIONES PENDIENTES
+   10. SECCIÓN 4 - MESAS DE EXAMEN Y POEC
    ========================================================== */
 
-.seccion-pendiente {
+/* Desplazamiento al navegar hacia la sección */
+
+.seccion-mesas-poec {
   scroll-margin-top: 25px;
 }
 
-.contenido-pendiente {
+/* ----------------------------------------------------------
+   SUBTÍTULOS INTERNOS
+   ---------------------------------------------------------- */
+
+.mesas-subtitulo {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  margin: 35px 0 20px;
+}
+
+/* Icono de los subtítulos */
+
+.mesas-subtitulo-icono {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 13px;
+
+  background: var(--tr-celeste);
+  color: var(--tr-verde);
+
+  font-size: 1.3rem;
+}
+
+/* Título */
+
+.mesas-subtitulo h3 {
+  margin: 0 0 6px;
+
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+}
+
+/* Descripción */
+
+.mesas-subtitulo p {
+  margin: 0;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+
+/* ----------------------------------------------------------
+   SITUACIONES DE EXAMEN
+   ---------------------------------------------------------- */
+
+/* Distribución de las cuatro situaciones */
+
+.situaciones-examen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Tarjeta individual de situación */
+
+.situacion-examen-card {
+  min-width: 0;
+  padding: 24px;
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
+  border-radius: 15px;
+
+  background: linear-gradient(
+    150deg,
+    #ffffff 0%,
+    #f8fbf7 100%
+  );
+
+  box-shadow: 0 5px 15px rgba(49, 86, 78, 0.08);
+
+  transition:
+    transform var(--tr-transicion),
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    background var(--tr-transicion);
+}
+
+/* Efecto hover */
+
+.situacion-examen-card:hover {
+  transform: translateY(-7px);
+
+  border-color: var(--tr-verde);
+  background: #ffffff;
+
+  box-shadow: 0 16px 30px rgba(49, 86, 78, 0.14);
+}
+
+/* Fila superior de cada tarjeta */
+
+.situacion-examen-superior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 17px;
+}
+
+/* Icono de cada situación */
+
+.situacion-examen-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+
+  border-radius: 13px;
+
+  background: var(--tr-celeste);
+  color: var(--tr-verde);
+
+  font-size: 1.3rem;
+
+  transition:
+    transform var(--tr-transicion),
+    background var(--tr-transicion),
+    color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
+}
+
+/* Animación del icono */
+
+.situacion-examen-card:hover .situacion-examen-icono {
+  transform: scale(1.12) rotate(-5deg);
+
+  background: var(--tr-verde);
+  color: white;
+
+  box-shadow: 0 5px 12px rgba(49, 86, 78, 0.14);
+}
+
+/* Número de situación */
+
+.situacion-examen-numero {
+  color: var(--tr-detalle);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* Título de cada situación */
+
+.situacion-examen-card h4 {
+  margin: 0 0 10px;
+
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Descripción de cada situación */
+
+.situacion-examen-card p {
+  margin: 0;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+
+
+/* ----------------------------------------------------------
+   BOTÓN ÚNICO DE INSCRIPCIÓN A MESAS
+   ---------------------------------------------------------- */
+
+/* Contenedor centrado debajo de las cuatro tarjetas.
+   El botón se coloca una sola vez en el JSX,
+   después de .situaciones-examen-grid. */
+
+.mesas-formulario-contenedor {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  margin-top: 32px;
+}
+
+/* Apariencia del botón de inscripción */
+
+.btn-formulario-mesas {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  text-align: center;
+}
+
+/* Movimiento del icono al interactuar */
+
+.btn-formulario-mesas i {
+  transition: transform var(--tr-transicion);
+}
+
+.btn-formulario-mesas:hover i {
+  transform: translate(3px, -3px);
+}
+
+
+/* ----------------------------------------------------------
+   PERÍODOS DE EXAMEN
+   ---------------------------------------------------------- */
+
+.mesas-periodos {
+  margin-top: 38px;
+}
+
+/* El primer subtítulo de este bloque no necesita
+   el margen superior general. */
+
+.mesas-periodos > .mesas-subtitulo {
+  margin-top: 0;
+}
+
+/* Distribución del contenido */
+
+.periodos-contenido {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: stretch;
+  gap: 20px;
+}
+
+/* Bloque de texto */
+
+.periodos-texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 13px;
+
+  padding: 24px;
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
+  border-radius: 15px;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #f6faf7 100%
+  );
+
+  box-shadow: 0 4px 12px rgba(49, 86, 78, 0.08);
+
+  transition:
+    transform var(--tr-transicion),
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
+}
+
+/* Efecto hover */
+
+.periodos-texto:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--tr-verde);
+
+  box-shadow: 0 13px 25px rgba(49, 86, 78, 0.12);
+}
+
+/* Párrafos del bloque */
+
+.periodos-texto p {
+  margin: 0;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.87rem;
+  line-height: 1.85;
+}
+
+/* Tarjeta destacada */
+
+.periodos-destacado {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  padding: 24px;
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
+  border-radius: 15px;
+
+  background: linear-gradient(
+    135deg,
+    #e4f1f4 0%,
+    #f3f9f5 100%
+  );
+
+  box-shadow: 0 4px 12px rgba(49, 86, 78, 0.08);
+
+  transition:
+    transform var(--tr-transicion),
+    box-shadow var(--tr-transicion),
+    border-color var(--tr-transicion);
+}
+
+/* Efecto hover */
+
+.periodos-destacado:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--tr-verde);
+
+  box-shadow: 0 13px 25px rgba(49, 86, 78, 0.13);
+}
+
+/* Icono de la tarjeta */
+
+.periodos-destacado > i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 43px;
+  height: 43px;
+
+  border-radius: 12px;
+
+  background: var(--tr-verde);
+  color: white;
+
+  font-size: 1.2rem;
+
+  transition: transform var(--tr-transicion);
+}
+
+.periodos-destacado:hover > i {
+  transform: rotate(-7deg) scale(1.1);
+}
+
+/* Título */
+
+.periodos-destacado h4 {
+  margin: 0 0 8px;
+
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.15rem;
+}
+
+/* Descripción */
+
+.periodos-destacado p {
+  margin: 0;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.83rem;
+  line-height: 1.75;
+}
+
+
+/* ----------------------------------------------------------
+   BLOQUE POEC
+   ---------------------------------------------------------- */
+
+/* Contenedor principal */
+
+.poec-bloque {
+  margin-top: 38px;
+  padding: 27px;
+
+  border: 1px solid var(--tr-borde);
+  border-radius: 17px;
+
+  background: linear-gradient(
+    125deg,
+    #e3f0f3 0%,
+    #f3f9f5 100%
+  );
+
+  box-shadow: 0 5px 15px rgba(49, 86, 78, 0.08);
+
+  transition:
+    transform var(--tr-transicion),
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
+}
+
+/* Efecto hover */
+
+.poec-bloque:hover {
+  transform: translateY(-4px);
+
+  border-color: var(--tr-detalle);
+
+  box-shadow: 0 13px 26px rgba(49, 86, 78, 0.13);
+}
+
+/* Encabezado del bloque */
+
+.poec-encabezado {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid var(--tr-borde);
+}
+
+/* Icono principal */
+
+.poec-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 15px;
+
+  background: var(--tr-verde);
+  color: white;
+
+  font-size: 1.7rem;
+}
+
+/* Etiqueta */
+
+.poec-etiqueta {
+  color: var(--tr-detalle);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+/* Título */
+
+.poec-encabezado h3 {
+  margin: 3px 0 5px;
+
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Descripción */
+
+.poec-encabezado p {
+  margin: 0;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.87rem;
+  line-height: 1.6;
+}
+
+/* Distribución del contenido */
+
+.poec-contenido {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+
+  padding-top: 22px;
+}
+
+/* Título de la explicación */
+
+.poec-explicacion h4 {
+  margin: 0 0 10px;
+
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.2rem;
+}
+
+/* Texto explicativo */
+
+.poec-explicacion p {
+  margin: 0;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.87rem;
+  line-height: 1.85;
+}
+
+/* Listado de condiciones */
+
+.poec-condiciones {
+  display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 180px;
-  padding: 30px;
-  border: 1px dashed var(--tr-borde);
-  border-radius: 15px;
-  background: var(--tr-celeste-claro);
-  text-align: center;
+}
+
+/* Tarjeta de cada condición */
+
+.poec-condicion {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  padding: 14px;
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
+  border-radius: 11px;
+
+  background: #fffefa;
+
+  box-shadow: 0 3px 9px rgba(49, 86, 78, 0.05);
+
   transition:
+    transform var(--tr-transicion),
     border-color var(--tr-transicion),
     background var(--tr-transicion),
     box-shadow var(--tr-transicion);
 }
 
-.contenido-pendiente:hover {
+/* Efecto hover */
+
+.poec-condicion:hover {
+  transform: translateX(4px);
+
   border-color: var(--tr-verde);
-  background: #e3f1f4;
-  box-shadow: var(--tr-sombra);
+  background: #ffffff;
+
+  box-shadow: 0 6px 14px rgba(49, 86, 78, 0.1);
 }
 
-.contenido-pendiente i {
+/* Icono de condición */
+
+.poec-condicion > i {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
   color: var(--tr-detalle);
-  font-size: 2rem;
+  font-size: 1.15rem;
+
+  transition:
+    transform var(--tr-transicion),
+    color var(--tr-transicion);
+}
+
+.poec-condicion:hover > i {
+  transform: scale(1.15);
+  color: var(--tr-verde);
+}
+
+/* Contenido textual de la condición */
+
+.poec-condicion div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Texto destacado */
+
+.poec-condicion strong {
+  color: var(--tr-verde);
+  font-size: 0.84rem;
+}
+
+/* Descripción de la condición */
+
+.poec-condicion span {
+  color: var(--tr-texto-secundario);
+  font-size: 0.81rem;
+  line-height: 1.6;
+}
+
+
+/* ----------------------------------------------------------
+   RECOMENDACIONES ANTES DE RENDIR
+   ---------------------------------------------------------- */
+
+/* Contenedor de recomendaciones */
+
+.mesas-recomendaciones {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+
+  margin-top: 25px;
+  padding: 25px;
+
+  border: 1px solid rgba(91, 137, 130, 0.38);
+  border-radius: 15px;
+
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #f5faf7 100%
+  );
+
+  box-shadow: 0 4px 12px rgba(49, 86, 78, 0.08);
+
+  transition:
+    transform var(--tr-transicion),
+    border-color var(--tr-transicion),
+    box-shadow var(--tr-transicion);
+}
+
+/* Efecto hover */
+
+.mesas-recomendaciones:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--tr-verde);
+
+  box-shadow: 0 13px 25px rgba(49, 86, 78, 0.12);
+}
+
+/* Icono de recomendaciones */
+
+.mesas-recomendaciones-icono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 49px;
+  height: 49px;
+
+  border-radius: 13px;
+
+  background: var(--tr-celeste);
+  color: var(--tr-verde);
+
+  font-size: 1.35rem;
+
   transition: transform var(--tr-transicion);
 }
 
-.contenido-pendiente:hover i {
-  transform: translateY(-4px);
+/* Animación del icono */
+
+.mesas-recomendaciones:hover .mesas-recomendaciones-icono {
+  transform: rotate(-6deg) scale(1.08);
 }
 
-.contenido-pendiente p {
-  margin: 0;
-  color: var(--tr-texto-secundario);
-  font-size: 0.9rem;
+/* Título */
+
+.mesas-recomendaciones-contenido h3 {
+  margin: 1px 0 7px;
+
+  color: var(--tr-verde);
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
 }
+
+/* Descripción */
+
+.mesas-recomendaciones-contenido > p {
+  margin: 0 0 15px;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.86rem;
+  line-height: 1.7;
+}
+
+/* Listado de recomendaciones */
+
+.mesas-recomendaciones-contenido ul {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* Elementos del listado */
+
+.mesas-recomendaciones-contenido li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.84rem;
+  line-height: 1.65;
+}
+
+/* Iconos del listado */
+
+.mesas-recomendaciones-contenido li i {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: var(--tr-detalle);
+  font-size: 1rem;
+}
+
+
+/* ----------------------------------------------------------
+   NOTA FINAL
+   ---------------------------------------------------------- */
+
+/* Aclaración ubicada al final de la sección */
+
+.mesas-nota-final {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin-top: 18px;
+  padding: 18px 21px;
+
+  border-left: 4px solid var(--tr-verde);
+  border-radius: 10px;
+
+  background: #f5faf8;
+}
+
+/* Icono de la nota */
+
+.mesas-nota-final > i {
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  color: var(--tr-verde);
+  font-size: 1.1rem;
+}
+
+/* Texto de la nota */
+
+.mesas-nota-final p {
+  margin: 0;
+
+  color: var(--tr-texto-secundario);
+  font-size: 0.82rem;
+  line-height: 1.75;
+}
+
 
 /* ==========================================================
-   RESPONSIVE - TABLETS
+   11. ACCESIBILIDAD Y ESTADOS DE INTERACCIÓN
    ========================================================== */
 
+/* Foco visible al navegar con teclado.
+   Permite identificar qué enlace o botón está seleccionado. */
+
+.acceso-card:focus-visible,
+.btn-cronograma:focus-visible {
+  outline: 3px solid var(--tr-detalle);
+  outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   12. RESPONSIVE - TABLETS
+   ========================================================== */
+
+/* Ajustes para pantallas de hasta 900 px */
+
 @media (max-width: 900px) {
+
+  /* Los accesos pasan a dos columnas */
+
   .accesos-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* Se reduce el espacio interior de la portada */
+
   .trayectos-portada {
     padding: 40px;
   }
+
+  /* Ajustes del resumen */
 
   .trayectos-resumen {
     gap: 25px;
     padding: 28px;
   }
 
+  /* Los horarios pasan a dos columnas */
+
   .materias-turnos-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* La última tarjeta ocupa todo el ancho */
 
   .materias-turno-card:last-child {
     grid-column: 1 / -1;
   }
 
-  /* En horarios de taller se mantienen dos columnas */
+  /* Los horarios de taller mantienen dos columnas */
 
   .talleres-turnos-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1158,16 +2496,35 @@
   .talleres-turnos-grid .materias-turno-card:last-child {
     grid-column: auto;
   }
+
+  /* Los períodos se organizan en una sola columna */
+
+  .periodos-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  /* El contenido POEC también se apila */
+
+  .poec-contenido {
+    grid-template-columns: 1fr;
+  }
 }
 
+
 /* ==========================================================
-   RESPONSIVE - CELULARES
+   13. RESPONSIVE - CELULARES
    ========================================================== */
 
+/* Ajustes para pantallas de hasta 650 px */
+
 @media (max-width: 650px) {
+
+  /* ---------------- PORTADA ---------------- */
+
   .trayectos-portada {
     width: 92%;
     min-height: 300px;
+
     margin-top: 20px;
     padding: 30px 25px;
   }
@@ -1185,17 +2542,25 @@
     font-size: 0.85rem;
   }
 
+  /* El paisaje se vuelve más discreto */
+
   .portada-imagenes {
     right: -18%;
     width: 75%;
     opacity: 0.35;
   }
 
+
+  /* ---------------- CONTENEDORES ---------------- */
+
   .trayectos-accesos,
   .trayectos-resumen,
   .trayectos-seccion {
     width: 90%;
   }
+
+
+  /* ---------------- ACCESOS ---------------- */
 
   .accesos-grid {
     grid-template-columns: 1fr;
@@ -1205,6 +2570,9 @@
     min-height: 175px;
   }
 
+
+  /* ---------------- RESUMEN ---------------- */
+
   .trayectos-resumen {
     grid-template-columns: 1fr;
     gap: 22px;
@@ -1213,14 +2581,22 @@
 
   .resumen-datos {
     grid-template-columns: 1fr 1fr;
+
     padding: 20px 0 0;
+
     border-top: 1px solid var(--tr-borde);
     border-left: none;
   }
 
+
+  /* ---------------- SECCIONES ---------------- */
+
   .trayectos-seccion {
     padding: 40px 0;
   }
+
+
+  /* ---------------- TALLERES ---------------- */
 
   .talleres-organizacion {
     grid-template-columns: 1fr;
@@ -1234,6 +2610,13 @@
     padding: 21px;
   }
 
+  .taller-listado ul {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* ---------------- HORARIOS ---------------- */
+
   .materias-horarios {
     padding: 19px;
   }
@@ -1246,7 +2629,8 @@
     grid-column: auto;
   }
 
-  /* En móvil las tarjetas de taller también se apilan */
+  /* En celulares los horarios de taller también
+     se organizan en una sola columna. */
 
   .talleres-turnos-grid {
     grid-template-columns: 1fr;
@@ -1256,6 +2640,9 @@
     grid-column: auto;
   }
 
+
+  /* ---------------- MATERIAS ---------------- */
+
   .materias-listado ul {
     grid-template-columns: 1fr;
   }
@@ -1264,13 +2651,15 @@
     padding: 15px;
   }
 
-  /* Botón independiente en móvil */
+
+  /* ---------------- BOTÓN CRONOGRAMA ---------------- */
 
   .talleres-cronograma {
     justify-content: center;
   }
 
-  /* Pasantías en móvil */
+
+  /* ---------------- PASANTÍAS ---------------- */
 
   .pasantias-introduccion {
     flex-direction: column;
@@ -1305,50 +2694,161 @@
   .pasantias-aclaracion {
     padding: 19px;
   }
-}
 
-/* ==========================================================
-   PANTALLAS MUY PEQUEÑAS
-   ========================================================== */
 
-@media (max-width: 380px) {
-  .taller-listado ul {
+  /* ---------------- MESAS Y POEC ---------------- */
+
+  .situaciones-examen-grid {
     grid-template-columns: 1fr;
   }
+
+  .mesas-subtitulo {
+    gap: 12px;
+  }
+
+  .mesas-subtitulo h3 {
+    font-size: 1.25rem;
+  }
+
+  .periodos-texto,
+  .periodos-destacado {
+    padding: 20px;
+  }
+
+  .poec-bloque {
+    padding: 20px;
+  }
+
+  .poec-contenido {
+    gap: 20px;
+  }
+
+  .mesas-recomendaciones {
+    gap: 13px;
+    padding: 20px;
+  }
+
+  .mesas-nota-final {
+    padding: 16px;
+  }
+
+
+  /* ---------------- INSCRIPCIÓN A MESAS ---------------- */
+
+  .mesas-formulario-contenedor {
+    margin-top: 24px;
+  }
+
+  .btn-formulario-mesas {
+    width: 100%;
+  }
+}
+
+
+/* ==========================================================
+   14. RESPONSIVE - PANTALLAS MUY PEQUEÑAS
+   ========================================================== */
+
+/* Ajustes adicionales para dispositivos de hasta 380 px */
+
+@media (max-width: 380px) {
+
+  /* Resumen: una columna */
 
   .resumen-datos {
     grid-template-columns: 1fr;
   }
+
+  /* Organización de talleres */
 
   .organizacion-item {
     flex-direction: column;
     gap: 8px;
   }
 
+  /* Encabezado de horarios */
+
   .materias-horarios-encabezado {
     align-items: flex-start;
   }
+
+  /* Duración de pasantías */
 
   .pasantias-duracion {
     flex-direction: column;
   }
 
+  /* Aclaración de pasantías */
+
   .pasantias-aclaracion {
     gap: 10px;
   }
+
+  /* Subtítulos de mesas */
+
+  .mesas-subtitulo {
+    flex-direction: column;
+  }
+
+  /* Tarjeta destacada de períodos */
+
+  .periodos-destacado {
+    flex-direction: column;
+  }
+
+  /* Encabezado POEC */
+
+  .poec-encabezado {
+    align-items: flex-start;
+  }
+
+  /* Recomendaciones */
+
+  .mesas-recomendaciones {
+    flex-direction: column;
+  }
 }
 
+
 /* ==========================================================
-   ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+   15. DISPOSITIVOS TÁCTILES
    ========================================================== */
 
+/* En pantallas táctiles no existe un hover tradicional.
+   Se utiliza una pequeña respuesta visual al presionar
+   enlaces y botones interactivos. */
+
+@media (hover: none) {
+
+  .acceso-card:active,
+  .btn-cronograma:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 13px rgba(49, 86, 78, 0.12);
+  }
+}
+
+
+/* ==========================================================
+   16. ACCESIBILIDAD - MOVIMIENTO REDUCIDO
+   ========================================================== */
+
+/* Respeta la preferencia del sistema operativo de las
+   personas que necesitan reducir las animaciones. */
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+
+  .trayectos-page *,
+  .trayectos-page *::before,
+  .trayectos-page *::after {
     scroll-behavior: auto !important;
+
     transition-duration: 0.01ms !important;
+
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
 }
+
+/* ==========================================================
+   FIN DE TRAYECTOS FORMATIVOS - EPET N.º 20
+   ========================================================== */

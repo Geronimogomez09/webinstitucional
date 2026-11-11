@@ -3,6 +3,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/TrayectosFormativos.css";
 
+// ==========================================================
+// DATOS DE LA PÁGINA
+// Los siguientes arreglos contienen la información que se
+// muestra en las distintas secciones del componente.
+// Para actualizar textos, nombres o elementos, modificar aquí.
+// ==========================================================
+
+// ----------------------------------------------------------
+// 1. Accesos rápidos a las secciones
+// ----------------------------------------------------------
+
 const accesos = [
   {
     numero: "01",
@@ -31,12 +42,16 @@ const accesos = [
   {
     numero: "04",
     icono: "bi-calendar-check",
-    titulo: "Mesas de examen y POEC",
+    titulo: "Mesas de examen y POEC/IFCA",
     descripcion: "Encontrá información sobre las instancias de evaluación.",
     destino: "#mesas-poec",
-    boton: "Ver información",
+    boton: "Mesas de examen y POEC/IFCA",
   },
 ];
+
+// ----------------------------------------------------------
+// 2. Talleres correspondientes a cada año
+// ----------------------------------------------------------
 
 const talleresPorAnio = [
   {
@@ -76,6 +91,10 @@ const talleresPorAnio = [
     ],
   },
 ];
+
+// ----------------------------------------------------------
+// 3. Materias teóricas y actividades extracurriculares
+// ----------------------------------------------------------
 
 const materiasPorAnio = [
   {
@@ -146,10 +165,7 @@ const materiasPorAnio = [
       "Informática",
       "Dibujo técnico",
     ],
-    extracurriculares: [
-      "Educación Física",
-      "Taller",
-    ],
+    extracurriculares: ["Educación Física", "Taller"],
   },
   {
     anio: "4.º",
@@ -167,10 +183,7 @@ const materiasPorAnio = [
       "Base de datos",
       "Sociología de los trabajos",
     ],
-    extracurriculares: [
-      "Taller",
-      "Educación Física",
-    ],
+    extracurriculares: ["Taller", "Educación Física"],
   },
   {
     anio: "5.º",
@@ -204,28 +217,68 @@ const materiasPorAnio = [
       "Introducción a la automatización y control",
       "Inglés técnico III",
     ],
-    extracurriculares: [
-      "Taller",
-      "Educación Física",
-      "Pasantías",
-    ],
+    extracurriculares: ["Taller", "Educación Física", "Pasantías"],
   },
 ];
+
+// ----------------------------------------------------------
+// 4. Docentes responsables de las pasantías
+// ----------------------------------------------------------
 
 const docentesPasantias = [
   "Enrique Zoppi",
   "Silvio Estenta",
-  "Agustina Avilez",
-  "Juan Canavidez",
 ];
+
+// ----------------------------------------------------------
+// 5. Situaciones contempladas en las mesas de examen
+// ----------------------------------------------------------
+
+const situacionesExamen = [
+  {
+    numero: "01",
+    icono: "bi-mortarboard",
+    titulo: "Finalización de estudios",
+    descripcion:
+      "Está destinada a estudiantes que ya finalizaron el cursado y egresaron, pero todavía tienen materias pendientes de aprobación para completar sus estudios.",
+  },
+  {
+    numero: "02",
+    icono: "bi-journal-bookmark",
+    titulo: "Materias previas",
+    descripcion:
+      "Corresponde a estudiantes que adeudan materias de años anteriores y deben rendirlas en la misma institución para regularizar su trayectoria escolar.",
+  },
+  {
+    numero: "03",
+    icono: "bi-person-plus",
+    titulo: "Exámenes libres",
+    descripcion:
+      "Es la instancia para quienes provienen de otra institución y necesitan rendir una materia que no cursaron en la EPET N.º 20, de acuerdo con su situación académica. También se consideran en esta modalidad las materias que continúan pendientes de aprobación cuando el estudiante ya egresó y han transcurrido más de dos años desde su egreso.",
+  },
+  {
+    numero: "04",
+    icono: "bi-arrow-left-right",
+    titulo: "Equivalencias",
+    descripcion:
+      "Se utiliza cuando una materia aprobada o pendiente en otra escuela tiene correspondencia con un espacio curricular de la EPET N.º 20. La institución evalúa si corresponde reconocerla o si debe rendirse aquí.",
+  },
+];
+
+// ==========================================================
+// COMPONENTE PRINCIPAL
+// Organiza y presenta todas las secciones de Trayectos
+// Formativos de la institución.
+// ==========================================================
 
 function TrayectosFormativos() {
   return (
     <main className="trayectos-page">
 
-      {/* ==========================================
+      {/* ==================================================
           SECCIÓN 0 - PRESENTACIÓN
-      ========================================== */}
+          Portada principal con título, descripción e imagen.
+      ================================================== */}
 
       <section className="trayectos-portada">
         <div className="portada-texto">
@@ -233,7 +286,11 @@ function TrayectosFormativos() {
             TRAYECTOS FORMATIVOS
           </span>
 
-          <h1>Tu formación,<br />paso a paso</h1>
+          <h1>
+            Tu formación,
+            <br />
+            paso a paso
+          </h1>
 
           <p>
             Conocé el recorrido educativo de nuestra escuela:
@@ -241,6 +298,8 @@ function TrayectosFormativos() {
             que acompañan tu formación técnica.
           </p>
         </div>
+
+        {/* Elementos gráficos decorativos de la portada */}
 
         <div className="portada-imagenes" aria-hidden="true">
           <div className="paisaje paisaje-principal">
@@ -257,9 +316,10 @@ function TrayectosFormativos() {
         </div>
       </section>
 
-      {/* ==========================================
-          ACCESOS A LAS SECCIONES
-      ========================================== */}
+      {/* ==================================================
+          ACCESOS RÁPIDOS
+          Tarjetas que permiten desplazarse a cada sección.
+      ================================================== */}
 
       <section className="trayectos-accesos">
         <div className="accesos-grid">
@@ -292,13 +352,16 @@ function TrayectosFormativos() {
         </div>
       </section>
 
-      {/* ==========================================
-          BLOQUE INFORMATIVO INFERIOR
-      ========================================== */}
+      {/* ==================================================
+          BLOQUE INFORMATIVO
+          Resumen general de la formación institucional.
+      ================================================== */}
 
       <section className="trayectos-resumen">
         <div className="resumen-texto">
-          <span className="seccion-etiqueta">NUESTRA ESCUELA</span>
+          <span className="seccion-etiqueta">
+            NUESTRA ESCUELA
+          </span>
 
           <h2>Una formación para cada etapa</h2>
 
@@ -332,16 +395,19 @@ function TrayectosFormativos() {
         </div>
       </section>
 
-      {/* ==========================================
+      {/* ==================================================
           SECCIÓN 1 - TALLERES Y ROTACIONES
-      ========================================== */}
+          Información de los espacios de formación práctica.
+      ================================================== */}
 
       <section
         id="talleres"
         className="trayectos-seccion seccion-talleres"
       >
         <div className="seccion-encabezado">
-          <span className="seccion-etiqueta">01 / FORMACIÓN PRÁCTICA</span>
+          <span className="seccion-etiqueta">
+            01 / FORMACIÓN PRÁCTICA
+          </span>
 
           <h2>Talleres y rotaciones</h2>
 
@@ -352,11 +418,15 @@ function TrayectosFormativos() {
           </p>
         </div>
 
+        {/* Organización de las rotaciones según el ciclo */}
+
         <div className="talleres-organizacion">
           <div className="organizacion-item">
             <span className="organizacion-numero">01 — 03</span>
+
             <div>
               <h3>De 1.º a 3.º año</h3>
+
               <p>
                 Los estudiantes realizan rotaciones por los distintos
                 talleres cada dos meses. Al finalizar cada período,
@@ -367,8 +437,10 @@ function TrayectosFormativos() {
 
           <div className="organizacion-item">
             <span className="organizacion-numero">04 — 06</span>
+
             <div>
               <h3>De 4.º a 6.º año</h3>
+
               <p>
                 Los talleres se intercalan durante los distintos días
                 de la semana. Los estudiantes participan en diferentes
@@ -379,13 +451,15 @@ function TrayectosFormativos() {
           </div>
         </div>
 
-        {/* HORARIOS GENERALES DE TALLER */}
+        {/* Horarios generales de los talleres */}
 
         <div className="materias-horarios talleres-horarios">
           <div className="materias-horarios-encabezado">
             <i className="bi bi-clock"></i>
+
             <div>
               <h3>Horarios de taller</h3>
+
               <p>
                 Los horarios pueden corresponder al turno mañana o tarde,
                 según el grupo asignado.
@@ -398,7 +472,9 @@ function TrayectosFormativos() {
               <span className="materias-turno-etiqueta">
                 TODOS LOS AÑOS
               </span>
+
               <h4>Turno mañana</h4>
+
               <p>
                 <i className="bi bi-sun"></i>
                 8:00 a 11:20 hs.
@@ -409,7 +485,9 @@ function TrayectosFormativos() {
               <span className="materias-turno-etiqueta">
                 TODOS LOS AÑOS
               </span>
+
               <h4>Turno tarde</h4>
+
               <p>
                 <i className="bi bi-sunset"></i>
                 13:30 a 16:50 hs.
@@ -418,11 +496,14 @@ function TrayectosFormativos() {
           </div>
         </div>
 
-        {/* TALLERES POR AÑO */}
+        {/* Listado de talleres organizado por año */}
 
         <div className="talleres-grid">
           {talleresPorAnio.map((anio) => (
-            <article className="taller-anio-card" key={anio.anio}>
+            <article
+              className="taller-anio-card"
+              key={anio.anio}
+            >
               <div className="taller-card-encabezado">
                 <span className="taller-anio-numero">
                   {anio.anio}
@@ -432,6 +513,7 @@ function TrayectosFormativos() {
                   <span className="taller-ciclo">
                     ESPACIOS DE FORMACIÓN
                   </span>
+
                   <h3>{anio.anio} año</h3>
                 </div>
               </div>
@@ -452,28 +534,36 @@ function TrayectosFormativos() {
           ))}
         </div>
 
+        {/* Acceso al cronograma detallado de rotaciones */}
+
         <div className="talleres-cronograma">
           <p>
             ¿Buscás la distribución detallada de las rotaciones?
           </p>
 
-          <Link to="/talleres" className="btn-cronograma">
+          <Link
+            to="/talleres"
+            className="btn-cronograma"
+          >
             Ver cronograma por grupo
             <i className="bi bi-arrow-right"></i>
           </Link>
         </div>
       </section>
 
-      {/* ==========================================
+      {/* ==================================================
           SECCIÓN 2 - MATERIAS TEÓRICAS
-      ========================================== */}
+          Listado de espacios curriculares por año.
+      ================================================== */}
 
       <section
         id="materias"
         className="trayectos-seccion seccion-materias"
       >
         <div className="seccion-encabezado">
-          <span className="seccion-etiqueta">02 / FORMACIÓN ACADÉMICA</span>
+          <span className="seccion-etiqueta">
+            02 / FORMACIÓN ACADÉMICA
+          </span>
 
           <h2>Materias teóricas</h2>
 
@@ -484,11 +574,12 @@ function TrayectosFormativos() {
           </p>
         </div>
 
-        {/* HORARIOS GENERALES */}
+        {/* Horarios generales de las materias */}
 
         <div className="materias-horarios">
           <div className="materias-horarios-encabezado">
             <i className="bi bi-clock"></i>
+
             <div>
               <h3>Organización de los turnos</h3>
               <p>Horarios correspondientes a las materias teóricas.</p>
@@ -497,8 +588,12 @@ function TrayectosFormativos() {
 
           <div className="materias-turnos-grid">
             <article className="materias-turno-card">
-              <span className="materias-turno-etiqueta">1.º A 3.º AÑO</span>
+              <span className="materias-turno-etiqueta">
+                1.º A 3.º AÑO
+              </span>
+
               <h4>Turno mañana</h4>
+
               <p>
                 <i className="bi bi-sun"></i>
                 8:00 a 12:20 hs.
@@ -506,8 +601,12 @@ function TrayectosFormativos() {
             </article>
 
             <article className="materias-turno-card">
-              <span className="materias-turno-etiqueta">1.º A 3.º AÑO</span>
+              <span className="materias-turno-etiqueta">
+                1.º A 3.º AÑO
+              </span>
+
               <h4>Turno tarde</h4>
+
               <p>
                 <i className="bi bi-sunset"></i>
                 13:30 a 17:50 hs.
@@ -515,8 +614,12 @@ function TrayectosFormativos() {
             </article>
 
             <article className="materias-turno-card">
-              <span className="materias-turno-etiqueta">4.º A 6.º AÑO</span>
+              <span className="materias-turno-etiqueta">
+                4.º A 6.º AÑO
+              </span>
+
               <h4>Turno vespertino</h4>
+
               <p>
                 <i className="bi bi-moon-stars"></i>
                 18:00 a 22:20 o 23:00 hs.
@@ -525,7 +628,7 @@ function TrayectosFormativos() {
           </div>
         </div>
 
-        {/* MATERIAS POR AÑO */}
+        {/* Materias y actividades extracurriculares por año */}
 
         <div className="talleres-grid materias-grid">
           {materiasPorAnio.map((anio) => (
@@ -539,10 +642,15 @@ function TrayectosFormativos() {
                 </span>
 
                 <div>
-                  <span className="taller-ciclo">FORMACIÓN ACADÉMICA</span>
+                  <span className="taller-ciclo">
+                    FORMACIÓN ACADÉMICA
+                  </span>
+
                   <h3>{anio.anio} año</h3>
                 </div>
               </div>
+
+              {/* Materias teóricas */}
 
               <div className="taller-listado materias-listado">
                 <h4>
@@ -559,6 +667,8 @@ function TrayectosFormativos() {
                   ))}
                 </ul>
               </div>
+
+              {/* Actividades extracurriculares */}
 
               <div className="taller-listado materias-extracurriculares">
                 <h4>
@@ -580,16 +690,19 @@ function TrayectosFormativos() {
         </div>
       </section>
 
-      {/* ==========================================
-          SECCIÓN 3 - PASANTÍAS
-      ========================================== */}
+      {/* ==================================================
+          SECCIÓN 3 - PERÍODO DE PASANTÍAS
+          Información sobre las prácticas profesionalizantes.
+      ================================================== */}
 
       <section
         id="pasantias"
         className="trayectos-seccion seccion-pasantias"
       >
         <div className="seccion-encabezado">
-          <span className="seccion-etiqueta">03 / EXPERIENCIA FORMATIVA</span>
+          <span className="seccion-etiqueta">
+            03 / EXPERIENCIA FORMATIVA
+          </span>
 
           <h2>Período de pasantías</h2>
 
@@ -601,6 +714,8 @@ function TrayectosFormativos() {
           </p>
         </div>
 
+        {/* Presentación general de las pasantías */}
+
         <div className="pasantias-introduccion">
           <div className="pasantias-intro-icono">
             <i className="bi bi-briefcase"></i>
@@ -608,6 +723,7 @@ function TrayectosFormativos() {
 
           <div>
             <h3>Una experiencia de formación profesional</h3>
+
             <p>
               Esta instancia comienza a introducirse en 5.º año y se
               asigna en 6.º año. Su objetivo es brindar a los estudiantes
@@ -618,7 +734,11 @@ function TrayectosFormativos() {
           </div>
         </div>
 
+        {/* Características principales de las pasantías */}
+
         <div className="pasantias-grid">
+
+          {/* Docentes responsables */}
 
           <article className="pasantia-card">
             <span className="pasantia-icono">
@@ -638,6 +758,8 @@ function TrayectosFormativos() {
             </ul>
           </article>
 
+          {/* Lugares donde pueden realizarse */}
+
           <article className="pasantia-card">
             <span className="pasantia-icono">
               <i className="bi bi-building"></i>
@@ -656,6 +778,8 @@ function TrayectosFormativos() {
             </ul>
           </article>
 
+          {/* Criterios de selección */}
+
           <article className="pasantia-card">
             <span className="pasantia-icono">
               <i className="bi bi-person-check"></i>
@@ -671,6 +795,8 @@ function TrayectosFormativos() {
             </p>
           </article>
 
+          {/* Organización de turnos y períodos */}
+
           <article className="pasantia-card">
             <span className="pasantia-icono">
               <i className="bi bi-calendar-week"></i>
@@ -685,8 +811,9 @@ function TrayectosFormativos() {
               donde realiza sus prácticas.
             </p>
           </article>
-
         </div>
+
+        {/* Duración mínima de las prácticas */}
 
         <div className="pasantias-duracion">
           <div className="pasantias-duracion-icono">
@@ -709,6 +836,8 @@ function TrayectosFormativos() {
           </div>
         </div>
 
+        {/* Aclaración sobre las actividades escolares */}
+
         <div className="pasantias-aclaracion">
           <i className="bi bi-info-circle"></i>
 
@@ -727,31 +856,302 @@ function TrayectosFormativos() {
         </div>
       </section>
 
-      {/* ==========================================
-          SECCIÓN 4 - MESAS Y POEC
-      ========================================== */}
+      {/* ==================================================
+          SECCIÓN 4 - MESAS DE EXAMEN Y POEC/IFCA
+          Información sobre las instancias de evaluación,
+          acreditación y recuperación de materias.
+      ================================================== */}
 
       <section
         id="mesas-poec"
-        className="trayectos-seccion seccion-pendiente"
+        className="trayectos-seccion seccion-mesas-poec"
       >
         <div className="seccion-encabezado">
-          <span className="seccion-etiqueta">04 / EVALUACIONES</span>
-          <h2>Mesas de examen y POEC</h2>
+          <span className="seccion-etiqueta">
+            04 / INSTANCIAS DE EVALUACIÓN
+          </span>
+
+          <h2>Mesas de examen y POEC/IFCA</h2>
+
           <p>
-            Información sobre las instancias de evaluación
-            y los períodos correspondientes.
+            Durante el ciclo lectivo existen diferentes instancias
+            destinadas a la acreditación de materias, la regularización
+            de espacios curriculares pendientes y la recuperación de
+            contenidos. Conocé cuál corresponde a cada situación.
           </p>
         </div>
 
-        <div className="contenido-pendiente">
-          <i className="bi bi-calendar-check"></i>
-          <p>Contenido pendiente de incorporar.</p>
+        {/* --------------------------------------------------
+            4.1 - Situaciones contempladas en las mesas
+        -------------------------------------------------- */}
+
+        <div className="mesas-subtitulo">
+          <span className="mesas-subtitulo-icono">
+            <i className="bi bi-person-lines-fill"></i>
+          </span>
+
+          <div>
+            <h3>¿Cuál es tu situación en una mesa de examen?</h3>
+
+            <p>
+              Las mesas contemplan distintas trayectorias académicas.
+              Identificá la opción que se relaciona con tu situación.
+            </p>
+          </div>
+        </div>
+
+        {/* Tarjetas informativas: una por cada situación */}
+
+        <div className="situaciones-examen-grid">
+          {situacionesExamen.map((situacion) => (
+            <article
+              className="situacion-examen-card"
+              key={situacion.numero}
+            >
+              <div className="situacion-examen-superior">
+                <span className="situacion-examen-icono">
+                  <i className={`bi ${situacion.icono}`}></i>
+                </span>
+
+                <span className="situacion-examen-numero">
+                  {situacion.numero}
+                </span>
+              </div>
+
+              <h4>{situacion.titulo}</h4>
+
+              <p>{situacion.descripcion}</p>
+            </article>
+          ))}
+        </div>
+
+        {/* --------------------------------------------------
+            4.2 - Períodos de examen
+        -------------------------------------------------- */}
+
+        <div className="mesas-periodos">
+          <div className="mesas-subtitulo">
+            <span className="mesas-subtitulo-icono">
+              <i className="bi bi-calendar3"></i>
+            </span>
+
+            <div>
+              <h3>Períodos de examen</h3>
+
+              <p>
+                Las mesas se organizan en diferentes períodos a lo largo
+                del año, de acuerdo con el calendario académico vigente.
+              </p>
+            </div>
+          </div>
+
+          <div className="periodos-contenido">
+            <div className="periodos-texto">
+              <p>
+                A lo largo del ciclo lectivo se habilitan distintas
+                fechas para que los estudiantes puedan presentarse a
+                rendir materias pendientes. La distribución de las mesas
+                puede variar según el tipo de examen y el período
+                establecido por la institución.
+              </p>
+
+              <p>
+                El cronograma anual indica tanto los plazos de pedido
+                o inscripción como las fechas en las que se realizan
+                los exámenes. Es importante distinguir ambas instancias:
+                la fecha de inscripción no es necesariamente la fecha
+                en la que se rinde.
+              </p>
+            </div>
+
+            {/* Recuadro destacado con información importante */}
+
+            <div className="periodos-destacado">
+              <i className="bi bi-calendar2-check"></i>
+
+              <div>
+                <h4>Consultá siempre el cronograma vigente</h4>
+
+                <p>
+                  Las fechas, los plazos y la organización pueden
+                  modificarse de un ciclo lectivo a otro. Revisá la
+                  información publicada por la escuela antes de
+                  organizar tu presentación.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* --------------------------------------------------
+            4.3 - POEC/IFCA
+            Información sobre las instancias de recuperación.
+        -------------------------------------------------- */}
+
+        <div className="poec-bloque">
+          <div className="poec-encabezado">
+            <span className="poec-icono">
+              <i className="bi bi-arrow-repeat"></i>
+            </span>
+
+            <div>
+              <span className="poec-etiqueta">
+                INSTANCIA DE RECUPERACIÓN
+              </span>
+
+              <h3>POEC/IFCA</h3>
+
+              <p>
+                Una oportunidad para recuperar aprendizajes pendientes
+                del mismo ciclo lectivo.
+              </p>
+            </div>
+          </div>
+
+          <div className="poec-contenido">
+            {/* Explicación general */}
+
+            <div className="poec-explicacion">
+              <h4>¿Qué es y para quién está destinado?</h4>
+
+              <p>
+                El POEC se desarrolla en diciembre y está destinado a
+                estudiantes que necesitan recuperar materias o unidades
+                desaprobadas durante el año en curso, siempre que esos
+                contenidos todavía se encuentren dentro de las
+                posibilidades de recuperación para acreditar la materia
+                en ese mismo ciclo lectivo.
+              </p>
+            </div>
+
+            {/* Características principales del POEC */}
+
+            <div className="poec-condiciones">
+              <div className="poec-condicion">
+                <i className="bi bi-calendar-event"></i>
+
+                <div>
+                  <strong>¿Cuándo?</strong>
+                  <span>En el período de diciembre.</span>
+                </div>
+              </div>
+
+              <div className="poec-condicion">
+                <i className="bi bi-journal-check"></i>
+
+                <div>
+                  <strong>¿Qué se recupera?</strong>
+
+                  <span>
+                    Materias o unidades desaprobadas del año en curso
+                    que aún puedan recuperarse.
+                  </span>
+                </div>
+              </div>
+
+              <div className="poec-condicion">
+                <i className="bi bi-flag"></i>
+
+                <div>
+                  <strong>¿Cuál es el objetivo?</strong>
+
+                  <span>
+                    Alcanzar la aprobación de la materia durante el
+                    mismo ciclo lectivo.
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* --------------------------------------------------
+            4.4 - Recomendaciones generales
+            Indicaciones para los estudiantes antes de rendir.
+        -------------------------------------------------- */}
+
+        <div className="mesas-recomendaciones">
+          <div className="mesas-recomendaciones-icono">
+            <i className="bi bi-clipboard2-check"></i>
+          </div>
+
+          <div className="mesas-recomendaciones-contenido">
+            <h3>Antes de presentarte a una mesa</h3>
+
+            <p>
+              Para evitar inconvenientes, tené en cuenta las siguientes
+              recomendaciones:
+            </p>
+
+            <ul>
+              <li>
+                <i className="bi bi-check2-circle"></i>
+                Verificá cuál es tu situación académica y qué tipo de
+                instancia de examen te corresponde.
+              </li>
+
+              <li>
+                <i className="bi bi-check2-circle"></i>
+                Consultá el cronograma actualizado y comprobá tanto
+                la fecha de inscripción como la fecha de examen.
+              </li>
+
+              <li>
+                <i className="bi bi-check2-circle"></i>
+                Revisá la materia, el año y la fecha de la mesa en la
+                que debés presentarte.
+              </li>
+
+              <li>
+                <i className="bi bi-check2-circle"></i>
+                Consultá con la institución o con el docente
+                correspondiente si necesitás confirmar algún requisito
+                o aspecto de la evaluación.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* --------------------------------------------------
+            BOTÓN DE INSCRIPCIÓN
+            Se ubica después de las recomendaciones para que
+            el estudiante pueda revisar la información antes
+            de acceder al formulario.
+        -------------------------------------------------- */}
+
+        <div className="mesas-formulario-contenedor">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSc0_W9Rw-xdm2LZaPW7QOHMrVwS9zqe0mLu1rjnN5Zzl5PWCw/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-cronograma btn-formulario-mesas"
+          >
+            Inscribirse a una mesa de examen
+            <i className="bi bi-box-arrow-up-right"></i>
+          </a>
+        </div>
+
+        {/* --------------------------------------------------
+            4.5 - Aclaración final sobre el calendario
+        -------------------------------------------------- */}
+
+        <div className="mesas-nota-final">
+          <i className="bi bi-info-circle"></i>
+
+          <p>
+            La organización de las mesas de examen y los períodos de
+            recuperación se establece según el calendario académico
+            de cada ciclo lectivo. Por eso, esta sección presenta
+            información general: las fechas concretas deben consultarse
+            siempre en el cronograma oficial vigente de la EPET N.º 20.
+          </p>
         </div>
       </section>
-
     </main>
   );
 }
+
+// Exportación del componente para utilizarlo en las rutas
+// de la aplicación.
 
 export default TrayectosFormativos;
