@@ -44,6 +44,7 @@ webinstitucional/
 | Trayectos Formativos | Ana | Estructuró los contenidos correspondientes al Ciclo Básico, Interciclo y Ciclo Orientado. |
 | Talleres | Agus | Diseñó y programó la sección de talleres técnicos y especialidades. |
 | Secretaría | Agus | Organizó la sección de trámites, instructivos de inscripciones y horarios de atención. |
+| Asesoría | Agus | Organizó la sección de documentación para estudiantes y horarios de atención. |
 | Nuestra Historia | Pilar | Redactó y estructuró los contenidos históricos institucionales y diseño de tarjetas. |
 | Contacto y Ubicación | Pilar | Diseñó la tarjeta de información extendida a ancho completo e integró el mapa interactivo de Google Maps (Lanín 2020). |
 | Biblioteca | Agus | Organizó la pagina ordenando los links. |
