@@ -1,4 +1,4 @@
-# 🏫 Sitio Web Institucional - EPET N°20 (Neuquén)
+# Sitio Web Institucional - EPET N°20 (Neuquén)
 
 ## 1. Descripción del Proyecto
 * **Objetivo:** Desarrollar el sitio web institucional oficial de la EPET N°20 de Neuquén para brindar información clara, moderna y accesible a la comunidad educativa (estudiantes, docentes, familias y público general).
@@ -25,10 +25,10 @@ webinstitucional/
 ├── package.json           # Dependencias y scripts del proyecto
 └── README.md              # Documentación del repositorio
 
-
+```
 ## 3. Cómo ejecutarlo y actualizarlo
 
-### 🛠️ Pasos para ver el sitio en una computadora local:
+### Pasos para ver el sitio en una computadora local:
 1. Clonar el repositorio o descargar el código fuente.
 2. Abrir una terminal en la carpeta raíz del proyecto (`webinstitucional`).
 3. Instalar las dependencias ejecutando:
@@ -37,10 +37,11 @@ webinstitucional/
 
 ## 4. Registro de Participación por Página
 
-| Página     | Integrante | Tareas Realizadas |
-| Inicio   | Luisa      | Maquetó la estructura visual general, configuró el layout principal y ajustó la presentación institucional. |
-| Novedades| Gero    | Desarrolló el sistema de publicaciones, maquetación de tarjetas y visualización de notas recientes. |
-| Trayectos Formativos| Ana | Estructuró los contenidos correspondientes al Ciclo Básico, Interciclo y Ciclo Orientado. |
+| Página | Integrante | Tareas Realizadas |
+| :--- | :--- | :--- |
+| Inicio | Luisa | Maquetó la estructura visual general, configuró el layout principal y ajustó la presentación institucional. |
+| Novedades | Gero | Desarrolló el sistema de publicaciones, maquetación de tarjetas y visualización de notas recientes. |
+| Trayectos Formativos | Ana | Estructuró los contenidos correspondientes al Ciclo Básico, Interciclo y Ciclo Orientado. |
 | Talleres | Agus | Diseñó y programó la sección de talleres técnicos y especialidades. |
 | Secretaría | Agus | Organizó la sección de trámites, instructivos de inscripciones y horarios de atención. |
 | Nuestra Historia | Pilar | Redactó y estructuró los contenidos históricos institucionales y diseño de tarjetas. |
